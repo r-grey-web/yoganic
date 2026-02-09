@@ -10560,28 +10560,25 @@ body {
   visibility: hidden;
   transition: 0.5s;
 }
+.back-to-top.is-show {
+  opacity: 1;
+  visibility: visible;
+}
 @media (hover: hover) {
   .back-to-top:hover {
     border-color: #cf6753;
     box-shadow: inset 300px 0 0 0 #faf8f5;
-    background-color: #fdfdfd;
   }
   .back-to-top:hover i {
     color: #cf6753;
   }
 }
-
-.back-to-top.is-show {
-  opacity: 1;
-  visibility: visible;
-}
-
 .back-to-top:active {
   opacity: 0.7;
 }
 
 /*----------------------------------------------*/
-/* Section */
+/* Section & Container */
 /*----------------------------------------------*/
 section {
   padding: 120px 0;
@@ -10609,8 +10606,7 @@ section {
 .leaf-bg {
   position: relative;
 }
-
-.leaf-bg::before {
+.leaf-bg:before {
   content: "";
   position: absolute;
   width: 30px;
@@ -10623,6 +10619,12 @@ section {
   opacity: 0;
   z-index: -1;
   pointer-events: none;
+  transition: opacity 0.3s;
+}
+@media (hover: hover) {
+  .leaf-bg:hover::before {
+    animation: leaf-diagonal-straight 3s linear forwards;
+  }
 }
 
 @keyframes leaf-diagonal-straight {
@@ -10672,9 +10674,13 @@ section {
   outline: none;
   transition: 0.5s;
 }
-
 .navbar-light .navbar-nav .nav-link.active {
   color: #cc5500 !important;
+}
+@media (hover: hover) {
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #cc5500 !important;
+  }
 }
 
 .navbar-light .navbar-brand img {
@@ -10684,15 +10690,17 @@ section {
   transition: 0.5s;
 }
 
-.header-cta,
-.header-cta:focus,
-.header-cta:active,
-.header-cta:visited {
+.header-cta {
   border: 2px solid #cf6753;
   background-color: #cf6753;
   color: #fdfdfd !important;
 }
-
+@media (hover: hover) {
+  .header-cta:hover {
+    box-shadow: inset 300px 0 0 0 #faf8f5;
+    color: #cf6753 !important;
+  }
+}
 .header-cta:active {
   opacity: 0.7;
 }
@@ -10713,6 +10721,10 @@ section {
 /*----------------------------------------------*/
 /* Service */
 /*----------------------------------------------*/
+section#service {
+  padding: 100px 0 120px;
+}
+
 section#service {
   padding: 100px 0 120px;
 }
@@ -11611,18 +11623,7 @@ details[open] .faq-answer {
     top: 430px !important;
   }
 }
-/* マウスがある環境でのみ実行 */
 @media (hover: hover) {
-  .leaf-bg:hover::before {
-    animation: leaf-diagonal-straight 3s linear forwards;
-  }
-  .navbar-light .navbar-nav .nav-link:hover {
-    color: #cc5500 !important;
-  }
-  .header-cta:hover {
-    box-shadow: inset 300px 0 0 0 #faf8f5;
-    color: #cf6753 !important;
-  }
   .service-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.03), 0 25px 50px rgba(166, 124, 82, 0.1);

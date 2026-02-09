@@ -7,6 +7,7 @@ $sub-text-color: #706c68;
 $text-white: #fdfdfd;
 $primary-color: #6b7b6e;
 $bg-color: #faf8f5;
+
 /*----------------------------------------------*/
 /* Mixin */
 /*----------------------------------------------*/
@@ -38,12 +39,6 @@ $bg-color: #faf8f5;
         opacity: 1;
     }
 }
-
-// #spinner.show {
-//     transition: opacity .5s ease-out, visibility 0s linear 0s;
-//     visibility: visible;
-//     opacity: 1;
-// }
 
 .my-spinner {
     color: $btn-color
@@ -93,28 +88,27 @@ body {
     visibility: hidden;
     transition: 0.5s;
 
+    &.is-show {
+        opacity: 1;
+        visibility: visible;
+    }
+
     @include hover-device {
         border-color: $btn-color;
         box-shadow: inset 300px 0 0 0 $bg-color;
-        background-color: $text-white;
 
         i {
             color: $btn-color;
         }
     }
-}
 
-.back-to-top.is-show {
-    opacity: 1;
-    visibility: visible;
-}
-
-.back-to-top:active {
-    opacity: 0.7;
+    &:active {
+        opacity: 0.7;
+    }
 }
 
 /*----------------------------------------------*/
-/* Section */
+/* Section & Container */
 /*----------------------------------------------*/
 section {
     padding: 120px 0;
@@ -141,21 +135,28 @@ section {
 /* Logo Background Animation */
 .leaf-bg {
     position: relative;
-}
 
-.leaf-bg::before {
-    content: "";
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: #9caf88;
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M476.188 24.146c-6.748-3.504-60.728 38.022-185.304 67.086C230.347 105.355 62.5 153.527 65.286 392.815L0 431.218l20.338 35.598c63.073-40.692 236.014-120.042 409.766-323.621 0 0-26.875 134.419-334.096 311.056 103.685 53.758 249.604 53.758 360.979-76.806C568.346 246.888 476.188 24.146 476.188 24.146z'/%3E%3C/svg%3E") no-repeat center / contain;
-    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M476.188 24.146c-6.748-3.504-60.728 38.022-185.304 67.086C230.347 105.355 62.5 153.527 65.286 392.815L0 431.218l20.338 35.598c63.073-40.692 236.014-120.042 409.766-323.621 0 0-26.875 134.419-334.096 311.056 103.685 53.758 249.604 53.758 360.979-76.806C568.346 246.888 476.188 24.146 476.188 24.146z'/%3E%3C/svg%3E") no-repeat center / contain;
-    top: -40px;
-    left: 100%;
-    opacity: 0;
-    z-index: -1;
-    pointer-events: none;
+    &:before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: #9caf88;
+        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M476.188 24.146c-6.748-3.504-60.728 38.022-185.304 67.086C230.347 105.355 62.5 153.527 65.286 392.815L0 431.218l20.338 35.598c63.073-40.692 236.014-120.042 409.766-323.621 0 0-26.875 134.419-334.096 311.056 103.685 53.758 249.604 53.758 360.979-76.806C568.346 246.888 476.188 24.146 476.188 24.146z'/%3E%3C/svg%3E") no-repeat center / contain;
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M476.188 24.146c-6.748-3.504-60.728 38.022-185.304 67.086C230.347 105.355 62.5 153.527 65.286 392.815L0 431.218l20.338 35.598c63.073-40.692 236.014-120.042 409.766-323.621 0 0-26.875 134.419-334.096 311.056 103.685 53.758 249.604 53.758 360.979-76.806C568.346 246.888 476.188 24.146 476.188 24.146z'/%3E%3C/svg%3E") no-repeat center / contain;
+        top: -40px;
+        left: 100%;
+        opacity: 0;
+        z-index: -1;
+        pointer-events: none;
+        transition: opacity 0.3s;
+    }
+
+    @include hover-device {
+        &::before {
+            animation: leaf-diagonal-straight 3s linear forwards;
+        }
+    }
 }
 
 @keyframes leaf-diagonal-straight {
@@ -199,41 +200,55 @@ section {
     padding: 0 5.5% !important;
 }
 
-.navbar-light .navbar-nav .nav-link {
-    position: relative;
-    margin-right: 25px;
-    padding: 30px 0;
-    color: #5d5754;
-    font-family: "M PLUS 1", sans-serif;
-    font-size: 0.9375rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    outline: none;
-    transition: .5s;
+.navbar-light {
+    .navbar-nav {
+        .nav-link {
+            position: relative;
+            margin-right: 25px;
+            padding: 30px 0;
+            color: #5d5754;
+            font-family: "M PLUS 1", sans-serif;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            outline: none;
+            transition: .5s;
+
+            &.active {
+                color: $dark-tl-color !important;
+            }
+
+            @include hover-device {
+                color: $dark-tl-color !important;
+            }
+        }
+    }
 }
 
-.navbar-light .navbar-nav .nav-link.active {
-    color: $dark-tl-color !important;
+.navbar-light {
+    .navbar-brand {
+        img {
+            width: 300px;
+            height: 45px;
+            max-height: 50px;
+            transition: .5s;
+        }
+    }
 }
 
-.navbar-light .navbar-brand img {
-    width: 300px;
-    height: 45px;
-    max-height: 50px;
-    transition: .5s;
-}
-
-.header-cta,
-.header-cta:focus,
-.header-cta:active,
-.header-cta:visited {
+.header-cta {
     border: 2px solid $btn-color;
     background-color: $btn-color;
     color: $text-white !important;
-}
 
-.header-cta:active {
-    opacity: 0.7;
+    @include hover-device {
+        box-shadow: inset 300px 0 0 0 $bg-color;
+        color: $btn-color !important;
+    }
+
+    &:active {
+        opacity: 0.7;
+    }
 }
 
 /*----------------------------------------------*/
@@ -254,6 +269,12 @@ section {
 /*----------------------------------------------*/
 section#service {
     padding: 100px 0 120px;
+}
+
+section {
+    &#service {
+        padding: 100px 0 120px;
+    }
 }
 
 .service-card {
@@ -1225,21 +1246,7 @@ details[open] .faq-answer {
     }
 }
 
-/* マウスがある環境でのみ実行 */
 @media (hover: hover) {
-
-    .leaf-bg:hover::before {
-        animation: leaf-diagonal-straight 3s linear forwards;
-    }
-
-    .navbar-light .navbar-nav .nav-link:hover {
-        color: $dark-tl-color !important;
-    }
-
-    .header-cta:hover {
-        box-shadow: inset 300px 0 0 0 $bg-color;
-        color: $btn-color !important;
-    }
 
     .service-card:hover {
         transform: translateY(-8px);
