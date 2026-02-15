@@ -1,0 +1,57 @@
+@use "_variables.scss" as v;
+
+/*----------------------------------------------*/
+/* Hover Device */
+/*----------------------------------------------*/
+@mixin hover-device {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+/*----------------------------------------------*/
+/* Media Queries */
+/*----------------------------------------------*/
+@mixin mq-min-1400 {
+    @media (min-width: v.$breakpoint-min-1400) {
+        @content;
+    }
+}
+
+@mixin mq-max-1399 {
+    @media (max-width: v.$breakpoint-max-1399) {
+        @content;
+    }
+}
+
+@mixin mq-max-1089 {
+    @media (max-width: v.$breakpoint-max-1089) {
+        @content;
+    }
+}
+
+@mixin mq-max-991 {
+    @media (max-width: v.$breakpoint-max-991) {
+        @content;
+    }
+}
+
+@mixin mq-max-791 {
+    @media (max-width: v.$breakpoint-max-791) {
+        @content;
+    }
+}
+
+@mixin mq-max-767 {
+    @media (max-width: v.$breakpoint-max-767) {
+        @content;
+    }
+}
+
+@mixin mq-max-539 {
+    @media (max-width: v.$breakpoint-max-539) {
+        @content;
+    }
+}

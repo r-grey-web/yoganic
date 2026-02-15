@@ -1,24 +1,5 @@
-/*----------------------------------------------*/
-/* Variable */
-/*----------------------------------------------*/
-$btn-color: #cf6753;
-$dark-tl-color: #cc5500;
-$sub-text-color: #706c68;
-$text-white: #fdfdfd;
-$primary-color: #6b7b6e;
-$bg-color: #faf8f5;
-
-/*----------------------------------------------*/
-/* Mixin */
-/*----------------------------------------------*/
-@mixin hover-device {
-    @media (hover: hover) {
-        &:hover {
-            @content;
-        }
-    }
-}
-
+@use "variables" as v;
+@use "mixins" as m;
 @import "bootstrap";
 
 /*----------------------------------------------*/
@@ -41,7 +22,7 @@ $bg-color: #faf8f5;
 }
 
 .my-spinner {
-    color: $btn-color
+    color: v.$btn-color
 }
 
 /*----------------------------------------------*/
@@ -80,10 +61,10 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 99;
-    border: 2px solid $btn-color;
+    border: 2px solid v.$btn-color;
     border-radius: 50%;
-    background-color: $btn-color;
-    color: $text-white !important;
+    background-color: v.$btn-color;
+    color: v.$text-white !important;
     opacity: 0;
     visibility: hidden;
     transition: 0.5s;
@@ -93,12 +74,12 @@ body {
         visibility: visible;
     }
 
-    @include hover-device {
-        border-color: $btn-color;
-        box-shadow: inset 300px 0 0 0 $bg-color;
+    @include m.hover-device {
+        border-color: v.$btn-color;
+        box-shadow: inset 300px 0 0 0 v.$bg-color;
 
         i {
-            color: $btn-color;
+            color: v.$btn-color;
         }
     }
 
@@ -114,7 +95,7 @@ section {
     padding: 120px 0;
     scroll-margin-top: 80px;
 
-    @media screen and (max-width: 991.98px) {
+    @include m.mq-max-991 {
         padding: 80px 12px;
     }
 }
@@ -122,7 +103,11 @@ section {
 .container {
     max-width: 1070px;
 
-    @media screen and (max-width: 1023.98px) {
+    @include m.mq-max-1089 {
+        max-width: 960px;
+    }
+
+    @media (max-width: 1023.98px) {
         padding-left: 25px;
         padding-right: 25px;
     }
@@ -161,7 +146,7 @@ section {
         transition: opacity 0.3s;
     }
 
-    @include hover-device {
+    @include m.hover-device {
         &::before {
             animation: leaf-diagonal-straight 3s linear forwards;
         }
@@ -205,10 +190,34 @@ section {
     background-color: #241a08;
 }
 
+/* sticky */
+@include m.mq-min-1400 {
+    .sticky-top.navbar-light {
+        position: fixed;
+        background: var(--bs-light) !important;
+    }
+}
+
+@include m.mq-max-1399 {
+    .sticky-top.navbar-light {
+        position: relative;
+        background: var(--bs-white);
+
+        .navbar-nav {
+            .nav-link {
+                padding: 20px 0;
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+/* navbar-light */
 .navbar-light {
     padding: 0 5.5% !important;
 
-    @media (min-width: 1400px) {
+    /* min-width: 1400px */
+    @include m.mq-min-1400 {
         position: absolute;
         width: 100%;
         top: 0;
@@ -217,8 +226,22 @@ section {
         z-index: 999;
     }
 
-    @media (max-width: 1399.98px) {
+    /* max-width: 1399.98px */
+    @include m.mq-max-1399 {
         padding: 15px 5% !important;
+
+        .navbar-toggler {
+            border-color: #e2e5e9 !important;
+
+            .fa-bars {
+                color: #5d5754;
+            }
+        }
+
+        .navbar-collapse {
+            margin-top: 15px;
+            border-top: 1px solid #DDDDDD;
+        }
     }
 
     .navbar-brand {
@@ -228,7 +251,7 @@ section {
             max-height: 50px;
             transition: .5s;
 
-            @media (max-width: 1399.98px) {
+            @include m.mq-max-1399 {
                 max-height: 45px;
             }
         }
@@ -248,15 +271,15 @@ section {
             transition: .5s;
 
             &.active {
-                color: $dark-tl-color !important;
+                color: v.$dark-tl-color !important;
             }
 
-            @include hover-device {
-                color: $dark-tl-color !important;
+            @include m.hover-device {
+                color: v.$dark-tl-color !important;
             }
 
-            @media (min-width: 1400px) {
-                &:before {
+            @include m.mq-min-1400 {
+                &::before {
                     position: absolute;
                     content: "";
                     width: 0;
@@ -274,7 +297,7 @@ section {
                 }
             }
 
-            @media (max-width: 1399.98px) {
+            @include m.mq-max-1399 {
                 padding: 20px 0;
                 margin-left: 0;
             }
@@ -284,20 +307,20 @@ section {
 }
 
 .header-cta {
-    border: 2px solid $btn-color;
-    background-color: $btn-color;
-    color: $text-white !important;
+    border: 2px solid v.$btn-color;
+    background-color: v.$btn-color;
+    color: v.$text-white !important;
 
-    @include hover-device {
-        box-shadow: inset 300px 0 0 0 $bg-color;
-        color: $btn-color !important;
+    @include m.hover-device {
+        box-shadow: inset 300px 0 0 0 v.$bg-color;
+        color: v.$btn-color !important;
     }
 
     &:active {
         opacity: 0.7;
     }
 
-    @media (max-width: 1399.98px) {
+    @include m.mq-max-1399 {
         margin: 20px 0 !important;
     }
 }
@@ -314,7 +337,7 @@ section {
     height: auto;
     margin-top: 85px;
 
-    @media (max-width: 1399.98px) {
+    @include m.mq-max-1399 {
         margin-top: 0px !important;
     }
 }
@@ -335,20 +358,34 @@ section {
             background: #fdfdfd;
             transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 
-            @include hover-device {
-                transform: translateY(-8px);
-                box-shadow:
-                    0 10px 15px rgba(0, 0, 0, 0.03),
-                    0 25px 50px rgba(166, 124, 82, 0.1);
+            &.service-card-1 {
+                margin-right: 15px;
+
+                .service-card-text {
+                    @include m.mq-max-791 {
+                        margin-bottom: 0px;
+                    }
+                }
             }
 
-            &.service-card-1,
             &.service-card-2 {
                 margin-right: 15px;
+
+                .service-card-text {
+                    @media (max-width: 734.98px) {
+                        margin-bottom: 0px;
+                    }
+                }
             }
 
             &.special {
                 background-color: #f5ece4;
+
+                .service-card-text {
+                    @include m.mq-max-791 {
+                        margin-bottom: 0px;
+                    }
+                }
             }
 
             .service-card-img {
@@ -363,38 +400,60 @@ section {
             .service-card-content {
                 padding: 25px;
                 text-align: center;
+
+                .service-btn-box {
+
+                    .service-btn {
+                        display: inline-block;
+                        padding: 10px 30px;
+                        background-color: #c89666;
+                        color: v.$text-white;
+                        font-size: 0.8938rem;
+                        font-weight: 450;
+                        letter-spacing: 0.06em;
+                        text-decoration: none;
+                        border-radius: 50px;
+                        outline: none;
+                        transition: all 0.3s ease-in-out;
+
+                        @include m.hover-device {
+                            background-color: #b38255;
+                            color: #fff;
+                        }
+
+                        &:focus,
+                        &:visited {
+                            outline: none;
+                        }
+
+                        &:active {
+                            outline: none;
+                            opacity: 0.7;
+                        }
+                    }
+                }
             }
 
-            .service-btn {
-                display: inline-block;
-                padding: 10px 30px;
-                background-color: #c89666;
-                color: $text-white;
-                font-size: 0.8938rem;
-                font-weight: 450;
-                letter-spacing: 0.06em;
-                text-decoration: none;
-                border-radius: 50px;
-                outline: none;
-                transition: all 0.3s ease-in-out;
-
-                @include hover-device {
-                    background-color: #b38255;
-                    color: #fff;
-                }
-
-                &:focus,
-                &:visited {
-                    outline: none;
-                }
-
-                &:active {
-                    outline: none;
-                    opacity: 0.7;
-                }
+            /* .service-card */
+            @include m.hover-device {
+                transform: translateY(-8px);
+                box-shadow:
+                    0 10px 15px rgba(0, 0, 0, 0.03),
+                    0 25px 50px rgba(166, 124, 82, 0.1);
             }
 
-            @media (max-width: 1089.98px) {
+            @include m.mq-max-791 {
+                max-height: none;
+            }
+
+            @include m.mq-max-539 {
+                width: 330px;
+                max-height: none;
+            }
+
+            /* Responsive */
+            @include m.mq-max-1089 {
+
                 max-width: 900px;
                 max-height: 210px;
 
@@ -414,7 +473,7 @@ section {
                 &.service-card-2 {
                     margin-right: 0px;
 
-                    img {
+                    .service-card-img {
                         object-position: center 30%;
                     }
                 }
@@ -439,7 +498,87 @@ section {
                 .service-btn-box {
                     text-align: right;
                 }
+
+                /* max-width: 826.98px */
+                @media (max-width: 826.98px) {
+
+                    &.service-card-1,
+                    &.special {
+                        .service-card-text {
+                            margin-bottom: 0px;
+                        }
+                    }
+                }
+
+                /* max-width: 769.98px */
+                @media (max-width: 769.98px) {
+                    &.service-card-2 {
+                        .service-card-text {
+                            margin-bottom: 0px;
+                        }
+                    }
+                }
+
+                /* max-width: 650.98px */
+                @media (max-width: 650.98px) {
+
+                    max-height: none;
+
+                    &.service-card-1,
+                    &.service-card-2,
+                    &.special {
+                        .service-card-text {
+                            margin-bottom: 22px;
+                        }
+                    }
+                }
+
+                /* max-width: 539.98px */
+                @include m.mq-max-539 {
+
+                    &.row-custom-parent {
+                        flex-direction: column;
+                    }
+
+
+                    &.service-card-2 {
+                        .service-card-img {
+                            object-position: center;
+                        }
+                    }
+
+                    .service-card-img {
+                        width: 100%;
+                        height: 200px;
+                        flex: 0 0 auto;
+                    }
+
+                    .service-card-content {
+                        width: 100%;
+                        flex: 0 0 auto;
+                    }
+
+                    .service-card-title {
+                        text-align: center;
+                    }
+
+                    .service-btn-box {
+                        text-align: center;
+                    }
+
+                    .service-btn {
+                        margin: 0 auto;
+                    }
+                }
             }
+        }
+
+        @include m.mq-max-991 {
+            padding: 80px 12px;
+        }
+
+        @include m.mq-max-767 {
+            padding-top: 60px;
         }
     }
 }
@@ -460,7 +599,7 @@ section {
 .about-contents p,
 .feedback-content p,
 .card-text {
-    color: $sub-text-color;
+    color: v.$sub-text-color;
     font-family: "M PLUS 1", sans-serif;
     font-size: 0.9375rem;
     font-weight: 450;
@@ -483,7 +622,7 @@ section {
         height: 80px;
     }
 
-    @media screen and (max-width: 991.98px) {
+    @include m.mq-max-991 {
         display: none;
     }
 }
@@ -514,24 +653,46 @@ section {
                     box-shadow: 15px 15px 0px #fdfbf8;
                     filter: sepia(10%) contrast(95%);
                 }
-
-                @media screen and (max-width: 991.98px) {
-                    flex: 0 1 auto;
-                    max-width: 600px !important;
-                    margin: 0 auto;
-                    padding: 0px !important;
-                    text-align: center;
-
-                    img {
-                        height: auto;
-                    }
-                }
             }
 
             .about-contents {
                 flex: 1;
             }
         }
+
+        /* Responsive */
+        /* max-width: 991.98px */
+        @include m.mq-max-991 {
+            padding: 80px 12px;
+
+            .about-text-box {
+                max-width: 600px !important;
+                margin: 0 auto;
+            }
+
+            .about-contents h5 {
+                margin-bottom: 30px;
+                text-align: center;
+            }
+
+            .about-contents-wrapper {
+                flex: 0 1 auto;
+                max-width: 600px !important;
+                margin: 0 auto;
+                padding: 0px !important;
+                text-align: center;
+
+                .about-img-box {
+                    flex: 0 0 100%;
+                    width: 100%;
+
+                    img {
+                        height: auto;
+                    }
+                }
+            }
+        }
+
     }
 }
 
@@ -543,7 +704,7 @@ section#feedback {
 }
 
 .sub-title {
-    color: $sub-text-color;
+    color: v.$sub-text-color;
     font-family: "M PLUS 1", sans-serif;
     font-size: 1.0625rem;
     font-weight: 400;
@@ -568,7 +729,7 @@ section#feedback {
 }
 
 .icon-bg {
-    background-color: $text-white;
+    background-color: v.$text-white;
 }
 
 .user-icon {
@@ -659,6 +820,10 @@ hr {
 .swiper-pagination {
     top: 380px !important;
     background-color: #cc5500;
+
+    @include m.mq-max-1089 {
+        top: 395px !important;
+    }
 }
 
 .swiper-pagination-bullet {
@@ -675,7 +840,7 @@ hr {
 }
 
 .feedback-cta-box span {
-    color: $sub-text-color;
+    color: v.$sub-text-color;
     font-size: 1.0625rem;
     font-weight: 400;
     letter-spacing: 0.15em;
@@ -698,7 +863,7 @@ hr {
 }
 
 #pricing .card {
-    background-color: $text-white;
+    background-color: v.$text-white;
     transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     border-radius: 40px 15px 40px 15px;
 }
@@ -774,7 +939,7 @@ hr {
 .card-body .pick-btn:visited {
     z-index: 10;
     background-color: #8da399;
-    color: $text-white;
+    color: v.$text-white;
 }
 
 .card-body .btn:active {
@@ -790,7 +955,7 @@ hr {
 
 .faq-box {
     padding: 50px 20px;
-    background-color: $bg-color;
+    background-color: v.$bg-color;
     color: #706c68;
 }
 
@@ -838,7 +1003,7 @@ hr {
 .faq-icon::after {
     content: "";
     position: absolute;
-    background-color: $primary-color;
+    background-color: v.$primary-color;
     transition: opacity 0.25s ease-in-out;
 }
 
@@ -987,41 +1152,6 @@ details[open] .faq-answer {
 /*----------------------------------------------*/
 /* Responsive Styles */
 /*----------------------------------------------*/
-
-@media (min-width: 1400px) {
-
-    .sticky-top.navbar-light {
-        position: fixed;
-        background: var(--bs-light) !important;
-    }
-}
-
-@media (max-width: 1399.98px) {
-    .navbar-toggler {
-        border-color: #e2e5e9 !important;
-    }
-
-    .fa-bars {
-        color: #5d5754;
-    }
-
-    .sticky-top.navbar-light {
-        position: relative;
-        background: var(--bs-white);
-    }
-
-    .navbar-light .navbar-collapse {
-        margin-top: 15px;
-        border-top: 1px solid #DDDDDD;
-    }
-
-    .sticky-top.navbar-light .navbar-nav .nav-link {
-        padding: 20px 0;
-        margin-left: 0;
-        color: #5d5754 !important;
-    }
-}
-
 @media (max-width: 1350.98px) {
 
     .swiper-button-prev,
@@ -1046,47 +1176,9 @@ details[open] .faq-answer {
     }
 }
 
-@media (max-width: 1089.98px) {
-
-    .container {
-        max-width: 960px;
-    }
-
-    .swiper-pagination {
-        top: 395px !important;
-    }
-}
-
 @media screen and (max-width: 1023.98px) {
     nav>a>img {
         width: 200px;
-    }
-}
-
-@media screen and (max-width: 991.98px) {
-
-    section#service,
-    section#about {
-        padding: 80px 12px;
-    }
-
-    #about {
-        background-color: #fdfbf7;
-    }
-
-    .about-contents h5 {
-        margin-bottom: 30px;
-        text-align: center;
-    }
-
-    .about-text-box {
-        max-width: 600px !important;
-        margin: 0 auto;
-    }
-
-    .about-contents-wrapper {
-        padding: 50px 0px;
-        background-color: $bg-color;
     }
 }
 
@@ -1108,26 +1200,10 @@ details[open] .faq-answer {
     }
 }
 
-@media screen and (max-width: 791.98px) {
-
-    .service-card {
-        max-height: none;
-    }
-
-    .service-card-1 .service-card-text,
-    .special .service-card-text {
-        margin-bottom: 0px;
-    }
-}
-
-@media screen and (max-width: 767.98px) {
+@include m.mq-max-767 {
     .navbar-light .navbar-brand img {
         width: 200px;
         height: 31px;
-    }
-
-    section#service {
-        padding-top: 60px;
     }
 
     .section-title {
@@ -1142,12 +1218,6 @@ details[open] .faq-answer {
 
     .pick-card:hover {
         transform: translateY(-8px) !important;
-    }
-}
-
-@media screen and (max-width: 734.98px) {
-    .service-card-2 .service-card-text {
-        margin-bottom: 0px;
     }
 }
 
@@ -1167,17 +1237,6 @@ details[open] .faq-answer {
     }
 }
 
-@media screen and (max-width: 650.98px) {
-
-    .service-card-1 .service-card-text,
-    .service-card-2 .service-card-text,
-    .special .service-card-text {
-        margin-bottom: 22px;
-    }
-}
-
-@media screen and (max-width: 635.98px) {}
-
 @media screen and (max-width: 605.98px) {
     .swiper-pagination {
         top: 435px !important;
@@ -1190,43 +1249,6 @@ details[open] .faq-answer {
     }
 }
 
-@media screen and (max-width: 539.98px) {
-    .row-custom-parent {
-        flex-direction: column;
-    }
-
-    .service-card {
-        width: 330px;
-        max-height: none;
-    }
-
-    .service-card-img {
-        width: 100%;
-        height: 200px;
-        flex: 0 0 auto;
-    }
-
-    .service-card-content {
-        width: 100%;
-        flex: 0 0 auto;
-    }
-
-    .service-card-title {
-        text-align: center;
-    }
-
-    .service-btn-box {
-        text-align: center;
-    }
-
-    .service-btn {
-        margin: 0 auto;
-    }
-
-    .service-card-2 {
-        object-position: center;
-    }
-}
 
 @media screen and (max-width: 447.98px) {
     .swiper-pagination {
@@ -1250,7 +1272,7 @@ details[open] .faq-answer {
 
     .feedback-cta:hover {
         background-color: #b88a76;
-        color: $text-white;
+        color: v.$text-white;
         box-shadow: 0 8px 20px rgba(184, 138, 118, 0.2);
     }
 
