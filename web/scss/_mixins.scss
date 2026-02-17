@@ -32,6 +32,12 @@
     }
 }
 
+@mixin mq-max-1023 {
+    @media (max-width: v.$breakpoint-max-1023) {
+        @content;
+    }
+}
+
 @mixin mq-max-991 {
     @media (max-width: v.$breakpoint-max-991) {
         @content;
