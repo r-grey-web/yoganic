@@ -1,6 +1,29 @@
 @use "_variables.scss" as v;
 
 /*----------------------------------------------*/
+/* Design */
+/*----------------------------------------------*/
+@mixin content-title {
+    margin-bottom: 15px;
+    font-family: "Noto Serif JP", serif;
+    font-size: 1.25rem;
+    color: #a67c52;
+    font-weight: 650;
+    letter-spacing: 0.11em;
+}
+
+@mixin content-text {
+    color: v.$sub-text-color;
+    font-family: "M PLUS 1", sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 450;
+    line-height: 1.9 !important;
+    letter-spacing: 0.14em;
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+/*----------------------------------------------*/
 /* Hover Device */
 /*----------------------------------------------*/
 @mixin hover-device {
@@ -10,6 +33,7 @@
         }
     }
 }
+
 /*----------------------------------------------*/
 /* Media Queries */
 /*----------------------------------------------*/
