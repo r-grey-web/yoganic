@@ -3,6 +3,13 @@
 /*----------------------------------------------*/
 /* Design */
 /*----------------------------------------------*/
+@mixin cta-btn {
+    padding: 10px 24px;
+    border: 2px solid v.$btn-color;
+    background-color: v.$btn-color;
+    color: v.$text-white !important;
+}
+
 @mixin content-title {
     margin-bottom: 15px;
     font-family: "Noto Serif JP", serif;
@@ -13,7 +20,7 @@
 }
 
 @mixin content-text {
-    color: v.$sub-text-color;
+    color: v.$light-gray;
     font-family: "M PLUS 1", sans-serif;
     font-size: 0.9375rem;
     font-weight: 450;
@@ -37,50 +44,14 @@
 /*----------------------------------------------*/
 /* Media Queries */
 /*----------------------------------------------*/
-@mixin mq-min-1400 {
-    @media (min-width: v.$breakpoint-min-1400) {
+@mixin mq-min($width) {
+    @media (width >=$width) {
         @content;
     }
 }
 
-@mixin mq-max-1399 {
-    @media (max-width: v.$breakpoint-max-1399) {
-        @content;
-    }
-}
-
-@mixin mq-max-1089 {
-    @media (max-width: v.$breakpoint-max-1089) {
-        @content;
-    }
-}
-
-@mixin mq-max-1023 {
-    @media (max-width: v.$breakpoint-max-1023) {
-        @content;
-    }
-}
-
-@mixin mq-max-991 {
-    @media (max-width: v.$breakpoint-max-991) {
-        @content;
-    }
-}
-
-@mixin mq-max-791 {
-    @media (max-width: v.$breakpoint-max-791) {
-        @content;
-    }
-}
-
-@mixin mq-max-767 {
-    @media (max-width: v.$breakpoint-max-767) {
-        @content;
-    }
-}
-
-@mixin mq-max-539 {
-    @media (max-width: v.$breakpoint-max-539) {
+@mixin mq-max($width) {
+    @media (width < $width) {
         @content;
     }
 }

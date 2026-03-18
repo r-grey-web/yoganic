@@ -35,14 +35,16 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Scss -->
-    <link rel="stylesheet" href="scss/my-style.css">
+    <link rel="stylesheet" href="css/my-style.css">
     <!-- Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navbarCollapse" data-bs-offset="100">
+<!-- <body data-bs-spy="scroll" data-bs-target="#navbarCollapse" data-bs-offset="100"> -->
+
+<body>
 
     <!-- Spinner Start -->
     <div id="spinner"
@@ -62,8 +64,10 @@
             <a href="index.html" class="navbar-brand p-0 leaf-bg">
                 <img src="img/logo.svg" alt="Yoganic（ヨガニック）">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
+            <button class="navbar-toggler menu-trigger" type="button" aria-label="メニューを開く">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
@@ -73,9 +77,9 @@
                     <a href="#feedback" class="nav-item nav-link">お客様の声</a>
                     <a href="#pricing" class="nav-item nav-link">料金プラン</a>
                     <a href="#faq" class="nav-item nav-link">よくあるご質問</a>
+                    <a href="#contact" class="nav-item nav-link">お問い合わせ</a>
                 </div>
-                <a href="index.html"
-                    class="btn rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0 header-cta">体験レッスン予約</a>
+                <a href="index.html" class="btn rounded-pill flex-wrap flex-sm-shrink-0 header-cta">体験レッスン予約</a>
             </div>
         </nav>
 
@@ -88,6 +92,35 @@
 
     </div>
     <!-- Navbar & Hero End -->
+
+    <!-- Responsive Scrolling Menu Start -->
+    <nav id="rp-scroll-header" class="floating-header">
+        <button class="menu-trigger" aria-label="メニュー">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+
+    <div id="rp-drawer-menu" class="drawer-menu">
+        <button id="menu-close" class="menu-close" aria-label="メニューを閉じる">
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="navbar-nav custom-drawer-nav">
+            <li class="fl-nav-item"><a class="fl-nav-link" href="#home">ホーム</a></li>
+            <li class="fl-nav-item"><a class="fl-nav-link" href="#service">サービス紹介</a></li>
+            <li class="fl-nav-item"><a class="fl-nav-link" href="#about">Yoganicの想い</a></li>
+            <li class="fl-nav-item"><a class="fl-nav-link" href="#feedback">お客様の声</a></li>
+            <li class="fl-nav-item"><a class="fl-nav-link" href="#pricing">料金プラン</a></li>
+            <li class="fl-nav-item"><a class="fl-nav-link" href="#faq">よくあるご質問</a></li>
+            <li><a href="index.html" class="btn rounded-pill fl-dw-cta">体験レッスン予約</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="menu-overlay" class="menu-overlay"></div>
+    <!-- Responsive Scrolling Menu End -->
 
     <!-- Services Start -->
     <section id="service" class="container-fluid service">
@@ -411,6 +444,14 @@
         </div>
     </section>
     <!-- Faq End -->
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-zoom-in" data-aos-easing="ease-out" data-aos-delay="0"
+                data-aos-duration="1000" data-aos-offset="50">お問い合わせ</h2>
+            <p class="text-center fs-5">Under construction</p>
+        </div>
+    </section>
 
     <!-- Footer Start -->
     <footer class="footer">

@@ -1,0 +1,24 @@
+{
+  "name": "yoganic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass:watch": "sass --watch web/scss:web/css --quiet-deps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rio-design/yoganic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rio-design/yoganic/issues"
+  },
+  "homepage": "https://github.com/rio-design/yoganic#readme",
+  "devDependencies": {
+    "sass": "^1.98.0"
+  }
+}

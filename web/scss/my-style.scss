@@ -34,6 +34,10 @@ body {
     font-family: "M PLUS 1", sans-serif;
     font-optical-sizing: auto;
     cursor: default;
+
+    &.is-drawer-open {
+        overflow: hidden;
+    }
 }
 
 /*----------------------------------------------*/
@@ -76,7 +80,7 @@ body {
 
     @include m.hover-device {
         border-color: v.$btn-color;
-        box-shadow: inset 300px 0 0 0 v.$bg-color;
+        box-shadow: inset 300px 0 0 0 #faf8f5;
 
         i {
             color: v.$btn-color;
@@ -95,7 +99,11 @@ section {
     padding: 120px 0;
     scroll-margin-top: 80px;
 
-    @include m.mq-max-991 {
+    @include m.mq-max(v.$xxl) {
+        scroll-margin-top: 0px;
+    }
+
+    @include m.mq-max(v.$lg) {
         padding: 80px 12px;
     }
 
@@ -108,7 +116,7 @@ section {
         letter-spacing: 0.15em;
         text-align: center;
 
-        @include m.mq-max-767 {
+        @media(width < 768) {
             margin-bottom: 50px;
             font-size: 1.625rem;
         }
@@ -118,11 +126,11 @@ section {
 .container {
     max-width: 1070px;
 
-    @include m.mq-max-1089 {
+    @include m.mq-max(v.$xl) {
         max-width: 960px;
     }
 
-    @include m.mq-max-1023 {
+    @media (width < 1024) {
         padding-left: 25px;
         padding-right: 25px;
     }
@@ -200,11 +208,14 @@ section {
 /*----------------------------------------------*/
 
 .navbar {
-
     &.navbar-light {
         padding: 0 5.5% !important;
 
-        @include m.mq-min-1400 {
+        @media (width < 1490px) {
+            padding: 0 3% !important;
+        }
+
+        @include m.mq-min(v.$xxl) {
             position: absolute;
             width: 100%;
             top: 0;
@@ -213,18 +224,18 @@ section {
             z-index: 999;
         }
 
-        @include m.mq-max-1399 {
+        @include m.mq-max(v.$xxl) {
             padding: 15px 5% !important;
         }
     }
 
     &.sticky-top {
-        @include m.mq-min-1400 {
+        @include m.mq-min(v.$xxl) {
             position: fixed;
             background: var(--bs-light) !important;
         }
 
-        @include m.mq-max-1399 {
+        @include m.mq-max(v.$xxl) {
             position: relative;
             background: var(--bs-white);
         }
@@ -237,11 +248,11 @@ section {
             max-height: 50px;
             transition: .5s;
 
-            @include m.mq-max-1399 {
+            @include m.mq-max(v.$xxl) {
                 max-height: 45px;
             }
 
-            @include m.mq-max-1023 {
+            @media (width < 1024) {
                 width: 250px;
             }
 
@@ -252,26 +263,32 @@ section {
     }
 
     .navbar-toggler {
-        @include m.mq-max-1399 {
-            border-color: #e2e5e9 !important;
+        display: none;
+        width: 50px;
+        height: 50px;
 
-            .fa-bars {
-                color: #5d5754;
-            }
+        @include m.mq-max(v.$xxl) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-color: #e2e5e9 !important;
+        }
+
+        .bar {
+            width: 17.5px;
+            height: 2px;
+            background: v.$dark-gray;
+            margin: 2px 0;
         }
     }
 
-    .navbar-collapse {
-        @include m.mq-max-1399 {
-            margin-top: 15px;
-            border-top: 1px solid #DDDDDD;
-        }
-
+    .navbar-nav {
         .nav-link {
             position: relative;
             margin-right: 25px;
-            padding: 30px 0;
-            color: #5d5754;
+            padding: 30px 8px;
+            color: v.$dark-gray !important;
             font-family: "M PLUS 1", sans-serif;
             font-size: 0.9375rem;
             font-weight: 500;
@@ -279,15 +296,20 @@ section {
             outline: none;
             transition: .5s;
 
-            &.active {
-                color: v.$dark-tl-color !important;
+            &.is-active {
+                color: v.$dark-btn-color !important;
+
+                &::before {
+                    width: calc(100% - 2px);
+                    left: 1px;
+                }
             }
 
             @include m.hover-device {
-                color: v.$dark-tl-color !important;
+                color: v.$dark-btn-color !important;
             }
 
-            @include m.mq-min-1400 {
+            @include m.mq-min(v.$xxl) {
                 &::before {
                     position: absolute;
                     content: "";
@@ -295,7 +317,7 @@ section {
                     height: 2px;
                     bottom: -1px;
                     left: 50%;
-                    background: #CC5500;
+                    background: v.$dark-btn-color;
                     transition: .5s;
                 }
 
@@ -306,20 +328,25 @@ section {
                 }
             }
 
-            @include m.mq-max-1399 {
+            @include m.mq-max(v.$xxl) {
                 padding: 20px 0;
                 margin-left: 0;
             }
         }
     }
 
+    .navbar-collapse {
+        @include m.mq-max(v.$xxl) {
+            margin-top: 15px;
+            border-top: 1px solid #DDDDDD;
+        }
+    }
+
     .header-cta {
-        border: 2px solid v.$btn-color;
-        background-color: v.$btn-color;
-        color: v.$text-white !important;
+        @include m.cta-btn;
 
         @include m.hover-device {
-            box-shadow: inset 300px 0 0 0 v.$bg-color;
+            box-shadow: inset 300px 0 0 0 #faf8f5;
             color: v.$btn-color !important;
         }
 
@@ -327,11 +354,180 @@ section {
             opacity: 0.7;
         }
 
-        @include m.mq-max-1399 {
+        @include m.mq-max(v.$xxl) {
             margin: 20px 0 !important;
         }
     }
+}
 
+/*----------------------------------------------*/
+/* Responsive Scrolling Menu */
+/*----------------------------------------------*/
+.floating-header {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+
+    @include m.mq-min(v.$xxl) {
+        display: none !important;
+    }
+
+    @include m.mq-max(v.$xxl) {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu-trigger {
+        width: 50px;
+        height: 50px;
+        background: #fff;
+        border-radius: 50%;
+        border: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        .bar {
+            width: 17.5px;
+            height: 2px;
+            background: v.$dark-gray;
+            margin: 2px 0;
+        }
+    }
+}
+
+.drawer-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background: #fff;
+    z-index: 2000;
+    transition: right 0.4s ease;
+    padding: 80px 20px 20px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+
+    &.is-on {
+        right: 0;
+    }
+
+    .menu-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            position: absolute;
+            width: 25px;
+            height: 2px;
+            background: v.$dark-gray;
+            transition: 0.3s;
+
+            // 1本目を45度傾ける
+            &:nth-child(1) {
+                transform: rotate(45deg);
+            }
+
+            // 2本目を-45度傾ける
+            &:nth-child(2) {
+                transform: rotate(-45deg);
+            }
+        }
+
+        &:hover span {
+            background: #000;
+        }
+    }
+
+    .custom-drawer-nav {
+        display: flex !important;
+        flex-direction: column !important;
+        padding-left: 0;
+        list-style: none;
+
+        .fl-nav-item {
+            width: 100%;
+            border-bottom: 1px solid #eee;
+
+            .fl-nav-link {
+                display: block;
+                padding: 25px 10px;
+                transition: background-color 0.2s ease-in-out;
+                color: v.$dark-gray !important;
+                text-decoration: none;
+                font-weight: bold;
+
+                // &.is-current {
+                //     color: v.$dark-btn-color !important;
+                // }
+
+                &.is-active {
+                    color: v.$dark-btn-color !important;
+                }
+
+                @include m.hover-device {
+                    background: #f8f9fa;
+                    color: v.$dark-btn-color !important;
+                }
+
+                &:active {
+                    background: #f8f9fa;
+                    color: v.$dark-btn-color !important;
+                }
+            }
+        }
+
+        .fl-dw-cta {
+            @include m.cta-btn;
+            margin-top: 25px;
+
+            @include m.hover-device {
+                box-shadow: inset 300px 0 0 0 #faf8f5;
+                color: v.$btn-color !important;
+            }
+
+            &:active {
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s;
+    z-index: 1999;
+
+    &.is-on {
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
 /*----------------------------------------------*/
@@ -345,11 +541,10 @@ section {
         height: auto;
         margin-top: 85px;
 
-        @include m.mq-max-1399 {
+        @include m.mq-max(v.$xxl) {
             margin-top: 0px !important;
         }
     }
-
 }
 
 /*----------------------------------------------*/
@@ -358,11 +553,11 @@ section {
 .service {
     padding: 100px 0 120px;
 
-    @include m.mq-max-991 {
+    @include m.mq-max(v.$lg) {
         padding: 80px 12px;
     }
 
-    @include m.mq-max-767 {
+    @media(width < 768) {
         padding-top: 60px;
     }
 
@@ -372,7 +567,7 @@ section {
         border: 1px solid rgba(166, 124, 82, 0.1);
         border-radius: 40px 15px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        background: #fdfdfd;
+        background: v.$text-white;
         transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 
         @include m.hover-device {
@@ -382,7 +577,7 @@ section {
                 0 25px 50px rgba(166, 124, 82, 0.1);
         }
 
-        @include m.mq-max-1089 {
+        @include m.mq-max(v.$xl) {
             max-width: 900px;
             max-height: 210px;
         }
@@ -397,7 +592,7 @@ section {
 
         &.row-custom-parent {
 
-            @include m.mq-max-1089 {
+            @include m.mq-max(v.$xl) {
                 display: flex;
                 flex-direction: row;
                 align-items: stretch;
@@ -414,7 +609,7 @@ section {
         &.service-card-1 {
             margin-right: 15px;
 
-            @include m.mq-max-1089 {
+            @include m.mq-max(v.$xl) {
                 margin-right: 0px;
             }
 
@@ -433,12 +628,12 @@ section {
         &.service-card-2 {
             margin-right: 15px;
 
-            @include m.mq-max-1089 {
+            @include m.mq-max(v.$xl) {
                 margin-right: 0px;
             }
 
             .service-card-img {
-                @include m.mq-max-1089 {
+                @include m.mq-max(v.$xl) {
                     object-position: center 30%;
                 }
 
@@ -488,7 +683,7 @@ section {
             object-fit: cover;
             border-radius: 0 0 30% 0;
 
-            @include m.mq-max-1089 {
+            @include m.mq-max(v.$xl) {
                 flex: 0 0 40%;
                 width: 40%;
                 height: auto;
@@ -507,7 +702,7 @@ section {
             padding: 25px;
             text-align: center;
 
-            @include m.mq-max-1089 {
+            @include m.mq-max(v.$xl) {
                 flex: 1;
                 padding: 20px;
             }
@@ -521,7 +716,7 @@ section {
         .service-card-title {
             @include m.content-title;
 
-            @include m.mq-max-1089 {
+            @include m.mq-max(v.$xl) {
                 text-align: left;
             }
 
@@ -536,7 +731,7 @@ section {
         }
 
         .service-btn-box {
-            @include m.mq-max-1089 {
+            @include m.mq-max(v.$xl) {
                 text-align: right;
             }
 
@@ -593,7 +788,7 @@ section {
         height: 80px;
     }
 
-    @include m.mq-max-991 {
+    @include m.mq-max(v.$lg) {
         display: none;
     }
 }
@@ -605,7 +800,7 @@ section {
     padding: 80px 0 120px;
     scroll-margin-top: 120px;
 
-    @include m.mq-max-991 {
+    @include m.mq-max(v.$lg) {
         padding: 80px 12px;
     }
 
@@ -617,7 +812,7 @@ section {
         gap: 30px;
         width: 100%;
 
-        @include m.mq-max-991 {
+        @include m.mq-max(v.$lg) {
             flex: 0 1 auto;
             max-width: 600px !important;
             margin: 0 auto;
@@ -629,7 +824,7 @@ section {
     .about-img-box {
         flex: 0 0 calc(41.666667% - 15px);
 
-        @include m.mq-max-991 {
+        @include m.mq-max(v.$lg) {
             flex: 0 0 100%;
             width: 100%;
             padding: 0;
@@ -642,7 +837,7 @@ section {
             box-shadow: 15px 15px 0px #fdfbf8;
             filter: sepia(10%) contrast(95%);
 
-            @include m.mq-max-991 {
+            @include m.mq-max(v.$lg) {
                 height: auto;
             }
 
@@ -650,7 +845,7 @@ section {
     }
 
     .about-text-box {
-        @include m.mq-max-991 {
+        @include m.mq-max(v.$lg) {
             max-width: 600px !important;
             margin: 0 auto;
             padding: 0;
@@ -663,7 +858,7 @@ section {
         h3 {
             @include m.content-title;
 
-            @include m.mq-max-991 {
+            @include m.mq-max(v.$lg) {
                 margin-bottom: 30px;
                 text-align: center;
             }
@@ -680,10 +875,9 @@ section {
                 display: block;
             }
 
-        }
-
-        p {
-            @include m.content-text;
+            p {
+                @include m.content-text;
+            }
         }
     }
 }
@@ -695,7 +889,7 @@ section {
     background-color: #fefef8;
 
     .sub-title {
-        color: v.$sub-text-color;
+        color: v.$light-gray;
         font-family: "M PLUS 1", sans-serif;
         font-size: 1.0625rem;
         font-weight: 400;
@@ -718,7 +912,7 @@ section {
         }
 
         i {
-            color: #706c68;
+            color: v.$light-gray;
             font-size: 1.25rem;
 
             @media (max-width: 397px) {
@@ -802,27 +996,19 @@ section {
         padding: 12px 32px;
         box-shadow: 0 4px 15px rgba(94, 77, 68, 0.1);
         background-color: transparent;
-        border: 1.55px solid #b88a76;
-        color: #b88a76;
+        border: 1.55px solid v.$feedback-btn-color;
+        color: v.$feedback-btn-color;
         outline: none;
         transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 
         @include m.hover-device {
-            background-color: #b88a76;
+            background-color: v.$feedback-btn-color;
             color: v.$text-white;
             box-shadow: 0 8px 20px rgba(184, 138, 118, 0.2);
 
             .arrow-svg {
                 transform: translateX(3px);
             }
-        }
-
-        &:focus,
-        &:active,
-        &:visited {
-            background-color: transparent;
-            border: 1.55px solid #b88a76;
-            color: #b88a76;
         }
 
         &:active {
@@ -841,7 +1027,7 @@ section {
     }
 
     span {
-        color: v.$sub-text-color;
+        color: v.$light-gray;
         font-size: 1.0625rem;
         font-weight: 400;
         letter-spacing: 0.15em;
@@ -898,13 +1084,13 @@ section {
 
     .swiper-pagination {
         top: 385px !important;
-        background-color: #cc5500;
+        background-color: v.$dark-btn-color;
 
-        @include m.mq-max-1089 {
+        @include m.mq-max(v.$xl) {
             top: 390px !important;
         }
 
-        @include m.mq-max-1023 {
+        @media (width < 1024) {
             top: 415px !important;
         }
 
@@ -1017,7 +1203,7 @@ section {
                 box-shadow: 0 20px 45px rgba(141, 163, 153, 0.3) !important;
             }
 
-            @include m.mq-max-767 {
+            @media(width < 768) {
                 transform: none;
                 border: 2px solid rgba(141, 163, 153, 0.6);
             }
@@ -1104,12 +1290,12 @@ section {
         padding: 50px 20px;
         background-color: lighten(#e6e0dd, 5.5%);
         border-radius: 8px;
-        color: #706c68;
+        color: v.$light-gray;
     }
 
     .fs-title {
         margin: 0 0 50px;
-        color: #706c68;
+        color: v.$light-gray;
         font-family: "Playfair Display", serif;
         font-weight: 650;
         font-size: 1.5rem;
@@ -1142,7 +1328,7 @@ section {
 
             .faq-answer {
                 opacity: 1;
-                transform: scale(1);
+                height: auto;
             }
         }
     }
@@ -1167,7 +1353,7 @@ section {
         &::after {
             content: "";
             position: absolute;
-            background-color: v.$primary-color;
+            background-color: #6b7b6e;
             transition: opacity 0.25s ease-in-out;
         }
 
@@ -1189,10 +1375,8 @@ section {
 
     .faq-answer {
         opacity: 0;
-        transform: scale(0.98);
-        transition:
-            opacity 0.6s ease,
-            transform 0.6s ease;
+        overflow: hidden;
+        height: 0;
 
         p {
             padding: 20px 28px 28px;
