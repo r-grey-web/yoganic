@@ -206,7 +206,6 @@ section {
 /*----------------------------------------------*/
 /* Navbar */
 /*----------------------------------------------*/
-
 .navbar {
     &.navbar-light {
         padding: 0 5.5% !important;
@@ -224,7 +223,7 @@ section {
             z-index: 999;
         }
 
-        @include m.mq-max(v.$xxl) {
+        @include m.mq-max(v.$nav-breakpoint) {
             padding: 15px 5% !important;
         }
     }
@@ -235,7 +234,7 @@ section {
             background: var(--bs-light) !important;
         }
 
-        @include m.mq-max(v.$xxl) {
+        @include m.mq-max(v.$nav-breakpoint) {
             position: relative;
             background: var(--bs-white);
         }
@@ -248,7 +247,7 @@ section {
             max-height: 50px;
             transition: .5s;
 
-            @include m.mq-max(v.$xxl) {
+            @include m.mq-max(v.$nav-breakpoint) {
                 max-height: 45px;
             }
 
@@ -267,7 +266,7 @@ section {
         width: 50px;
         height: 50px;
 
-        @include m.mq-max(v.$xxl) {
+        @include m.mq-max(v.$nav-breakpoint) {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -328,7 +327,7 @@ section {
                 }
             }
 
-            @include m.mq-max(v.$xxl) {
+            @include m.mq-max(v.$nav-breakpoint) {
                 padding: 20px 0;
                 margin-left: 0;
             }
@@ -336,7 +335,7 @@ section {
     }
 
     .navbar-collapse {
-        @include m.mq-max(v.$xxl) {
+        @include m.mq-max(v.$nav-breakpoint) {
             margin-top: 15px;
             border-top: 1px solid #DDDDDD;
         }
@@ -354,7 +353,7 @@ section {
             opacity: 0.7;
         }
 
-        @include m.mq-max(v.$xxl) {
+        @include m.mq-max(v.$nav-breakpoint) {
             margin: 20px 0 !important;
         }
     }

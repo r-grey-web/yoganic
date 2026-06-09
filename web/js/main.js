@@ -28,7 +28,7 @@
         }
     });
 
-    // --- Swiperの初期化 ---
+    //　Swiper initialization
     const swiper = new Swiper(".mySwiper", {
         slidesPerView: 3,
         spaceBetween: 20,
@@ -49,14 +49,14 @@
         }
     });
 
-    // --- AOSの初期化 ---
+    //　AOS Initialization
     AOS.init({
         once: true,
         duration: 1000,
         easing: 'ease-out-sine',
     });
 
-    // レスポンシブ スクロール時のメニュー
+    // // Responsive Scroll Menu
     document.addEventListener('DOMContentLoaded', () => {
 
         const header = document.getElementById('rp-scroll-header');
@@ -65,11 +65,27 @@
         const closeBtn = document.getElementById('menu-close');
         const navLinks = document.querySelectorAll('.nav-link, .fl-nav-link');
 
+        // // Toggle navigation layout at 1640px
+        const navbar = document.querySelector('.navbar');
+
+        const switchNavbar = () => {
+            if (!navbar) return;
+
+            if (window.innerWidth < 1640) {
+                navbar.classList.remove('navbar-expand-xxl');
+            } else {
+                navbar.classList.add('navbar-expand-xxl');
+            }
+        };
+
+        switchNavbar();
+        window.addEventListener('resize', switchNavbar);
+
         window.addEventListener('scroll', () => {
             const y = window.scrollY;
 
-            // 【PC/スマホ切り分け】
-            if (window.innerWidth >= 1400) {
+            // // Desktop / Mobile Behavior Switch
+            if (window.innerWidth >= 1640) {
                 if (header) {
                     header.classList.remove('show');
                     header.classList.add('d-none');
@@ -77,7 +93,7 @@
                 return;
             }
 
-            // スマホ用ボタン表示
+            // // Toggle mobile header visibility on scroll
             if (header) {
                 if (y === 0) {
                     header.classList.remove('show');
@@ -115,7 +131,7 @@
     });
 
 
-    // Scrollspy (width > 1400px) Start
+    // Scrollspy Start
     const mainSections = document.querySelectorAll("#home, section");
     const mainNavLinks = document.querySelectorAll(".nav-link");
     const mobileNavLinks = document.querySelectorAll(".fl-nav-link");
@@ -159,9 +175,9 @@
             if (homeMobile) homeMobile.classList.add("is-active");
         }
     });
-    // Scrollspy (width >= 1400px) End
+    // Scrollspy Start End
 
-    // Accordion Mune Start
+    // Accordion Menu Start
     document.querySelectorAll('details').forEach((el) => {
         const summary = el.querySelector('summary');
         const content = el.querySelector('.faq-answer');
@@ -215,7 +231,7 @@
                 };
             }
         });
-    });// Accordion Mune End
+    });// Accordion Menu End
 
 })(jQuery);
 
