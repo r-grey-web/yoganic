@@ -114,6 +114,7 @@
             <li class="fl-nav-item"><a class="fl-nav-link" href="#feedback">お客様の声</a></li>
             <li class="fl-nav-item"><a class="fl-nav-link" href="#pricing">料金プラン</a></li>
             <li class="fl-nav-item"><a class="fl-nav-link" href="#faq">よくあるご質問</a></li>
+            <li class="fl-nav-item"><a class="fl-nav-link" href="#contact">お問い合わせ</a></li>
             <li><a href="index.html" class="btn rounded-pill fl-dw-cta">体験レッスン予約</a>
             </li>
         </ul>
@@ -205,7 +206,7 @@
         <div class="container feedback-card-wrapper">
             <h2 class="section-title" data-aos="fade-zoom-in" data-aos-duration="800" data-aos-offset="50"
                 data-aos-easing="ease-out-quart">お客様の声</h2>
-            <p class="mb-5 text-center sub-title" data-aos="fade-zoom-in" data-aos-delay="200" data-aos-duration="1000"
+            <p class="mb-4 text-center sub-title" data-aos="fade-zoom-in" data-aos-delay="200" data-aos-duration="1000"
                 data-aos-offset="50" data-aos-easing="ease-out-quart">会員様のリアルな声を<br>お届けします&nbsp;<i
                     class="far fa-comment-dots"></i></p>
             <div class="swiper-container-wrapper" data-aos="fade-zoom-in" data-aos-delay="200" data-aos-duration="1000"
@@ -394,7 +395,7 @@
     <!-- Pricing End -->
 
     <!--Faq Start -->
-    <section id="faq" class="faq container-fluid">
+    <section id="faq" class="faq">
         <div class="container faq-wrapper">
             <h2 class="section-title" data-aos="fade-zoom-in" data-aos-easing="ease-out-sine" data-aos-duration="1200"
                 data-aos-offset="50">よくあるご質問</h2>
@@ -445,11 +446,52 @@
     </section>
     <!-- Faq End -->
 
-    <section id="contact">
-        <div class="container">
+    <section id="contact" class="contact">
+        <div class="contact__inner container">
             <h2 class="section-title" data-aos="fade-zoom-in" data-aos-easing="ease-out" data-aos-delay="0"
                 data-aos-duration="1000" data-aos-offset="50">お問い合わせ</h2>
-            <p class="text-center fs-5">Under construction</p>
+            <p class="contact__lead mb-4">ご質問やご相談など、<br class="sp-only">お気軽にお問い合わせください。</p>
+            <form class="contact-form" action="#" method="post" novalidate>
+                <div class="contact-form__item">
+                    <label class="contact-form__label" for="name">お名前<span class="required">必須</span></label>
+                    <input type="text" id="name" name="name" placeholder="山田 花子" required>
+                    <p class="error-message"></p>
+                </div>
+                <div class="contact-form__item">
+                    <label class="contact-form__label" for="email">メールアドレス<span class="required">必須</span></label>
+                    <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+                    <p class="error-message"></p>
+                </div>
+                <div class="contact-form__item">
+                    <label class="contact-form__label" for="category">お問い合わせ種別<span class="required">必須</span></label>
+                    <div class="select-wrapper">
+                        <select name="category" id="category" required>
+                            <option value="">選択してください</option>
+                            <option value="trial">体験レッスンについて</option>
+                            <option value="plan">料金プランについて</option>
+                            <option value="lesson">レッスン内容について</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </div>
+                    <p class="error-message"></p>
+                </div>
+                <div class="contact-form__item">
+                    <label class="contact-form__label" for="message">お問い合わせ内容<span class="required">必須</span></label>
+                    <textarea name="message" id="message" rows="6" placeholder="お問い合わせ内容をご入力ください" required></textarea>
+                    <p class="error-message"></p>
+                </div>
+                <div class="contact-form__privacy">
+                    <label for="privacy">
+                        <input type="checkbox" id="privacy" required>
+                        <span>個人情報の取り扱いに同意します</span>
+                    </label>
+                    <p class="error-message"></p>
+                </div>
+
+                <button class="contact-form__button btn rounded-pill" type="submit" aria-label="お問い合わせ内容を確認する">
+                    入力内容を確認する
+                </button>
+            </form>
         </div>
     </section>
 
@@ -482,7 +524,7 @@
     <a href="index.html" class="btn back-to-top" aria-label="ページの先頭へ戻る"><i class="fa fa-arrow-up"></i></a>
 
 
-    <!-- JavaScript Libraries -->
+    <!-- JavaScript & Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
@@ -492,8 +534,9 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Aos -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Template Javascript -->
+    <!-- Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/validation.js"></script>
 </body>
 
 </html>

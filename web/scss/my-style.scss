@@ -1,12 +1,10 @@
 @use "variables" as v;
 @use "mixins" as m;
+@use "sass:color";
 @import "bootstrap";
 
 /*----------------------------------------------*/
-/* Main Styles */
-/*----------------------------------------------*/
-/*----------------------------------------------*/
-/* Spinner */
+/* スピナー */
 /*----------------------------------------------*/
 #spinner {
     opacity: 0;
@@ -26,7 +24,7 @@
 }
 
 /*----------------------------------------------*/
-/* Body */
+/* ボディ */
 /*----------------------------------------------*/
 
 body {
@@ -41,7 +39,7 @@ body {
 }
 
 /*----------------------------------------------*/
-/* Button */
+/* ボタン */
 /*----------------------------------------------*/
 .btn {
     font-weight: 600;
@@ -93,7 +91,7 @@ body {
 }
 
 /*----------------------------------------------*/
-/* Section & Container */
+/* セクション & コンテナ */
 /*----------------------------------------------*/
 section {
     padding: 120px 0;
@@ -116,7 +114,7 @@ section {
         letter-spacing: 0.15em;
         text-align: center;
 
-        @media(width < 768) {
+        @media(width < 768px) {
             margin-bottom: 50px;
             font-size: 1.625rem;
         }
@@ -125,19 +123,20 @@ section {
 
 .container {
     max-width: 1070px;
+    margin: 0 auto;
 
     @include m.mq-max(v.$xl) {
         max-width: 960px;
     }
 
-    @media (width < 1024) {
+    @media (width < 1024px) {
         padding-left: 25px;
         padding-right: 25px;
     }
 }
 
 /*----------------------------------------------*/
-/* Header */
+/* ヘッダー */
 /*----------------------------------------------*/
 .header-bar {
     height: 7px;
@@ -204,7 +203,7 @@ section {
 }
 
 /*----------------------------------------------*/
-/* Navbar */
+/* ナブメニュー */
 /*----------------------------------------------*/
 .navbar {
     &.navbar-light {
@@ -345,8 +344,7 @@ section {
         @include m.cta-btn;
 
         @include m.hover-device {
-            box-shadow: inset 300px 0 0 0 #faf8f5;
-            color: v.$btn-color !important;
+            @include m.cta-btn-hover;
         }
 
         &:active {
@@ -360,7 +358,7 @@ section {
 }
 
 /*----------------------------------------------*/
-/* Responsive Scrolling Menu */
+/* レスポンシブ時のナブメニュー */
 /*----------------------------------------------*/
 .floating-header {
     opacity: 0;
@@ -475,10 +473,6 @@ section {
                 text-decoration: none;
                 font-weight: bold;
 
-                // &.is-current {
-                //     color: v.$dark-btn-color !important;
-                // }
-
                 &.is-active {
                     color: v.$dark-btn-color !important;
                 }
@@ -500,8 +494,7 @@ section {
             margin-top: 25px;
 
             @include m.hover-device {
-                box-shadow: inset 300px 0 0 0 #faf8f5;
-                color: v.$btn-color !important;
+                @include m.cta-btn-hover;
             }
 
             &:active {
@@ -547,7 +540,7 @@ section {
 }
 
 /*----------------------------------------------*/
-/* Service */
+/* サービス紹介 */
 /*----------------------------------------------*/
 .service {
     padding: 100px 0 120px;
@@ -793,7 +786,7 @@ section {
 }
 
 /*----------------------------------------------*/
-/* About */
+/* Yoganicの想い */
 /*----------------------------------------------*/
 .about {
     padding: 80px 0 120px;
@@ -882,17 +875,13 @@ section {
 }
 
 /*----------------------------------------------*/
-/* Feedback */
+/* お客様の声 */
 /*----------------------------------------------*/
 .feedback {
     background-color: #fefef8;
 
     .sub-title {
-        color: v.$light-gray;
-        font-family: "M PLUS 1", sans-serif;
-        font-size: 1.0625rem;
-        font-weight: 400;
-        letter-spacing: 0.15em;
+        @include m.section-lead;
 
         @media (max-width: 576px) {
             font-size: 1rem;
@@ -1157,7 +1146,7 @@ section {
 }
 
 /*----------------------------------------------*/
-/* Pricing */
+/* 料金プラン */
 /*----------------------------------------------*/
 #pricing {
     background-image:
@@ -1280,10 +1269,14 @@ section {
 }
 
 /*----------------------------------------------*/
-/* Faq */
+/* よくあるご質問 */
 /*----------------------------------------------*/
 .faq {
     background-color: #fefef8;
+
+    @include m.mq-max(v.$md) {
+        padding: 80px 0px;
+    }
 
     .faq-box {
         padding: 50px 20px;
@@ -1389,7 +1382,164 @@ section {
 }
 
 /*----------------------------------------------*/
-/* Footer */
+/* お問い合わせフォーム */
+/*----------------------------------------------*/
+.contact {
+    background: #faf8f2;
+
+    @include m.mq-max(v.$md) {
+        padding: 80px 0px;
+    }
+
+    .contact__lead {
+        @include m.section-lead;
+        text-align: center;
+
+        @include m.mq-max(v.$xxl) {
+            font-size: clamp(0.875rem, 0.821rem + 0.268vw, 1.063rem);
+        }
+
+        &.sp-only {
+            display: none;
+
+            @include m.mq-max(v.$md) {
+                display: block;
+            }
+        }
+    }
+
+    .contact-form {
+        max-width: 1070px;
+        margin: 0 auto;
+        padding: 50px 20px;
+        background-color: color.scale(#faf8f2, $lightness: -1.5%);
+        border-radius: 8px;
+        box-shadow: 0 16px 40px rgba(92, 68, 61, 0.08);
+    }
+
+    .contact-form__item {
+        max-width: 800px;
+        margin: 0 auto 28px;
+
+        .contact-form__label {
+            display: block;
+            padding-left: 4px;
+            margin-bottom: 10px;
+            color: #5c443d;
+            font-size: 14px;
+            letter-spacing: 0.08em;
+        }
+
+        .required {
+            display: inline-block;
+            margin-left: 8px;
+            padding: 2px 8px;
+            color: #fff;
+            background: #c97b63;
+            border-radius: 999px;
+            font-size: 11px;
+        }
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 20px 50px 20px 28px;
+        color: #5c443d;
+        background: #fbfaf7;
+        border: 1px solid #e4ddd5;
+        border-radius: 8px;
+        font-size: 15px;
+
+        &:focus-visible {
+            border: 1.5px solid #c97b63;
+            outline: none;
+        }
+
+        &::placeholder {
+            color: #b8aaa4;
+        }
+
+        &.is-error {
+            border-color: #d9534f;
+        }
+    }
+
+    .error-message {
+        padding-left: 4px;
+        color: #d9534f;
+        font-size: 14px;
+        margin-top: 4px;
+        min-height: 1.2em;
+
+        &:not(:empty)::before {
+            content: "※";
+            margin-right: 4px;
+        }
+    }
+
+    .select-wrapper {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 28px;
+            width: 10px;
+            height: 10px;
+            border-right: 1px solid #5c443d;
+            border-bottom: 1px solid #5c443d;
+            transform: translateY(-70%) rotate(45deg);
+            pointer-events: none;
+        }
+
+        select {
+            appearance: none;
+            cursor: pointer;
+        }
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    .contact-form__privacy {
+        margin: 32px 0;
+        color: #6b5a55;
+        font-size: 14px;
+        text-align: center;
+
+        label {
+            cursor: pointer;
+        }
+
+        input {
+            transform: scale(1.3);
+            position: relative;
+            top: 1.1px;
+            width: auto;
+            margin-right: 8px;
+            cursor: pointer;
+        }
+    }
+
+    .contact-form__button {
+        @include m.cta-btn;
+        display: block;
+        min-width: 220px;
+        margin: 0 auto;
+        padding: 16px 40px;
+
+        @include m.hover-device {
+            @include m.cta-btn-hover;
+        }
+    }
+}
+
+/*----------------------------------------------*/
+/* フッター */
 /*----------------------------------------------*/
 .footer {
     background-color: #54433f;
@@ -1494,5 +1644,205 @@ section {
             letter-spacing: 0.2em;
         }
 
+    }
+}
+
+/*----------------------------------------------*/
+/* お問い合わせフォーム 入力確認ページ */
+/*----------------------------------------------*/
+.confirm {
+    padding: 96px 20px;
+    background-color: #fbf8f1;
+
+    &__inner {
+        max-width: 800px;
+        margin-inline: auto;
+    }
+
+    &__lead {
+        @include m.section-lead;
+        text-align: center;
+
+        @include m.mq-max(v.$xxl) {
+            font-size: clamp(0.875rem, 0.821rem + 0.268vw, 1.063rem);
+        }
+    }
+
+    &__box {
+        margin-top: 24px;
+        padding: 48px;
+        background-color: #fffdf8;
+        box-shadow: 0 8px 30px rgba(91, 74, 63, 0.08);
+
+        @include m.mq-max(v.$xxl) {
+            padding: clamp(1.5rem, 1.071rem + 2.143vw, 3rem);
+        }
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 24px;
+        padding: 20px 0;
+        border-bottom: 1px solid #eadfd2;
+
+        @include m.mq-max(v.$md) {
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+
+        dt {
+            color: #c97b63;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        dd {
+            margin: 0;
+            color: v.$dark-gray;
+            line-height: 1.8;
+            white-space: pre-wrap;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 40px;
+
+        @include m.mq-max(v.$xxl) {
+            flex-direction: column;
+        }
+    }
+
+    &__button {
+        min-width: 180px;
+        padding: 14px 28px;
+        font-size: 15px;
+    }
+
+    &__button--back {
+        color: v.$btn-color;
+        background-color: #fffdf8;
+        border: 2px solid v.$btn-color;
+
+        @include m.hover-device {
+            color: v.$btn-color;
+            opacity: .7;
+        }
+    }
+
+    &__button--submit {
+        color: #fffdf8;
+        background-color: #c86f57;
+        border: 2px solid #c86f57;
+
+        @include m.hover-device {
+            color: #fffdf8;
+            opacity: .8;
+        }
+    }
+}
+
+/*----------------------------------------------*/
+/* お問い合わせフォーム 送信完了ページ */
+/*----------------------------------------------*/
+.thanks {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 120px 20px;
+    background-color: #fbf8f1;
+
+    @include m.mq-max(v.$md) {
+        padding: 80px 16px;
+    }
+
+    &__inner {
+        width: 100%;
+        max-width: 760px;
+        margin-inline: auto;
+    }
+
+    &__box {
+        padding: 64px 48px;
+        background-color: #fffdf8;
+        box-shadow: 0 8px 30px rgba(91, 74, 63, 0.08);
+        text-align: center;
+
+        @include m.mq-max(v.$md) {
+            padding: 48px 24px;
+        }
+    }
+
+    &__icon {
+        width: 56px;
+        height: 56px;
+        fill: none;
+        margin: 0 auto 24px;
+        border-radius: 50%;
+        background-color: #c86f57;
+        display: grid;
+        place-items: center;
+        font-size: 28px;
+        line-height: 1;
+
+        @include m.mq-max(v.$xxl) {
+            width: clamp(46px, 2.696rem + 0.893vw, 56px);
+            height: clamp(46px, 2.696rem + 0.893vw, 56px);
+        }
+
+        svg {
+            width: 36px;
+            height: 36px;
+            stroke: #fff;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+
+            @include m.mq-max(v.$xxl) {
+                width: clamp(26px, 1.446rem + 0.893vw, 36px);
+                height: clamp(26px, 1.446rem + 0.893vw, 36px);
+            }
+        }
+    }
+
+    &__title {
+        color: #c86f57;
+        font-family: "Noto Serif JP", serif;
+        font-size: clamp(1.5rem, 4vw, 2.25rem);
+        font-weight: 400;
+        letter-spacing: 0.08em;
+    }
+
+    &__text {
+        margin-top: 24px;
+        color: #3f332d;
+        font-size: 15px;
+        line-height: 2;
+
+        @include m.mq-max(v.$md) {
+            text-align: left;
+        }
+    }
+
+    &__button {
+        @include m.cta-btn;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 220px;
+        padding: 14px 32px;
+        margin-top: 40px;
+        background-color: #c86f57;
+
+        @include m.hover-device {
+            @include m.cta-btn-hover;
+        }
+
+        @include m.mq-max(v.$md) {
+            width: 100%;
+        }
     }
 }

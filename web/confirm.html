@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>入力内容の確認</title>
+  <!-- Scss -->
+  <link rel="stylesheet" href="css/my-style.css">
+</head>
+
+<body>
+  <section class="confirm section">
+    <div class="confirm__inner">
+      <h1 class="section-title">お問い合わせ内容の確認</h1>
+      <p class="confirm__lead">
+        入力内容をご確認のうえ、送信してください。
+      </p>
+
+      <div class="confirm__box">
+        <dl class="confirm__list">
+          <div class="confirm__item">
+            <dt>お名前</dt>
+            <dd id="confirm-name"></dd>
+          </div>
+
+          <div class="confirm__item">
+            <dt>メールアドレス</dt>
+            <dd id="confirm-email"></dd>
+          </div>
+
+          <div class="confirm__item">
+            <dt>お問い合わせ種別</dt>
+            <dd id="confirm-category"></dd>
+          </div>
+
+          <div class="confirm__item">
+            <dt>お問い合わせ内容</dt>
+            <dd id="confirm-message"></dd>
+          </div>
+        </dl>
+
+        <div class="confirm__buttons">
+          <button id="return-to-form-button" class="confirm__button confirm__button--back rounded-pill btn"
+            type="button" aria-label="お問い合わせ内容を修正する">
+            修正する
+          </button>
+          <button id="submit-button" class="confirm__button confirm__button--submit rounded-pill btn" type="button"
+            aria-label="お問い合わせ内容を送信する">
+            送信する
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+  <script src="js/confirm.js"></script>
+</body>
+
+</html>

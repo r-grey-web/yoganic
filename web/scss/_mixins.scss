@@ -10,6 +10,19 @@
     color: v.$text-white !important;
 }
 
+@mixin cta-btn-hover {
+    box-shadow: inset 300px 0 0 0 #faf8f5;
+    color: v.$btn-color !important;
+}
+
+@mixin section-lead {
+    color: v.$light-gray;
+    font-family: "M PLUS 1", sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+}
+
 @mixin content-title {
     margin-bottom: 15px;
     font-family: "Noto Serif JP", serif;
