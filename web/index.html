@@ -42,10 +42,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<!-- <body data-bs-spy="scroll" data-bs-target="#navbarCollapse" data-bs-offset="100"> -->
-
 <body>
-
     <!-- Spinner Start -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -55,10 +52,10 @@
     </div>
     <!-- Spinner End -->
 
-    <div class="header-bar"></div>
+    <div id="home" class="header-bar"></div>
 
     <!-- Navbar & Hero Start -->
-    <div class="container-fluid position-relative p-0">
+    <header class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-xxl navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
 
             <a href="index.html" class="navbar-brand p-0 leaf-bg">
@@ -83,14 +80,14 @@
             </div>
         </nav>
 
-        <div id="home" class="hero-container">
+        <div class="hero-container">
             <picture>
                 <source media="(min-width: 768px)" srcset="img/hero-img.webp">
                 <img src="img/hero-img-sp.webp" alt="誰にも見られない、私だけのおうちヨガ" class="img-fluid w-100 hero-img">
             </picture>
         </div>
 
-    </div>
+    </header>
     <!-- Navbar & Hero End -->
 
     <!-- Responsive Scrolling Menu Start -->
@@ -483,7 +480,7 @@
                 <div class="contact-form__privacy">
                     <label for="privacy">
                         <input type="checkbox" id="privacy" required>
-                        <span>個人情報の取り扱いに同意します</span>
+                        <span><a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">個人情報の取り扱い</a>に同意します</span>
                     </label>
                     <p class="error-message"></p>
                 </div>

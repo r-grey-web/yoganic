@@ -12041,6 +12041,17 @@ section .section-title {
   margin-right: 8px;
   cursor: pointer;
 }
+.contact .contact-form__privacy a {
+  color: #6b5a55;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.25s ease;
+}
+@media (hover: hover) {
+  .contact .contact-form__privacy a:hover {
+    opacity: 0.8;
+  }
+}
 .contact .contact-form__button {
   padding: 10px 24px;
   border: 2px solid #cf6753;
@@ -12153,6 +12164,99 @@ section .section-title {
   font-size: 0.7813rem;
   text-transform: none;
   letter-spacing: 0.2em;
+}
+
+/*----------------------------------------------*/
+/* プライバシーポリシー */
+/*----------------------------------------------*/
+.privacy-policy {
+  padding: 120px 20px;
+  background-color: #fbf8f1;
+}
+.privacy-policy__inner {
+  max-width: 880px;
+  margin-inline: auto;
+}
+.privacy-policy__title {
+  color: #c86f57;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+.privacy-policy__lead {
+  margin-top: 32px;
+  color: #3f332d;
+  font-size: 15px;
+  line-height: 2;
+  text-align: center;
+}
+.privacy-policy__box {
+  margin-top: 48px;
+  padding: 56px 48px;
+  background-color: #fffdf8;
+  box-shadow: 0 8px 30px rgba(91, 74, 63, 0.08);
+}
+.privacy-policy__section {
+  padding: 0;
+  scroll-margin-top: 0;
+}
+.privacy-policy__section + .privacy-policy__section {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid #eadfd2;
+}
+.privacy-policy__section h2, .privacy-policy__section .h2 {
+  color: #c86f57;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.privacy-policy__section p {
+  margin-top: 16px;
+  color: #3f332d;
+  font-size: 15px;
+  line-height: 2;
+}
+.privacy-policy__button-wrap {
+  margin-top: 48px;
+  text-align: center;
+}
+.privacy-policy__button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 240px;
+  padding: 14px 32px;
+  background-color: #c86f57;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+@media (max-width: 767px) {
+  .privacy-policy {
+    padding: 80px 16px;
+  }
+  .privacy-policy__lead {
+    text-align: left;
+  }
+  .privacy-policy__box {
+    margin-top: 40px;
+    padding: 40px 24px;
+  }
+  .privacy-policy__section + .privacy-policy__section {
+    margin-top: 32px;
+    padding-top: 32px;
+  }
+  .privacy-policy__section h2, .privacy-policy__section .h2 {
+    font-size: 16px;
+  }
+  .privacy-policy__section p {
+    font-size: 14px;
+  }
+  .privacy-policy__button {
+    width: 100%;
+  }
 }
 
 /*----------------------------------------------*/
