@@ -61,7 +61,8 @@
             <a href="index.html" class="navbar-brand p-0 leaf-bg">
                 <img src="img/logo.svg" alt="Yoganic（ヨガニック）">
             </a>
-            <button class="navbar-toggler menu-trigger" type="button" aria-label="メニューを開く">
+            <button id="navbar-toggler" class="navbar-toggler menu-trigger" type="button" aria-label="メニューを開く"
+                aria-controls="rp-drawer-menu" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -451,18 +452,19 @@
             <form class="contact-form" action="#" method="post" novalidate>
                 <div class="contact-form__item">
                     <label class="contact-form__label" for="name">お名前<span class="required">必須</span></label>
-                    <input type="text" id="name" name="name" placeholder="山田 花子" required>
-                    <p class="error-message"></p>
+                    <input type="text" id="name" name="name" placeholder="山田 花子" required aria-describedby="name-error">
+                    <p id="name-error" class="error-message" aria-live="polite"></p>
                 </div>
                 <div class="contact-form__item">
                     <label class="contact-form__label" for="email">メールアドレス<span class="required">必須</span></label>
-                    <input type="email" id="email" name="email" placeholder="example@mail.com" required>
-                    <p class="error-message"></p>
+                    <input type="email" id="email" name="email" placeholder="example@mail.com" required
+                        aria-describedby="email-error">
+                    <p id="email-error" class="error-message" aria-live="polite"></p>
                 </div>
                 <div class="contact-form__item">
                     <label class="contact-form__label" for="category">お問い合わせ種別<span class="required">必須</span></label>
                     <div class="select-wrapper">
-                        <select name="category" id="category" required>
+                        <select name="category" id="category" required aria-describedby="category-error">
                             <option value="">選択してください</option>
                             <option value="trial">体験レッスンについて</option>
                             <option value="plan">料金プランについて</option>
@@ -470,19 +472,21 @@
                             <option value="other">その他</option>
                         </select>
                     </div>
-                    <p class="error-message"></p>
+                    <p id="category-error" class="error-message" aria-live="polite"></p>
                 </div>
                 <div class="contact-form__item">
                     <label class="contact-form__label" for="message">お問い合わせ内容<span class="required">必須</span></label>
-                    <textarea name="message" id="message" rows="6" placeholder="お問い合わせ内容をご入力ください" required></textarea>
-                    <p class="error-message"></p>
+                    <textarea name="message" id="message" rows="6" placeholder="お問い合わせ内容をご入力ください" required
+                        aria-describedby="message-error"></textarea>
+                    <p id="message-error" class="error-message" aria-live="polite"></p>
                 </div>
                 <div class="contact-form__privacy">
                     <label for="privacy">
-                        <input type="checkbox" id="privacy" required>
-                        <span><a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">個人情報の取り扱い</a>に同意します</span>
+                        <input type="checkbox" id="privacy" required aria-describedby="privacy-error">
+                        <span><a href="privacy-policy.html" target="_blank"
+                                rel="noopener noreferrer">個人情報の取り扱い</a>に同意します</span>
                     </label>
-                    <p class="error-message"></p>
+                    <p id="privacy-error" class="error-message" aria-live="polite"></p>
                 </div>
 
                 <button class="contact-form__button btn rounded-pill" type="submit" aria-label="お問い合わせ内容を確認する">
