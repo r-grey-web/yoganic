@@ -10,9 +10,9 @@
 </head>
 
 <body>
-  <section class="confirm section">
+  <main class="confirm">
     <div class="confirm__inner">
-      <h1 class="section-title">お問い合わせ内容の確認</h1>
+      <h1 class="confirm__title">お問い合わせ内容の確認</h1>
       <p class="confirm__lead">
         入力内容をご確認のうえ、送信してください。
       </p>
@@ -40,15 +40,17 @@
           </div>
         </dl>
 
+        <p id="confirm-note" class="confirm__note">※本サイトはポートフォリオのため、実際のメール送信は行われません。</p>
+
         <div class="confirm__buttons">
           <button id="return-to-form-button" class="confirm__button confirm__button--back rounded-pill btn"
-            type="button">修正する</button>
-          <button id="submit-button" class="confirm__button confirm__button--submit rounded-pill btn"
-            type="button">送信する</button>
+            type="button">入力画面に戻って修正する</button>
+          <button id="submit-button" class="confirm__button confirm__button--submit rounded-pill btn" type="button"
+            aria-describedby="confirm-note">送信する（デモ）</button>
         </div>
       </div>
     </div>
-  </section>
+  </main>
 
   <script src="js/main.js"></script>
   <script src="js/confirm.js"></script>

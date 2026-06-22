@@ -26,11 +26,13 @@ if (form) {
     // エラー表示
     function showError(input, errorElement, message) {
         input.classList.add("is-error");
+        input.setAttribute("aria-invalid", "true");
         errorElement.textContent = message;
     }
     // エラーを非表示
     function clearError(input, errorElement) {
         input.classList.remove("is-error");
+        input.setAttribute("aria-invalid", "false");
         errorElement.textContent = "";
     }
 
@@ -100,6 +102,14 @@ if (form) {
             showError(privacyInput, privacyError, "個人情報の取り扱いに同意し、チェックしてください");
         } else {
             clearError(privacyInput, privacyError);
+        }
+        // 送信時にエラーがあったら最初のエラー項目へフォーカス
+        if (!isValid) {
+            const firstError = form.querySelector(".is-error");
+            if (firstError) {
+                firstError.focus();
+            }
+            return;
         }
         // 入力完了 → 内容確認ページへ
         if (isValid) {

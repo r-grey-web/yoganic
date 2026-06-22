@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('rp-scroll-header');
     const drawer = document.getElementById('rp-drawer-menu');
     const overlay = document.getElementById('menu-overlay');
+    const humButtons = document.querySelectorAll('.menu-trigger');
     const closeBtn = document.getElementById('menu-close');
     const navLinks = document.querySelectorAll('.nav-link, .fl-nav-link');
 
@@ -120,6 +121,12 @@ document.addEventListener('DOMContentLoaded', () => {
             overlay.classList.toggle('is-on');
 
             document.body.classList.toggle('is-drawer-open');
+
+            const isOpen = drawer.classList.contains('is-on');
+
+            humButtons.forEach(btn => {
+                btn.setAttribute('aria-expanded', isOpen);
+            });
         }
     };
 

@@ -10,12 +10,11 @@ const categoryMap = {
     other: "その他"
 };
 
-if (data) {
-    document.querySelector("#confirm-name").textContent = data.name;
-    document.querySelector("#confirm-email").textContent = data.email;
-    document.querySelector("#confirm-category").textContent = categoryMap[data.category];
-    document.querySelector("#confirm-message").textContent = data.message;
-}
+document.querySelector("#confirm-name").textContent = data?.name || "未入力";
+document.querySelector("#confirm-email").textContent = data?.email || "未入力";
+document.querySelector("#confirm-category").textContent = categoryMap[data?.category] || "未選択";
+document.querySelector("#confirm-message").textContent = data?.message || "未入力";
+
 
 if (returnToFormButton) {
     returnToFormButton.addEventListener("click", () => {
