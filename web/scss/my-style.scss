@@ -1986,6 +1986,10 @@ section {
             opacity: .8;
         }
 
+        &:focus-visible {
+            @include m.focus-ring-accessible;
+        }
+
         @include m.mq-max(v.$md) {
             width: 100%;
         }

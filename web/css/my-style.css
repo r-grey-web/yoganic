@@ -12482,6 +12482,11 @@ section .section-title {
     opacity: 0.8;
   }
 }
+.thanks__button:focus-visible {
+  box-shadow: none !important;
+  outline: 3px solid #5d7769 !important;
+  outline-offset: 4px !important;
+}
 @media (width < 768px) {
   .thanks__button {
     width: 100%;
