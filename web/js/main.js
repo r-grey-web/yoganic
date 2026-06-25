@@ -31,7 +31,7 @@ window.addEventListener("scroll", () => {
     }
 });
 
-//　Swiper initialization
+//　Swiper 初期化
 const swiperElement = document.querySelector(".mySwiper");
 
 if (swiperElement) {
@@ -65,8 +65,16 @@ document.querySelector(".swiper-button-prev")
 document.querySelector(".swiper-button-next")
     ?.setAttribute("aria-label", "次のお客様の声を表示");
 
+const labels = [
+    "40代女性のお客様の声を表示",
+    "30代男性のお客様の声を表示",
+    "20代女性のお客様の声を表示",
+    "40代男性のお客様の声を表示",
+    "30代女性のお客様の声を表示",
+];
+
 document.querySelectorAll(".swiper-pagination-bullet").forEach((bullet, index) => {
-    bullet.setAttribute("aria-label", `${index + 1}件目のお客様の声を表示`);
+    bullet.setAttribute("aria-label", labels[index]);
 });
 
 //　AOS Initialization
@@ -111,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     switchNavbar();
-    // ※意味聞く
     window.addEventListener('resize', switchNavbar);
 
     window.addEventListener('scroll', () => {

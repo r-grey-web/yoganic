@@ -57,8 +57,8 @@
     <header class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-xxl navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
 
-            <a href="index.html" class="navbar-brand p-0 leaf-bg">
-                <img src="img/logo.svg" alt="ヨガニック">
+            <a href="index.html" class="navbar-brand p-0 leaf-bg" aria-label="Yoganic ホームへ戻る">
+                <img src="img/logo.svg" alt="">
             </a>
             <button id="navbar-toggler" class="navbar-toggler menu-trigger" type="button" aria-label="メニューを開く"
                 aria-controls="rp-drawer-menu" aria-expanded="false">
@@ -414,7 +414,7 @@
                     data-aos-duration="1200" data-aos-offset="50">よくあるご質問</h2>
                 <div class="container faq-box" data-aos="fade-zoom-in" data-aos-delay="400" data-aos-duration="2000"
                     data-aos-easing="ease-out-sine" data-aos-offset="50">
-                    <p class="fs-title">FAQ</p>
+                    <p class="fs-title" aria-hidden="true">FAQ</p>
                     <div class="faq-container">
                         <details class="faq-item">
                             <summary class="faq-question">体が硬いのですが、レッスンについていけますか？<span class="faq-icon"
@@ -468,19 +468,19 @@
             <div class="contact__inner container">
                 <h2 class="section-title" data-aos="fade-zoom-in" data-aos-easing="ease-out" data-aos-delay="0"
                     data-aos-duration="1000" data-aos-offset="50">お問い合わせ</h2>
-                <p class="contact__lead mb-4">ご質問やご相談など、<br class="sp-only">お気軽にお問い合わせください。</p>
+                <p class="contact__lead mb-4">ご質問やご相談など、<br class="sp-only" aria-hidden="true">お気軽にお問い合わせください。</p>
                 <form class="contact-form" action="#" method="post" novalidate>
                     <div class="contact-form__item">
                         <label class="contact-form__label" for="name">お名前<span class="required">必須</span></label>
                         <input type="text" id="name" name="name" placeholder="山田 花子" required
                             aria-describedby="name-error">
-                        <p id="name-error" class="error-message" aria-live="polite"></p>
+                        <p id="name-error" class="error-message"></p>
                     </div>
                     <div class="contact-form__item">
                         <label class="contact-form__label" for="email">メールアドレス<span class="required">必須</span></label>
                         <input type="email" id="email" name="email" placeholder="example@mail.com" required
                             aria-describedby="email-error">
-                        <p id="email-error" class="error-message" aria-live="polite"></p>
+                        <p id="email-error" class="error-message"></p>
                     </div>
                     <div class="contact-form__item">
                         <label class="contact-form__label" for="category">お問い合わせ種別<span
@@ -494,14 +494,14 @@
                                 <option value="other">その他</option>
                             </select>
                         </div>
-                        <p id="category-error" class="error-message" aria-live="polite"></p>
+                        <p id="category-error" class="error-message"></p>
                     </div>
                     <div class="contact-form__item">
                         <label class="contact-form__label" for="message">お問い合わせ内容<span
                                 class="required">必須</span></label>
                         <textarea name="message" id="message" rows="6" placeholder="お問い合わせ内容をご入力ください" required
                             aria-describedby="message-error"></textarea>
-                        <p id="message-error" class="error-message" aria-live="polite"></p>
+                        <p id="message-error" class="error-message"></p>
                     </div>
                     <div class="contact-form__privacy">
                         <label for="privacy">
@@ -509,7 +509,7 @@
                             <span><a href="privacy-policy.html" target="_blank" rel="noopener noreferrer"
                                     aria-label="個人情報の取り扱い（別タブで開きます）">個人情報の取り扱い</a>に同意します</span>
                         </label>
-                        <p id="privacy-error" class="error-message" aria-live="polite"></p>
+                        <p id="privacy-error" class="error-message"></p>
                     </div>
 
                     <button class="contact-form__button btn rounded-pill" type="submit" aria-label="お問い合わせ内容を確認する">
@@ -529,8 +529,8 @@
             </a>
         </div>
         <div class="footer-main">
-            <div class="footer-logo"><a href="index.html" class="navbar-brand p-0 leaf-bg">
-                    <img src="img/footer-logo.svg" alt="ヨガニック" width="300px" height="45">
+            <div class="footer-logo"><a href="index.html" class="navbar-brand p-0 leaf-bg" aria-label="Yoganic ホームへ戻る">
+                    <img src="img/footer-logo.svg" alt="" width="300px" height="45">
                 </a></div>
             <ul class="footer-sns">
                 <li><a href="index.html" aria-label="Instagramを開く"><i class="fab fa-instagram"

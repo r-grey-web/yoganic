@@ -11906,11 +11906,11 @@ section .section-title {
     font-size: clamp(0.938rem, 0.902rem + 0.179vw, 1.063rem);
   }
 }
-.contact .contact__lead.sp-only {
+.contact .contact__lead .sp-only {
   display: none;
 }
 @media (width < 768px) {
-  .contact .contact__lead.sp-only {
+  .contact .contact__lead .sp-only {
     display: block;
   }
 }
@@ -12258,31 +12258,6 @@ section .section-title {
 @media (width < 768px) {
   .privacy-policy__section p {
     font-size: 14px;
-  }
-}
-.privacy-policy__button-wrap {
-  margin-top: 48px;
-  text-align: center;
-}
-.privacy-policy__button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 240px;
-  padding: 14px 32px;
-  color: #fffdf8;
-  background-color: #c86f57;
-  border: 2px solid #c86f57;
-}
-@media (hover: hover) {
-  .privacy-policy__button:hover {
-    color: #fffdf8;
-    opacity: 0.8;
-  }
-}
-@media (width < 768px) {
-  .privacy-policy__button {
-    width: 100%;
   }
 }
 
