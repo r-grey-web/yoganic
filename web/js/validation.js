@@ -17,10 +17,23 @@ if (form) {
     const saveData = JSON.parse(sessionStorage.getItem("contactData"));
 
     if (saveData) {
-        nameInput.value = saveData.name;
-        emailInput.value = saveData.email;
-        categorySelect.value = saveData.category;
-        messageTextarea.value = saveData.message;
+        nameInput.value = saveData.name || "";
+        emailInput.value = saveData.email || "";
+        categorySelect.value = saveData.category || "";
+        messageTextarea.value = saveData.message || "";
+        privacyInput.checked = saveData.privacy || false;
+    }
+
+    function saveContactData() {
+        const contactData = {
+            name: nameInput.value,
+            email: emailInput.value,
+            category: categorySelect.value,
+            message: messageTextarea.value,
+            privacy: privacyInput.checked,
+        };
+
+        sessionStorage.setItem("contactData", JSON.stringify(contactData));
     }
 
     // エラー表示
@@ -40,22 +53,27 @@ if (form) {
     // 名前
     nameInput.addEventListener("input", () => {
         clearError(nameInput, nameError);
+        saveContactData();
     });
     // メール
     emailInput.addEventListener("input", () => {
         clearError(emailInput, emailError);
+        saveContactData();
     });
     // セレクトボックス
     categorySelect.addEventListener("change", () => {
         clearError(categorySelect, categorySelectError);
+        saveContactData();
     });
     // お問い合わせ内容
     messageTextarea.addEventListener("input", () => {
         clearError(messageTextarea, messageTextareaError);
+        saveContactData();
     });
     // 同意チェック
     privacyInput.addEventListener("change", () => {
         clearError(privacyInput, privacyError);
+        saveContactData();
     });
 
     // 送信ボタン押下
@@ -118,6 +136,7 @@ if (form) {
                 email: emailInput.value.trim(),
                 category: categorySelect.value,
                 message: messageTextarea.value.trim(),
+                privacy: privacyInput.checked,
             };
 
             sessionStorage.setItem(

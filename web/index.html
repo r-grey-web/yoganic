@@ -14,8 +14,7 @@
     <meta property="og:description" content="予約なしで、パジャマのまま、好きな場所から。自分に一番優しい時間を作りませんか？体験レッスン実施中。">
     <meta property="og:url" content="https://yoganic-online-yoga.netlify.app/">
     <meta property="og:image" content="https://yoganic-online-yoga.netlify.app/img/ogp.png">
-    <meta name="twitter:card" content="summary_large_i
-    mage">
+    <meta name="twitter:card" content="summary_large_image">
     <!-- Favicon -->
     <link rel="icon" href="img/favicon.png">
     <link rel="apple-touch-icon" href="img/favicon.png">
@@ -47,7 +46,7 @@
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border my-spinner" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
+            <span class="visually-hidden">Loading...</span>
         </div>
     </div>
     <!-- Spinner End -->
@@ -58,14 +57,14 @@
     <header class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-xxl navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
 
-            <a href="index.html" class="navbar-brand p-0 leaf-bg">
-                <img src="img/logo.svg" alt="Yoganic（ヨガニック）">
+            <a href="index.html" class="navbar-brand p-0 leaf-bg" aria-label="Yoganic ホームへ戻る">
+                <img src="img/logo.svg" alt="">
             </a>
             <button id="navbar-toggler" class="navbar-toggler menu-trigger" type="button" aria-label="メニューを開く"
                 aria-controls="rp-drawer-menu" aria-expanded="false">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
@@ -81,10 +80,12 @@
             </div>
         </nav>
 
+        <h1 class="visually-hidden">Yoganic 誰にも見られない、私だけのおうちヨガ</h1>
+
         <div class="hero-container">
             <picture>
                 <source media="(min-width: 768px)" srcset="img/hero-img.webp">
-                <img src="img/hero-img-sp.webp" alt="誰にも見られない、私だけのおうちヨガ" class="img-fluid w-100 hero-img">
+                <img src="img/hero-img-sp.webp" alt="" class="img-fluid w-100 hero-img">
             </picture>
         </div>
 
@@ -93,17 +94,17 @@
 
     <!-- Responsive Scrolling Menu Start -->
     <nav id="rp-scroll-header" class="floating-header">
-        <button class="menu-trigger" aria-label="メニュー">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <button class="menu-trigger" aria-label="メニューを開く" aria-controls="rp-drawer-menu" aria-expanded="false">
+            <span class="bar" aria-hidden="true"></span>
+            <span class="bar" aria-hidden="true"></span>
+            <span class="bar" aria-hidden="true"></span>
         </button>
     </nav>
 
-    <div id="rp-drawer-menu" class="drawer-menu">
+    <div id="rp-drawer-menu" class="drawer-menu" aria-hidden="true" inert>
         <button id="menu-close" class="menu-close" aria-label="メニューを閉じる">
-            <span></span>
-            <span></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
         </button>
         <ul class="navbar-nav custom-drawer-nav">
             <li class="fl-nav-item"><a class="fl-nav-link" href="#home">ホーム</a></li>
@@ -122,395 +123,420 @@
     <!-- Responsive Scrolling Menu End -->
 
     <!-- Services Start -->
-    <section id="service" class="container-fluid service">
-        <div class="container service-card-wrapper">
-            <h2 class="section-title" data-aos="fade-zoom-in" data-aos-easing="ease-out" data-aos-delay="0"
-                data-aos-duration="1000" data-aos-offset="50">サービス紹介</h2>
-            <div class="d-flex justify-content-center flex-wrap mx-auto" style="gap: 25px;" data-aos="fade-up"
-                data-aos-delay="200" data-aos-duration="800" data-aos-easing="ease-out" data-aos-offset="50">
-                <div class="row service-card row-custom-parent service-card-1">
-                    <img src="img/service-img1.avif" alt="" class="service-card-img">
-                    <div class="service-card-content">
-                        <h3 class="service-card-title">ヴィンヤサヨガ</h3>
-                        <p class="service-card-text">呼吸に合わせ、流れるように動く。集中力を高め、心身に活力を。アクティブにリフレッシュしたい方に。</p>
-                        <div class="service-btn-box">
-                            <a href="index.html" class="service-btn">詳しく見る</a>
+    <main>
+        <section id="service" class="container-fluid service">
+            <div class="container service-card-wrapper">
+                <h2 class="section-title" data-aos="fade-zoom-in" data-aos-easing="ease-out" data-aos-delay="0"
+                    data-aos-duration="1000" data-aos-offset="50">サービス紹介</h2>
+                <div class="d-flex justify-content-center flex-wrap mx-auto" style="gap: 25px;" data-aos="fade-up"
+                    data-aos-delay="200" data-aos-duration="800" data-aos-easing="ease-out" data-aos-offset="50">
+                    <div class="row service-card row-custom-parent service-card-1">
+                        <img src="img/service-img1.avif" alt="" class="service-card-img">
+                        <div class="service-card-content">
+                            <h3 class="service-card-title">ヴィンヤサヨガ</h3>
+                            <p class="service-card-text">呼吸に合わせ、流れるように動く。集中力を高め、心身に活力を。アクティブにリフレッシュしたい方に。</p>
+                            <div class="service-btn-box">
+                                <a href="index.html" class="service-btn">詳しく見る<span
+                                        class="visually-hidden">（ヴィンヤサヨガ）</span></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row service-card  row-custom-parent service-card-2">
-                    <img src="img/service-img2.avif" alt="" class="service-card-img">
-                    <div class="service-card-content">
-                        <h3 class="service-card-title">ハタヨガ</h3>
-                        <p class="service-card-text">ヨガ初心者の方や、基礎から学びたい方に。無理なく、自分のペースでヨガを楽しみませんか？</p>
-                        <div class="service-btn-box">
-                            <a href="index.html" class="service-btn">詳しく見る</a>
+                    <div class="row service-card  row-custom-parent service-card-2">
+                        <img src="img/service-img2.avif" alt="" class="service-card-img">
+                        <div class="service-card-content">
+                            <h3 class="service-card-title">ハタヨガ</h3>
+                            <p class="service-card-text">ヨガ初心者の方や、基礎から学びたい方に。無理なく、自分のペースでヨガを楽しみませんか？</p>
+                            <div class="service-btn-box">
+                                <a href="index.html" class="service-btn">詳しく見る<span
+                                        class="visually-hidden">（ハタヨガ）</span></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row service-card special row-custom-parent">
-                    <img src="img/service-img3.avif" alt="" class="service-card-img">
-                    <div class="service-card-content">
-                        <h3 class="service-card-title">マタニティヨガ</h3>
-                        <p class="service-card-text">おなかの赤ちゃんと共に、心安らぐひとときを。妊娠期の不調を和らげ、出産に必要な体力を整えます。</p>
-                        <div class="service-btn-box">
-                            <a href="index.html" class="service-btn">詳しく見る</a>
+                    <div class="row service-card special row-custom-parent">
+                        <img src="img/service-img3.avif" alt="" class="service-card-img">
+                        <div class="service-card-content">
+                            <h3 class="service-card-title">マタニティヨガ</h3>
+                            <p class="service-card-text">おなかの赤ちゃんと共に、心安らぐひとときを。妊娠期の不調を和らげ、出産に必要な体力を整えます。</p>
+                            <div class="service-btn-box">
+                                <a href="index.html" class="service-btn">詳しく見る<span
+                                        class="visually-hidden">（マタニティヨガ）</span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+        <!-- Services End -->
+
+        <!-- Boundary line -->
+        <div class="hand-drawn-divider" aria-hidden="true">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,30 Q150,70 300,30 T600,30 T900,30 T1200,30 L1200,120 L0,120 Z" fill="#fdfbf7"></path>
+                <path d="M0,30 Q150,70 300,30 T600,30 T900,30 T1200,30" fill="none" stroke="#d4a373" stroke-width="2"
+                    stroke-linecap="round" opacity="0.3"></path>
+            </svg>
         </div>
-    </section>
-    <!-- Services End -->
 
-    <!-- Boundary line -->
-    <div class="hand-drawn-divider">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,30 Q150,70 300,30 T600,30 T900,30 T1200,30 L1200,120 L0,120 Z" fill="#fdfbf7"></path>
-            <path d="M0,30 Q150,70 300,30 T600,30 T900,30 T1200,30" fill="none" stroke="#d4a373" stroke-width="2"
-                stroke-linecap="round" opacity="0.3"></path>
-        </svg>
-    </div>
-    </section>
-
-    <!-- About Start -->
-    <section id="about" class="container-fluid about">
-        <div class="container about-wrapper">
-            <h2 class="section-title" data-aos="fade-zoom-in" data-aos-duration="800" data-aos-easing="ease-out-quart"
-                data-aos-offset="50">Yoganicの想い</h2>
-            <div class="row align-items-center about-contents-wrapper flex-lg-nowrap mx-auto">
-                <div class="col-lg-5 about-img-box pe-lg-0" data-aos="fade-zoom-in" data-aos-delay="200"
-                    data-aos-duration="1000" data-aos-easing="ease-out-quart" data-aos-offset="50">
-                    <img src="img/about-img.webp" class="img-fluid w-100" style="object-fit: cover;"
-                        alt="新緑の芝生の上で、後ろ向きに座って瞑想する女性">
-                </div>
-                <div class="col-lg-7 ps-lg-0 about-text-box" data-aos="fade-zoom-in" data-aos-delay="200"
-                    data-aos-duration="1000" data-aos-easing="ease-out-quart" data-aos-offset="50">
-                    <div class="about-contents">
-                        <h3>自分らしいリズムで、<br class="sp-only">生きていく。</h3>
-                        <p>「&thinsp;yoganic(ヨガニック)」という名前には、 自然体の自分を、オーガニックな感覚で愛してほしいという想いを込めました。</p>
-                        <p>決まった時間はなく、ルールもありません。<br>体を動かしたいと思ったその瞬間が、あなたのヨガの時間です。</p>
-                        <p class="mb-0">男性も、女性も、年齢も関係なく。
-                            画面の向こうに広がるのは、誰にも邪魔されない自由な空間。私たちは、あなたのライフスタイルに溶け込む「健やかな習慣」を提案します。</p>
+        <!-- About Start -->
+        <section id="about" class="container-fluid about">
+            <div class="container about-wrapper">
+                <h2 class="section-title" data-aos="fade-zoom-in" data-aos-duration="800"
+                    data-aos-easing="ease-out-quart" data-aos-offset="50">Yoganicの想い</h2>
+                <div class="row align-items-center about-contents-wrapper flex-lg-nowrap mx-auto">
+                    <div class="col-lg-5 about-img-box pe-lg-0" data-aos="fade-zoom-in" data-aos-delay="200"
+                        data-aos-duration="1000" data-aos-easing="ease-out-quart" data-aos-offset="50">
+                        <img src="img/about-img.webp" class="img-fluid w-100" style="object-fit: cover;"
+                            alt="新緑の芝生の上で、後ろ向きに座って瞑想する女性">
+                    </div>
+                    <div class="col-lg-7 ps-lg-0 about-text-box" data-aos="fade-zoom-in" data-aos-delay="200"
+                        data-aos-duration="1000" data-aos-easing="ease-out-quart" data-aos-offset="50">
+                        <div class="about-contents">
+                            <h3>自分らしいリズムで、<br class="sp-only">生きていく。</h3>
+                            <p>「&thinsp;yoganic(ヨガニック)」という名前には、 自然体の自分を、オーガニックな感覚で愛してほしいという想いを込めました。</p>
+                            <p>決まった時間はなく、ルールもありません。体を動かしたいと思ったその瞬間が、あなたのヨガの時間です。</p>
+                            <p class="mb-0">男性も、女性も、年齢も関係なく。
+                                画面の向こうに広がるのは、誰にも邪魔されない自由な空間。私たちは、あなたのライフスタイルに溶け込む「健やかな習慣」を提案します。</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- About End -->
+        </section>
+        <!-- About End -->
 
-    <!-- Feedback Start -->
-    <section id="feedback" class="container-fluid feedback">
-        <div class="container feedback-card-wrapper">
-            <h2 class="section-title" data-aos="fade-zoom-in" data-aos-duration="800" data-aos-offset="50"
-                data-aos-easing="ease-out-quart">お客様の声</h2>
-            <p class="mb-4 text-center sub-title" data-aos="fade-zoom-in" data-aos-delay="200" data-aos-duration="1000"
-                data-aos-offset="50" data-aos-easing="ease-out-quart">会員様のリアルな声を<br>お届けします&nbsp;<i
-                    class="far fa-comment-dots"></i></p>
-            <div class="swiper-container-wrapper" data-aos="fade-zoom-in" data-aos-delay="200" data-aos-duration="1000"
-                data-aos-offset="50" data-aos-easing="ease-out-quart">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="feedback-item p-4">
-                                <div>
-                                    <div class="feedback-icon mb-4">
-                                        <div class="p-3 d-inline-flex rounded icon-bg">
-                                            <img src="img/user-1.png" alt="" class="user-icon">
+        <!-- Feedback Start -->
+        <section id="feedback" class="container-fluid feedback">
+            <div class="container feedback-card-wrapper">
+                <h2 class="section-title" data-aos="fade-zoom-in" data-aos-duration="800" data-aos-offset="50"
+                    data-aos-easing="ease-out-quart">お客様の声</h2>
+                <p class="mb-4 text-center sub-title" data-aos="fade-zoom-in" data-aos-delay="200"
+                    data-aos-duration="1000" data-aos-offset="50" data-aos-easing="ease-out-quart">
+                    会員様のリアルな声を<br>お届けします&nbsp;<i class="far fa-comment-dots" aria-hidden="true"></i></p>
+                <div class="swiper-container-wrapper" data-aos="fade-zoom-in" data-aos-delay="200"
+                    data-aos-duration="1000" data-aos-offset="50" data-aos-easing="ease-out-quart">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="feedback-item p-4">
+                                    <div>
+                                        <div class="feedback-icon mb-4">
+                                            <div class="p-3 d-inline-flex rounded icon-bg">
+                                                <img src="img/user-1.png" alt="" class="user-icon">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="feedback-content d-flex flex-column">
-                                        <h3>40代 女性</h3>
-                                        <hr class="m-0">
-                                        <p class="mb-0">
-                                            体が硬いのが悩みでしたが、無理のない指導で少しずつ柔軟性がアップ。肩こりも軽くなり、毎日の家事が楽になりました！
-                                        </p>
+                                        <div class="feedback-content d-flex flex-column">
+                                            <h3>40代 女性</h3>
+                                            <hr class="m-0" aria-hidden="true">
+                                            <p class="mb-0">
+                                                体が硬いのが悩みでしたが、無理のない指導で少しずつ柔軟性がアップ。肩こりも軽くなり、毎日の家事が楽になりました！
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="feedback-item p-4 male-card">
-                                <div>
-                                    <div class="feedback-icon mb-4">
-                                        <div class="p-3 d-inline-flex rounded icon-bg">
-                                            <img src="img/user-2.png" alt="" class="user-icon">
+                            <div class="swiper-slide">
+                                <div class="feedback-item p-4 male-card">
+                                    <div>
+                                        <div class="feedback-icon mb-4">
+                                            <div class="p-3 d-inline-flex rounded icon-bg">
+                                                <img src="img/user-2.png" alt="" class="user-icon">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="feedback-content d-flex flex-column">
-                                        <h3>30代 男性</h3>
-                                        <hr class="m-0">
-                                        <p class="mb-0">
-                                            運動不足解消に。オンラインなので周りの目を気にせず、自分のペースで集中できます。仕事後のリフレッシュに最適です。
-                                        </p>
+                                        <div class="feedback-content d-flex flex-column">
+                                            <h3>30代 男性</h3>
+                                            <hr class="m-0" aria-hidden="true">
+                                            <p class="mb-0">
+                                                運動不足解消に。オンラインなので周りの目を気にせず、自分のペースで集中できます。仕事後のリフレッシュに最適です。
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="feedback-item p-4">
-                                <div>
-                                    <div class="feedback-icon mb-4">
-                                        <div class="p-3 d-inline-flex rounded icon-bg">
-                                            <img src="img/user-3.png" alt="" class="user-icon">
+                            <div class="swiper-slide">
+                                <div class="feedback-item p-4">
+                                    <div>
+                                        <div class="feedback-icon mb-4">
+                                            <div class="p-3 d-inline-flex rounded icon-bg">
+                                                <img src="img/user-3.png" alt="" class="user-icon">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="feedback-content d-flex flex-column">
-                                        <h3>20代 女性</h3>
-                                        <hr class="m-0">
-                                        <p class="mb-0">
-                                            妊娠中の運動不足が不安で始めました。呼吸法を学び、心身ともにリラックス。出産への自信もつき、良い気分転換です。
-                                        </p>
+                                        <div class="feedback-content d-flex flex-column">
+                                            <h3>20代 女性</h3>
+                                            <hr class="m-0" aria-hidden="true">
+                                            <p class="mb-0">
+                                                妊娠中の運動不足が不安で始めました。呼吸法を学び、心身ともにリラックス。出産への自信もつき、良い気分転換です。
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="feedback-item p-4 male-card">
-                                <div>
-                                    <div class="feedback-icon mb-4">
-                                        <div class="p-3 d-inline-flex rounded icon-bg">
-                                            <img src="img/user-4.png" alt="" class="user-icon">
+                            <div class="swiper-slide">
+                                <div class="feedback-item p-4 male-card">
+                                    <div>
+                                        <div class="feedback-icon mb-4">
+                                            <div class="p-3 d-inline-flex rounded icon-bg">
+                                                <img src="img/user-4.png" alt="" class="user-icon">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="feedback-content d-flex flex-column">
-                                        <h3>40代 男性</h3>
-                                        <hr class="m-0">
-                                        <p class="mb-0">
-                                            動的なヴィンヤサヨガにハマっています。しっかり汗を流せて、終わった後の爽快感が抜群。集中力も高まった気がします。
-                                        </p>
+                                        <div class="feedback-content d-flex flex-column">
+                                            <h3>40代 男性</h3>
+                                            <hr class="m-0" aria-hidden="true">
+                                            <p class="mb-0">
+                                                動的なヴィンヤサヨガにハマっています。しっかり汗を流せて、終わった後の爽快感が抜群。集中力も高まった気がします。
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="feedback-item p-4">
-                                <div>
-                                    <div class="feedback-icon mb-4">
-                                        <div class="p-3 d-inline-flex rounded icon-bg">
-                                            <img src="img/user-5.png" alt="" class="user-icon">
+                            <div class="swiper-slide">
+                                <div class="feedback-item p-4">
+                                    <div>
+                                        <div class="feedback-icon mb-4">
+                                            <div class="p-3 d-inline-flex rounded icon-bg">
+                                                <img src="img/user-5.png" alt="" class="user-icon">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="feedback-content d-flex flex-column">
-                                        <h3>30代 女性</h3>
-                                        <hr class="m-0">
-                                        <p class="mb-0" style="line-height: 1.8;">
-                                            ヨガは初めてでしたが、画面越しでも分かりやすくて安心です。自宅がスタジオになるので、忙しくても継続できています！
-                                        </p>
+                                        <div class="feedback-content d-flex flex-column">
+                                            <h3>30代 女性</h3>
+                                            <hr class="m-0" aria-hidden="true">
+                                            <p class="mb-0" style="line-height: 1.8;">
+                                                ヨガは初めてでしたが、画面越しでも分かりやすくて安心です。自宅がスタジオになるので、忙しくても継続できています！
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="swiper-button-prev" aria-label="前のスライドを表示"><svg version="1.1" id="_x32_"
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                        viewBox="0 0 512 512" style="width: 64px; height: 64px; opacity: 1;" xml:space="preserve">
-                        <g>
-                            <path class="st0" d="M256,0C114.613,0,0,114.613,0,256s114.613,256,256,256c141.387,0,256-114.613,256-256S397.387,0,256,0z
+                    <button type="button" class="swiper-button-prev" aria-label="前のスライドを表示"><svg version="1.1"
+                            id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px" y="0px" viewBox="0 0 512 512" style="width: 64px; height: 64px; opacity: 1;"
+                            xml:space="preserve" aria-hidden="true" focusable="false">
+                            <g>
+                                <path class="st0" d="M256,0C114.613,0,0,114.613,0,256s114.613,256,256,256c141.387,0,256-114.613,256-256S397.387,0,256,0z
 		 M358.395,285.46H240.596l49.726,47.314c11.782,11.194,12.25,29.863,1.032,41.646c-11.218,11.798-29.863,12.266-41.653,1.032
 		L127.709,259.396c-0.927-0.888-1.452-2.113-1.452-3.396c0-1.282,0.524-2.508,1.452-3.395L249.702,136.54
 		c11.79-11.226,30.435-10.766,41.653,1.032c11.218,11.79,10.75,30.452-1.032,41.653l-49.726,47.307h117.799
 		c16.282,0,29.467,13.185,29.467,29.467S374.678,285.46,358.395,285.46z" style="fill: #C97B63;"></path>
-                        </g>
-                    </svg></div>
-                <div class="swiper-button-next" aria-label="次のスライドを表示"><svg version="1.1"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 44px; height: 44px;">
-                        <g>
-                            <path fill="#C97B63" d="M256,0C114.614,0,0,114.613,0,256s114.614,256,256,256c141.387,0,256-114.613,256-256S397.387,0,256,0z
+                            </g>
+                        </svg></button>
+                    <button type="button" class="swiper-button-next" aria-label="次のスライドを表示"><svg version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 44px; height: 44px;"
+                            aria-hidden="true" focusable="false">
+                            <g>
+                                <path fill="#C97B63" d="M256,0C114.614,0,0,114.613,0,256s114.614,256,256,256c141.387,0,256-114.613,256-256S397.387,0,256,0z
 		 M384.29,259.396L262.298,375.46c-11.79,11.226-30.435,10.767-41.653-1.032c-11.218-11.79-10.75-30.452,1.032-41.653l49.726-47.306
 		H153.605c-16.282,0-29.467-13.186-29.467-29.468s13.186-29.46,29.467-29.46h117.799l-49.726-47.314
 		c-11.782-11.193-12.25-29.863-1.032-41.644c11.218-11.798,29.863-12.267,41.653-1.032L384.29,252.605
 		c0.928,0.887,1.452,2.113,1.452,3.395C385.742,257.282,385.218,258.508,384.29,259.396z"></path>
-                        </g>
-                    </svg></div>
-                <div class="swiper-pagination"></div>
-            </div>
-            <div class="col-12 text-center feedback-cta-box">
-                <a href="index.html" class="btn rounded-pill feedback-cta">体験してみる <svg version="1.1" id="_x32_"
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                        viewBox="0 0 512 512" xml:space="preserve" class="arrow-svg">
-                        <g>
-                            <path class="st0" d="M268.234,24.08c-22.883-21.777-59.085-20.883-80.861,2c-21.787,22.904-20.894,59.116,2.01,80.883l96.511,91.84
+                            </g>
+                        </svg></button>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="col-12 text-center feedback-cta-box">
+                    <a href="index.html" class="btn rounded-pill feedback-cta">体験してみる <svg version="1.1" id="_x32_"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 512 512" xml:space="preserve" class="arrow-svg" aria-hidden="true">
+                            <g>
+                                <path class="st0" d="M268.234,24.08c-22.883-21.777-59.085-20.883-80.861,2c-21.787,22.904-20.894,59.116,2.01,80.883l96.511,91.84
 		H57.202C25.606,198.803,0,224.399,0,256.006c0,31.596,25.606,57.192,57.202,57.192h228.691l-96.511,91.85
 		c-22.904,21.756-23.797,57.979-2.01,80.862c21.776,22.883,57.978,23.798,80.861,2.011L512,256.006L268.234,24.08z">
-                            </path>
-                        </g>
-                    </svg></a>
-                <span class="ms-0 ms-md-3 d-block d-md-inline mt-3 mt-md-0">まずは一度、気軽に体験<br>してみませんか？</span>
+                                </path>
+                            </g>
+                        </svg></a>
+                    <span class="ms-0 ms-md-3 d-block d-md-inline mt-3 mt-md-0">まずは一度、気軽に体験<br>してみませんか？</span>
+                </div>
             </div>
-        </div>
-        </div>
-    </section>
-    <!-- Feedback End -->
+        </section>
+        <!-- Feedback End -->
 
-    <!-- Pricing Start -->
-    <section id="pricing" class="container-fluid appointment">
-        <div class="container pricing-card-wrapper">
-            <h2 class="section-title" data-aos="fade-zoom-in" data-aos-easing="ease-out" data-aos-delay="0"
-                data-aos-duration="1000" data-aos-offset="50">料金プラン</h2>
-            <div class="row" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800" data-aos-easing="ease-out"
-                data-aos-offset="50">
-                <div class="col-md-4 mb-4"><a href="index.html">
+        <!-- Pricing Start -->
+        <section id="pricing" class="container-fluid appointment">
+            <div class="container pricing-card-wrapper">
+                <h2 class="section-title" data-aos="fade-zoom-in" data-aos-easing="ease-out" data-aos-delay="0"
+                    data-aos-duration="1000" data-aos-offset="50">料金プラン</h2>
+                <div class="row" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800"
+                    data-aos-easing="ease-out" data-aos-offset="50">
+                    <div class="col-md-4 mb-4">
                         <div class="card side-card">
                             <div class="card-body text-center">
                                 <h3 class="card-title fw-bold">ドロップイン</h3>
                                 <p class="card-text">まずは1回、お試しに</p>
-                                <h4><span class="doll">¥&nbsp;</span>1,100<small class="text-gray unit"> /回</small></h4>
-                                <button class="btn w-100 side-btn">申し込む</button>
+                                <p class="course-price"><span class="visually-hidden">1回あたり1100円</span>
+                                    <span aria-hidden="true">
+                                        <span class="doll">¥&nbsp;</span>1,100<small class="text-gray unit"> /回</small>
+                                    </span>
+                                </p>
+                                <a href="index.html" class="pricing__btn btn w-100 side-btn">申し込む<span
+                                        class="visually-hidden">（ドロップイン）</span></a>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <a href="index.html">
+                    </div>
+                    <div class="col-md-4 mb-4">
                         <div class="card pick-card">
                             <div class="card-body text-center">
                                 <span class="badge pick-bg rounded-pill">おすすめ</span>
                                 <h3 class="card-title fw-bold">ゆるっと月4回</h3>
                                 <p class="card-text">週に1回、自分のペースで</p>
-                                <h4><span class="doll">¥&nbsp;</span>3,300<small class="text-gray unit"> /月</small></h4>
-                                <button class="btn w-100 pick-btn">申し込む</button>
+                                <p class="course-price"><span class="visually-hidden">一か月あたり3300円</span>
+                                    <span aria-hidden="true">
+                                        <span class="doll">¥&nbsp;</span>3,300<small class="text-gray unit"> /月</small>
+                                    </span>
+                                </p>
+                                <a href="index.html" class="pricing__btn btn w-100 pick-btn">申し込む<span
+                                        class="visually-hidden">（ゆるっと月4回）</span></a>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <a href="index.html">
+                    </div>
+                    <div class="col-md-4 mb-4">
                         <div class="card side-card">
                             <div class="card-body text-center">
                                 <h3 class="card-title fw-bold">受け放題</h3>
                                 <p class="card-text">いつでも、何度でも、好きなだけ</p>
-                                <h4><span class="doll">¥&nbsp;</span>5,500<small class="text-gray unit"> /月</small></h4>
-                                <button class="btn w-100 side-btn">申し込む</button>
+                                <p class="course-price"><span class="visually-hidden">一か月あたり5500円</span>
+                                    <span aria-hidden="true">
+                                        <span class="doll">¥&nbsp;</span>5,500<small class="text-gray unit"> /月</small>
+                                    </span>
+                                </p>
+                                <a href="index.html" class="pricing__btn btn w-100 side-btn">申し込む<span
+                                        class="visually-hidden">（受け放題）</span></a>
                             </div>
                         </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Pricing End -->
-
-    <!--Faq Start -->
-    <section id="faq" class="faq">
-        <div class="container faq-wrapper">
-            <h2 class="section-title" data-aos="fade-zoom-in" data-aos-easing="ease-out-sine" data-aos-duration="1200"
-                data-aos-offset="50">よくあるご質問</h2>
-            <div class="container faq-box" data-aos="fade-zoom-in" data-aos-delay="400" data-aos-duration="2000"
-                data-aos-easing="ease-out-sine" data-aos-offset="50">
-                <h3 class="fs-title">FAQ</h3>
-                <div class="faq-container">
-                    <details class="faq-item">
-                        <summary class="faq-question">体が硬いのですが、レッスンについていけますか？<span class="faq-icon"></span>
-                        </summary>
-                        <div class="faq-answer">
-                            <p class="mb-0">
-                                もちろんです。ヨガはポーズの完成度を競うものではありません。インストラクターが軽減法（簡単なポーズへのアレンジ）をお伝えしますので、ご自身のペースで心地よく動いていただけます。
-                            </p>
-                        </div>
-                    </details>
-                    <details class="faq-item">
-                        <summary class="faq-question">運動が苦手で体力に自信がありませんが、大丈夫でしょうか？<span class="faq-icon"></span>
-                        </summary>
-                        <div class="faq-answer">
-                            <p class="mb-0">
-                                はい、もちろんです。Yoganicのレッスンは、激しい運動よりも「呼吸」や「心地よい伸び」を重視しています。その日の体調に合わせてお休みしながらでも構いません。まずは深呼吸をするような気持ちでご参加ください。
-                            </p>
-                        </div>
-                    </details>
-                    <details class="faq-item">
-                        <summary class="faq-question">オンラインレッスンに必要な準備はありますか？<span class="faq-icon"></span></summary>
-                        <div class="faq-answer">
-                            <p class="mb-0">
-                                動きやすい服装、水分、ヨガマット（または滑りにくい床）をご用意ください。Zoomを使用して配信しますので、スマホ・タブレット・PCのいずれかがあればOKです。</p>
-                        </div>
-                    </details>
-                    <details class="faq-item">
-                        <summary class="faq-question">カメラをオフにして参加しても大丈夫ですか？<span class="faq-icon"></span></summary>
-                        <div class="faq-answer">
-                            <p class="mb-0">はい、大丈夫です。リラックスして受けたい時や、お部屋の様子を映したくない時は、カメラオフのままご参加いただけます。</p>
-                        </div>
-                    </details>
-                    <details class="faq-item">
-                        <summary class="faq-question">予約のキャンセルはいつまで可能ですか？<span class="faq-icon"></span></summary>
-                        <div class="faq-answer">
-                            <p class="mb-0">レッスン開始の60分前まで無料でキャンセル・振替が可能です。公式LINEから簡単にお手続きいただけます。</p>
-                        </div>
-                    </details>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Faq End -->
-
-    <section id="contact" class="contact">
-        <div class="contact__inner container">
-            <h2 class="section-title" data-aos="fade-zoom-in" data-aos-easing="ease-out" data-aos-delay="0"
-                data-aos-duration="1000" data-aos-offset="50">お問い合わせ</h2>
-            <p class="contact__lead mb-4">ご質問やご相談など、<br class="sp-only">お気軽にお問い合わせください。</p>
-            <form class="contact-form" action="#" method="post" novalidate>
-                <div class="contact-form__item">
-                    <label class="contact-form__label" for="name">お名前<span class="required">必須</span></label>
-                    <input type="text" id="name" name="name" placeholder="山田 花子" required aria-describedby="name-error">
-                    <p id="name-error" class="error-message" aria-live="polite"></p>
-                </div>
-                <div class="contact-form__item">
-                    <label class="contact-form__label" for="email">メールアドレス<span class="required">必須</span></label>
-                    <input type="email" id="email" name="email" placeholder="example@mail.com" required
-                        aria-describedby="email-error">
-                    <p id="email-error" class="error-message" aria-live="polite"></p>
-                </div>
-                <div class="contact-form__item">
-                    <label class="contact-form__label" for="category">お問い合わせ種別<span class="required">必須</span></label>
-                    <div class="select-wrapper">
-                        <select name="category" id="category" required aria-describedby="category-error">
-                            <option value="">選択してください</option>
-                            <option value="trial">体験レッスンについて</option>
-                            <option value="plan">料金プランについて</option>
-                            <option value="lesson">レッスン内容について</option>
-                            <option value="other">その他</option>
-                        </select>
                     </div>
-                    <p id="category-error" class="error-message" aria-live="polite"></p>
                 </div>
-                <div class="contact-form__item">
-                    <label class="contact-form__label" for="message">お問い合わせ内容<span class="required">必須</span></label>
-                    <textarea name="message" id="message" rows="6" placeholder="お問い合わせ内容をご入力ください" required
-                        aria-describedby="message-error"></textarea>
-                    <p id="message-error" class="error-message" aria-live="polite"></p>
-                </div>
-                <div class="contact-form__privacy">
-                    <label for="privacy">
-                        <input type="checkbox" id="privacy" required aria-describedby="privacy-error">
-                        <span><a href="privacy-policy.html" target="_blank"
-                                rel="noopener noreferrer">個人情報の取り扱い</a>に同意します</span>
-                    </label>
-                    <p id="privacy-error" class="error-message" aria-live="polite"></p>
-                </div>
+            </div>
+        </section>
+        <!-- Pricing End -->
 
-                <button class="contact-form__button btn rounded-pill" type="submit" aria-label="お問い合わせ内容を確認する">
-                    入力内容を確認する
-                </button>
-            </form>
-        </div>
-    </section>
+        <!--Faq Start -->
+        <section id="faq" class="faq">
+            <div class="container faq-wrapper">
+                <h2 class="section-title" data-aos="fade-zoom-in" data-aos-easing="ease-out-sine"
+                    data-aos-duration="1200" data-aos-offset="50">よくあるご質問</h2>
+                <div class="container faq-box" data-aos="fade-zoom-in" data-aos-delay="400" data-aos-duration="2000"
+                    data-aos-easing="ease-out-sine" data-aos-offset="50">
+                    <p class="fs-title" aria-hidden="true">FAQ</p>
+                    <div class="faq-container">
+                        <details class="faq-item">
+                            <summary class="faq-question">体が硬いのですが、レッスンについていけますか？<span class="faq-icon"
+                                    aria-hidden="true"></span>
+                            </summary>
+                            <div class="faq-answer">
+                                <p class="mb-0">
+                                    もちろんです。ヨガはポーズの完成度を競うものではありません。インストラクターが軽減法（簡単なポーズへのアレンジ）をお伝えしますので、ご自身のペースで心地よく動いていただけます。
+                                </p>
+                            </div>
+                        </details>
+                        <details class="faq-item">
+                            <summary class="faq-question">運動が苦手で体力に自信がありませんが、大丈夫でしょうか？<span class="faq-icon"
+                                    aria-hidden="true"></span>
+                            </summary>
+                            <div class="faq-answer">
+                                <p class="mb-0">
+                                    はい、もちろんです。Yoganicのレッスンは、激しい運動よりも「呼吸」や「心地よい伸び」を重視しています。その日の体調に合わせてお休みしながらでも構いません。まずは深呼吸をするような気持ちでご参加ください。
+                                </p>
+                            </div>
+                        </details>
+                        <details class="faq-item">
+                            <summary class="faq-question">オンラインレッスンに必要な準備はありますか？<span class="faq-icon"
+                                    aria-hidden="true"></span></summary>
+                            <div class="faq-answer">
+                                <p class="mb-0">
+                                    動きやすい服装、水分、ヨガマット（または滑りにくい床）をご用意ください。Zoomを使用して配信しますので、スマホ・タブレット・PCのいずれかがあればOKです。</p>
+                            </div>
+                        </details>
+                        <details class="faq-item">
+                            <summary class="faq-question">カメラをオフにして参加しても大丈夫ですか？<span class="faq-icon"
+                                    aria-hidden="true"></span></summary>
+                            <div class="faq-answer">
+                                <p class="mb-0">はい、大丈夫です。リラックスして受けたい時や、お部屋の様子を映したくない時は、カメラオフのままご参加いただけます。</p>
+                            </div>
+                        </details>
+                        <details class="faq-item">
+                            <summary class="faq-question">予約のキャンセルはいつまで可能ですか？<span class="faq-icon"
+                                    aria-hidden="true"></span></summary>
+                            <div class="faq-answer">
+                                <p class="mb-0">レッスン開始の60分前まで無料でキャンセル・振替が可能です。公式LINEから簡単にお手続きいただけます。</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Faq End -->
+
+        <section id="contact" class="contact">
+            <div class="contact__inner container">
+                <h2 class="section-title" data-aos="fade-zoom-in" data-aos-easing="ease-out" data-aos-delay="0"
+                    data-aos-duration="1000" data-aos-offset="50">お問い合わせ</h2>
+                <p class="contact__lead mb-4">ご質問やご相談など、<br class="sp-only" aria-hidden="true">お気軽にお問い合わせください。</p>
+                <form class="contact-form" action="#" method="post" novalidate>
+                    <div class="contact-form__item">
+                        <label class="contact-form__label" for="name">お名前<span class="required">必須</span></label>
+                        <input type="text" id="name" name="name" placeholder="山田 花子" required
+                            aria-describedby="name-error">
+                        <p id="name-error" class="error-message"></p>
+                    </div>
+                    <div class="contact-form__item">
+                        <label class="contact-form__label" for="email">メールアドレス<span class="required">必須</span></label>
+                        <input type="email" id="email" name="email" placeholder="example@mail.com" required
+                            aria-describedby="email-error">
+                        <p id="email-error" class="error-message"></p>
+                    </div>
+                    <div class="contact-form__item">
+                        <label class="contact-form__label" for="category">お問い合わせ種別<span
+                                class="required">必須</span></label>
+                        <div class="select-wrapper">
+                            <select name="category" id="category" required aria-describedby="category-error">
+                                <option value="">選択してください</option>
+                                <option value="trial">体験レッスンについて</option>
+                                <option value="plan">料金プランについて</option>
+                                <option value="lesson">レッスン内容について</option>
+                                <option value="other">その他</option>
+                            </select>
+                        </div>
+                        <p id="category-error" class="error-message"></p>
+                    </div>
+                    <div class="contact-form__item">
+                        <label class="contact-form__label" for="message">お問い合わせ内容<span
+                                class="required">必須</span></label>
+                        <textarea name="message" id="message" rows="6" placeholder="お問い合わせ内容をご入力ください" required
+                            aria-describedby="message-error"></textarea>
+                        <p id="message-error" class="error-message"></p>
+                    </div>
+                    <div class="contact-form__privacy">
+                        <label for="privacy">
+                            <input type="checkbox" id="privacy" required aria-describedby="privacy-error">
+                            <span><a href="privacy-policy.html" target="_blank" rel="noopener noreferrer"
+                                    aria-label="個人情報の取り扱い（別タブで開きます）">個人情報の取り扱い</a>に同意します</span>
+                        </label>
+                        <p id="privacy-error" class="error-message"></p>
+                    </div>
+
+                    <button class="contact-form__button btn rounded-pill" type="submit" aria-label="お問い合わせ内容を確認する">
+                        入力内容を確認する
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer Start -->
     <footer class="footer">
         <div class="footer-cta-box">
             <p class="cta-message">忙しい日常のなかに、自分を整える癒しの15分を。</p>
             <a href="index.html" class="btn line-btn">
-                <i class="fab fa-line pe-2"></i>&thinsp;公式LINEで体験予約
+                <i class="fab fa-line pe-2" aria-hidden="true"></i>&thinsp;公式LINEで体験予約
             </a>
         </div>
         <div class="footer-main">
-            <div class="footer-logo"><a href="index.html" class="navbar-brand p-0 leaf-bg">
-                    <img src="img/footer-logo.svg" alt="Yoganic（ヨガニック）" width="300px" height="45">
+            <div class="footer-logo"><a href="index.html" class="navbar-brand p-0 leaf-bg" aria-label="Yoganic ホームへ戻る">
+                    <img src="img/footer-logo.svg" alt="" width="300px" height="45">
                 </a></div>
             <ul class="footer-sns">
-                <li><a href="index.html" aria-label="Instagramを開く"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="index.html" aria-label="Facebookを開く"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="index.html" aria-label="Instagramを開く"><i class="fab fa-instagram"
+                            aria-hidden="true"></i></a></li>
+                <li><a href="index.html" aria-label="Facebookを開く"><i class="fab fa-facebook-f"
+                            aria-hidden="true"></i></a></li>
             </ul>
             <!-- Copyright -->
             <div class="copyright">
@@ -522,7 +548,7 @@
     <!-- Footer End -->
 
     <!-- Back to Top -->
-    <a href="index.html" class="btn back-to-top" aria-label="ページの先頭へ戻る"><i class="fa fa-arrow-up"></i></a>
+    <a href="#home" class="btn back-to-top" aria-label="ページの先頭へ戻る"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
 
 
     <!-- JavaScript & Libraries -->

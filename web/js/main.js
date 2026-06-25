@@ -31,7 +31,7 @@ window.addEventListener("scroll", () => {
     }
 });
 
-//　Swiper initialization
+//　Swiper 初期化
 const swiperElement = document.querySelector(".mySwiper");
 
 if (swiperElement) {
@@ -52,9 +52,30 @@ if (swiperElement) {
             320: { slidesPerView: 1 },
             599.98: { slidesPerView: 2 },
             880.98: { slidesPerView: 3 }
-        }
+        },
+        a11y: {
+            enabled: false
+        },
     });
 }
+
+document.querySelector(".swiper-button-prev")
+    ?.setAttribute("aria-label", "前のお客様の声を表示");
+
+document.querySelector(".swiper-button-next")
+    ?.setAttribute("aria-label", "次のお客様の声を表示");
+
+const labels = [
+    "40代女性のお客様の声を表示",
+    "30代男性のお客様の声を表示",
+    "20代女性のお客様の声を表示",
+    "40代男性のお客様の声を表示",
+    "30代女性のお客様の声を表示",
+];
+
+document.querySelectorAll(".swiper-pagination-bullet").forEach((bullet, index) => {
+    bullet.setAttribute("aria-label", labels[index]);
+});
 
 //　AOS Initialization
 if (typeof AOS !== "undefined") {
@@ -74,18 +95,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const humButtons = document.querySelectorAll('.menu-trigger');
     const closeBtn = document.getElementById('menu-close');
     const navLinks = document.querySelectorAll('.nav-link, .fl-nav-link');
-
-    // // Toggle navigation layout at 1640px
     const navbar = document.querySelector('.navbar');
 
-    const switchNavbar = () => {
-        if (!navbar) return;
+    // ドロワーメニューのinert属性の切り替え
+    const updateDrawerInert = () => {
+        if (!drawer) return;
 
-        if (window.innerWidth < 1640) {
-            navbar.classList.remove('navbar-expand-xxl');
-        } else {
-            navbar.classList.add('navbar-expand-xxl');
-        }
+        const isOpen = drawer.classList.contains('is-on');
+        const isMobile = window.innerWidth < 1640;
+
+        drawer.inert = !isOpen || !isMobile;
+
+    };
+
+    // // Toggle navigation layout at 1640px
+    const switchNavbar = () => {
+        if (!navbar || !drawer) return;
+
+        const isMobile = window.innerWidth < 1640;
+
+        navbar.classList.toggle('navbar-expand-xxl', !isMobile);
+        updateDrawerInert();
     };
 
     switchNavbar();
@@ -124,9 +154,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const isOpen = drawer.classList.contains('is-on');
 
+            updateDrawerInert();
+
             humButtons.forEach(btn => {
-                btn.setAttribute('aria-expanded', isOpen);
+                btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
             });
+
+            drawer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
         }
     };
 

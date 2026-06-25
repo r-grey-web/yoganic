@@ -8,6 +8,12 @@
     border: 2px solid v.$btn-color;
     background-color: v.$btn-color;
     color: v.$text-white !important;
+
+    &:focus-visible {
+        box-shadow: none !important;
+        outline: 3px solid #5d7769 !important;
+        outline-offset: 4px !important;
+    }
 }
 
 @mixin cta-btn-hover {
@@ -61,6 +67,12 @@
     letter-spacing: 0.14em;
     margin-bottom: 22px;
     text-align: left;
+}
+
+@mixin focus-ring-accessible {
+    box-shadow: none !important;
+    outline: 3px solid #5d7769 !important;
+    outline-offset: 4px !important;
 }
 
 /*----------------------------------------------*/
