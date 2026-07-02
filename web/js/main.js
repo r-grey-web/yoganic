@@ -44,7 +44,7 @@ if (swiperElement) {
         },
         pagination: {
             el: ".swiper-pagination",
-            clickable: true,
+            clickable: false,
         },
         loop: true,
         breakpoints: {
@@ -54,28 +54,12 @@ if (swiperElement) {
             880.98: { slidesPerView: 3 }
         },
         a11y: {
-            enabled: false
+            enabled: true,
+            prevSlideMessage: "前のお客様の声を表示",
+            nextSlideMessage: "次のお客様の声を表示",
         },
     });
 }
-
-document.querySelector(".swiper-button-prev")
-    ?.setAttribute("aria-label", "前のお客様の声を表示");
-
-document.querySelector(".swiper-button-next")
-    ?.setAttribute("aria-label", "次のお客様の声を表示");
-
-const labels = [
-    "40代女性のお客様の声を表示",
-    "30代男性のお客様の声を表示",
-    "20代女性のお客様の声を表示",
-    "40代男性のお客様の声を表示",
-    "30代女性のお客様の声を表示",
-];
-
-document.querySelectorAll(".swiper-pagination-bullet").forEach((bullet, index) => {
-    bullet.setAttribute("aria-label", labels[index]);
-});
 
 //　AOS Initialization
 if (typeof AOS !== "undefined") {
