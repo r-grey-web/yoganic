@@ -12188,6 +12188,22 @@ section .section-title {
   max-width: 880px;
   margin-inline: auto;
 }
+.privacy-policy__key-icon {
+  margin-bottom: 24px;
+  text-align: center;
+}
+.privacy-policy__icon {
+  width: 36px;
+  height: 36px;
+  color: #9C5A2A;
+  stroke-width: 2;
+}
+@media (width < 1400px) {
+  .privacy-policy__icon {
+    width: clamp(2.125rem, 2.089rem + 0.179vw, 2.25rem);
+    height: clamp(2.125rem, 2.089rem + 0.179vw, 2.25rem);
+  }
+}
 .privacy-policy__title {
   margin: 0 auto 50px;
   color: #9A7048;
@@ -12196,6 +12212,7 @@ section .section-title {
   font-size: 1.875rem;
   letter-spacing: 0.15em;
   text-align: center;
+  color: #8B4513;
 }
 @media (width < 768px) {
   .privacy-policy__title {
@@ -12247,7 +12264,7 @@ section .section-title {
   }
 }
 .privacy-policy__section h2, .privacy-policy__section .h2 {
-  color: #c86f57;
+  color: #3A3834;
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -12257,9 +12274,12 @@ section .section-title {
     font-size: 16px;
   }
 }
+.privacy-policy__section span {
+  color: #8B4513;
+}
 .privacy-policy__section p {
   margin-top: 16px;
-  color: #3f332d;
+  color: #3A3834;
   font-size: 15px;
   line-height: 2;
 }
@@ -12333,7 +12353,7 @@ section .section-title {
   }
 }
 .confirm__item dt {
-  color: #c97b63;
+  color: #5d5754;
   font-size: 14px;
   font-weight: 600;
 }
@@ -12383,8 +12403,8 @@ section .section-title {
 }
 .confirm__button--submit {
   color: #fffdf8;
-  background-color: #c86f57;
-  border: 2px solid #c86f57;
+  background-color: #973D00;
+  border: 2px solid #973D00;
 }
 @media (hover: hover) {
   .confirm__button--submit:hover {
@@ -12430,7 +12450,7 @@ section .section-title {
   fill: none;
   margin: 0 auto 24px;
   border-radius: 50%;
-  background-color: #c86f57;
+  background-color: #973D00;
   display: grid;
   place-items: center;
   font-size: 28px;
@@ -12445,7 +12465,7 @@ section .section-title {
 .thanks__icon svg {
   width: 36px;
   height: 36px;
-  stroke: #fff;
+  stroke: #fffdf8;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -12457,7 +12477,7 @@ section .section-title {
   }
 }
 .thanks__title {
-  color: #c86f57;
+  color: #9A7048;
   font-family: "Noto Serif JP", serif;
   font-size: clamp(1.5rem, 4vw, 2.25rem);
   font-weight: 400;
@@ -12482,11 +12502,10 @@ section .section-title {
   padding: 14px 32px;
   margin-top: 40px;
   color: #fffdf8;
-  background-color: #c86f57;
+  background-color: #973D00;
 }
 @media (hover: hover) {
   .thanks__button:hover {
-    color: #fffdf8;
     opacity: 0.8;
   }
 }

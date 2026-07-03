@@ -1719,8 +1719,26 @@ section {
         margin-inline: auto;
     }
 
+    &__key-icon {
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+    &__icon {
+        width: 36px;
+        height: 36px;
+        color: #9C5A2A;
+        stroke-width: 2;
+
+        @include m.mq-max(v.$xxl) {
+            width: clamp(2.125rem, 2.089rem + 0.179vw, 2.25rem);
+            height: clamp(2.125rem, 2.089rem + 0.179vw, 2.25rem);
+        }
+    }
+
     &__title {
         @include m.section-title;
+        color: #8B4513;
 
         @include m.mq-max(v.$md) {
             @include m.section-title-sp;
@@ -1767,7 +1785,7 @@ section {
         }
 
         h2 {
-            color: #c86f57;
+            color: #3A3834;
             font-size: 18px;
             font-weight: 600;
             letter-spacing: 0.04em;
@@ -1775,12 +1793,15 @@ section {
             @include m.mq-max(v.$md) {
                 font-size: 16px;
             }
+        }
 
+        span {
+            color: #8B4513;
         }
 
         p {
             margin-top: 16px;
-            color: #3f332d;
+            color: #3A3834;
             font-size: 15px;
             line-height: 2;
 
@@ -1843,7 +1864,7 @@ section {
         }
 
         dt {
-            color: #c97b63;
+            color: #5d5754;
             font-size: 14px;
             font-weight: 600;
         }
@@ -1893,8 +1914,8 @@ section {
 
     &__button--submit {
         color: #fffdf8;
-        background-color: #c86f57;
-        border: 2px solid #c86f57;
+        background-color: #973D00;
+        border: 2px solid #973D00;
 
         @include m.hover-device {
             color: #fffdf8;
@@ -1940,7 +1961,7 @@ section {
         fill: none;
         margin: 0 auto 24px;
         border-radius: 50%;
-        background-color: #c86f57;
+        background-color: #973D00;
         display: grid;
         place-items: center;
         font-size: 28px;
@@ -1954,7 +1975,7 @@ section {
         svg {
             width: 36px;
             height: 36px;
-            stroke: #fff;
+            stroke: #fffdf8;
             stroke-width: 2;
             stroke-linecap: round;
             stroke-linejoin: round;
@@ -1967,7 +1988,7 @@ section {
     }
 
     &__title {
-        color: #c86f57;
+        color: #9A7048;
         font-family: "Noto Serif JP", serif;
         font-size: clamp(1.5rem, 4vw, 2.25rem);
         font-weight: 400;
@@ -1993,10 +2014,9 @@ section {
         padding: 14px 32px;
         margin-top: 40px;
         color: #fffdf8;
-        background-color: #c86f57;
+        background-color: #973D00;
 
         @include m.hover-device {
-            color: #fffdf8;
             opacity: .8;
         }
 

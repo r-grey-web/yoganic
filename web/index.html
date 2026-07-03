@@ -98,8 +98,11 @@
 
         <div class="hero-container">
             <picture>
-                <source media="(min-width: 768px)" srcset="img/hero-img.webp">
-                <img src="img/hero-img-sp.webp" alt="" class="img-fluid w-100 hero-img">
+                <source media="(min-width: 768px)" srcset="img/hero-img.avif" type="image/avif">
+                <source media="(min-width: 768px)" srcset="img/hero-img.webp" type="image/webp">
+                <source srcset="img/hero-img-sp.avif" type="image/avif">
+                <img src="img/hero-img-sp.webp" alt="" class="img-fluid w-100 hero-img" fetchpriority="high"
+                    decoding="async">
             </picture>
         </div>
 
