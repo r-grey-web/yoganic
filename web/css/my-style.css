@@ -11296,7 +11296,6 @@ section .section-title {
   opacity: 0.95;
   height: 290px;
   border-radius: 15px;
-  box-shadow: 15px 15px 0px #fdfbf8;
   filter: sepia(10%) contrast(95%);
 }
 @media (width < 992px) {

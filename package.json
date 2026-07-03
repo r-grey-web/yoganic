@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass:watch": "sass --watch web/scss:web/css --quiet-deps"
+    "sass:watch": "sass --watch web/scss/my-style.scss:web/css/my-style.css --quiet-deps"
   },
   "repository": {
     "type": "git",
