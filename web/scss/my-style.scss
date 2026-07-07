@@ -1172,7 +1172,7 @@ section {
 #pricing {
     background-image:
         linear-gradient(rgba(251, 250, 249, 0.1), rgba(251, 250, 249, 0.1)),
-        url("../img/pricing-bg.png");
+        url("../img/pricing-bg.avif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1478,13 +1478,13 @@ section {
         padding: 20px 50px 20px 28px;
         color: #5c443d;
         background: #fbfaf7;
-        border: 1px solid #e4ddd5;
+        border: 1.8px solid #e4ddd5;
         border-radius: 8px;
         font-size: 15px;
 
         &:focus-visible {
-            border: 1.5px solid #c97b63;
-            outline: none;
+            border: 1.8px solid #c97b63 !important;
+            outline: none !important;
         }
 
         &::placeholder {
