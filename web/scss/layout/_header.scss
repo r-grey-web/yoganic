@@ -1,0 +1,229 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/*----------------------------------------------*/
+/* トップバー */
+/*----------------------------------------------*/
+.c-top-line {
+    height: 7px;
+    background-color: #241a08;
+}
+
+/*----------------------------------------------*/
+/* ヘッダー */
+/*----------------------------------------------*/
+.p-header {
+    position: relative;
+    padding: 0;
+
+    &__nav {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        padding: 0 5.5%;
+        background-color: v.$color-white;
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+
+        @include m.mq-max(v.$nav-breakpoint) {
+            padding: 15px 5% !important;
+        }
+
+        &.sticky-top {
+            @include m.mq-min(v.$nav-breakpoint) {
+                position: fixed;
+                background: var(--bs-light) !important;
+            }
+
+            @include m.mq-max(v.$nav-breakpoint) {
+                position: relative;
+                background: var(--bs-white);
+            }
+        }
+    }
+
+    &__logo {
+        position: relative;
+        padding: 0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #9caf88;
+            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M476.188 24.146c-6.748-3.504-60.728 38.022-185.304 67.086C230.347 105.355 62.5 153.527 65.286 392.815L0 431.218l20.338 35.598c63.073-40.692 236.014-120.042 409.766-323.621 0 0-26.875 134.419-334.096 311.056 103.685 53.758 249.604 53.758 360.979-76.806C568.346 246.888 476.188 24.146 476.188 24.146z'/%3E%3C/svg%3E") no-repeat center / contain;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M476.188 24.146c-6.748-3.504-60.728 38.022-185.304 67.086C230.347 105.355 62.5 153.527 65.286 392.815L0 431.218l20.338 35.598c63.073-40.692 236.014-120.042 409.766-323.621 0 0-26.875 134.419-334.096 311.056 103.685 53.758 249.604 53.758 360.979-76.806C568.346 246.888 476.188 24.146 476.188 24.146z'/%3E%3C/svg%3E") no-repeat center / contain;
+            top: -40px;
+            left: 100%;
+            opacity: 0;
+            z-index: -1;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        @include m.hover-device {
+            &::before {
+                animation: leaf-diagonal-straight 3s linear forwards;
+            }
+        }
+    }
+
+    @keyframes leaf-diagonal-straight {
+        0% {
+            top: -10%;
+            left: 100%;
+            transform: translateX(0) rotate(0deg);
+            opacity: 0;
+        }
+
+        10% {
+            opacity: 0.9;
+        }
+
+        25% {
+            transform: translateX(-10px) rotate(45deg);
+        }
+
+        50% {
+            transform: translateX(10px) rotate(90deg);
+        }
+
+        75% {
+            transform: translateX(-10px) rotate(135deg);
+        }
+
+        100% {
+            top: 110%;
+            left: -20%;
+            transform: translateX(0) rotate(180deg);
+            opacity: 0;
+        }
+    }
+
+    &__logo-img {
+        width: 300px;
+        height: 45px;
+        max-height: 50px;
+        transition: .5s;
+
+        @include m.mq-max(v.$nav-breakpoint) {
+            max-height: 45px;
+        }
+
+        @media (width < 1024) {
+            width: 250px;
+        }
+
+        @media (max-width: 576.98px) {
+            width: 200px;
+        }
+    }
+
+    &__hamburger {
+        display: none;
+        width: 50px;
+        height: 50px;
+
+        @include m.mq-max(v.$nav-breakpoint) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-color: #e2e5e9 !important;
+        }
+    }
+
+    &__hamburger-bar {
+        width: 17.5px;
+        height: 2px;
+        background: v.$dark-gray;
+        margin: 2px 0;
+    }
+
+    &__nav-list {
+        margin-left: auto;
+        padding-block: 0;
+    }
+
+    &__nav-link {
+        position: relative;
+        margin-right: 25px;
+        padding: 30px 8px;
+        color: v.$dark-gray !important;
+        font-family: "M PLUS 1", sans-serif;
+        font-size: 0.9375rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        outline: none;
+        transition: .5s;
+
+        @include m.hover-device {
+            color: v.$dark-btn-color !important;
+        }
+
+        &.is-active {
+            color: v.$dark-btn-color !important;
+
+            &::before {
+                width: calc(100% - 2px);
+                left: 1px;
+            }
+        }
+
+        @include m.mq-min(v.$nav-breakpoint) {
+            &::before {
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 2px;
+                bottom: -1px;
+                left: 50%;
+                background: v.$dark-btn-color;
+                transition: .5s;
+            }
+
+            &:hover::before,
+            &.active::before {
+                width: calc(100% - 2px);
+                left: 1px;
+            }
+        }
+
+        @include m.mq-max(v.$nav-breakpoint) {
+            padding: 20px 0;
+            margin-left: 0;
+        }
+    }
+
+    &__cta {
+        @include m.cta-btn;
+
+        @include m.hover-device {
+            @include m.cta-btn-hover;
+        }
+
+        &:active {
+            opacity: 0.7;
+        }
+
+        @include m.mq-max(v.$nav-breakpoint) {
+            margin: 20px 0 !important;
+        }
+    }
+}
+
+/*----------------------------------------------*/
+/* ヒーロー */
+/*----------------------------------------------*/
+.p-hero__image {
+    width: 100%;
+    height: auto;
+    margin-top: 85px;
+}
+
+/*----------------------------------------------*/
+/* レスポンシブ時のナブメニュー */
+/*----------------------------------------------*/
+// 次回css以降と、bootstrapのクラス消す作業

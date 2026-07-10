@@ -60,44 +60,43 @@
     </div>
     <!-- Spinner End -->
 
-    <div id="home" class="header-bar"></div>
+    <div id="home" class="c-top-line"></div>
 
     <!-- Navbar & Hero Start -->
-    <header class="container-fluid position-relative p-0">
-        <nav class="navbar navbar-expand-xxl navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
+    <header class="p-header">
+        <nav class="p-header__nav navbar navbar-expand-xxl navbar-light">
 
-            <a href="index.html" class="navbar-brand p-0 leaf-bg" aria-label="Yoganic ホームへ戻る">
-                <img src="img/logo.svg" alt="">
+            <a href="index.html" class="p-header__logo navbar-brand" aria-label="Yoganic ホームへ戻る">
+                <img class="p-header__logo-img" src="img/logo.svg" alt="">
             </a>
-            <button id="navbar-toggler" class="navbar-toggler menu-trigger" type="button" aria-label="メニューを開く"
-                aria-controls="rp-drawer-menu" aria-expanded="false">
-                <span class="bar" aria-hidden="true"></span>
-                <span class="bar" aria-hidden="true"></span>
-                <span class="bar" aria-hidden="true"></span>
+            <button id="navbar-toggler" class="p-header__hamburger navbar-toggler menu-trigger" type="button"
+                aria-label="メニューを開く" aria-controls="rp-drawer-menu" aria-expanded="false">
+                <span class="p-header__hamburger-bar" aria-hidden="true"></span>
+                <span class="p-header__hamburger-bar" aria-hidden="true"></span>
+                <span class="p-header__hamburger-bar" aria-hidden="true"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-                    <a href="#home" class="nav-item nav-link">ホーム</a>
-                    <a href="#service" class="nav-item nav-link">サービス紹介</a>
-                    <a href="#about" class="nav-item nav-link">Yoganicの想い</a>
-                    <a href="#feedback" class="nav-item nav-link">お客様の声</a>
-                    <a href="#pricing" class="nav-item nav-link">料金プラン</a>
-                    <a href="#faq" class="nav-item nav-link">よくあるご質問</a>
-                    <a href="#contact" class="nav-item nav-link">お問い合わせ</a>
+            <div class="p-header__menu collapse navbar-collapse" id="navbarCollapse">
+                <div class="p-header__nav-list navbar-nav">
+                    <a href="#home" class="p-header__nav-link nav-item nav-link">ホーム</a>
+                    <a href="#service" class="p-header__nav-link nav-item nav-link">サービス紹介</a>
+                    <a href="#about" class="p-header__nav-link nav-item nav-link">Yoganicの想い</a>
+                    <a href="#feedback" class="p-header__nav-link nav-item nav-link">お客様の声</a>
+                    <a href="#pricing" class="p-header__nav-link nav-item nav-link">料金プラン</a>
+                    <a href="#faq" class="p-header__nav-link nav-item nav-link">よくあるご質問</a>
+                    <a href="#contact" class="p-header__nav-link nav-item nav-link">お問い合わせ</a>
                 </div>
-                <a href="index.html" class="btn rounded-pill flex-wrap flex-sm-shrink-0 header-cta">体験レッスン予約</a>
+                <a href="index.html" class="p-header__cta">体験レッスン予約</a>
             </div>
         </nav>
 
         <h1 class="visually-hidden">Yoganic 誰にも見られない、私だけのおうちヨガ</h1>
 
-        <div class="hero-container">
+        <div class="p-hero">
             <picture>
                 <source media="(min-width: 768px)" srcset="img/hero-img.avif" type="image/avif">
                 <source media="(min-width: 768px)" srcset="img/hero-img.webp" type="image/webp">
                 <source srcset="img/hero-img-sp.avif" type="image/avif">
-                <img src="img/hero-img-sp.webp" alt="" class="img-fluid w-100 hero-img" fetchpriority="high"
-                    decoding="async">
+                <img src="img/hero-img-sp.webp" alt="" class="p-hero__image" fetchpriority="high" decoding="async">
             </picture>
         </div>
 
@@ -105,33 +104,42 @@
     <!-- Navbar & Hero End -->
 
     <!-- Responsive Scrolling Menu Start -->
-    <nav id="rp-scroll-header" class="floating-header">
-        <button class="menu-trigger" aria-label="メニューを開く" aria-controls="rp-drawer-menu" aria-expanded="false">
-            <span class="bar" aria-hidden="true"></span>
-            <span class="bar" aria-hidden="true"></span>
-            <span class="bar" aria-hidden="true"></span>
+    <nav id="rp-scroll-header" class="p-header__floating-menu floating-header">
+        <button class="p-header__floating-button menu-trigger" aria-label="メニューを開く" aria-controls="rp-drawer-menu"
+            aria-expanded="false">
+            <span class="p-header__floating-bar bar" aria-hidden="true"></span>
+            <span class="p-header__floating-bar bar" aria-hidden="true"></span>
+            <span class="p-header__floating-bar bar" aria-hidden="true"></span>
         </button>
     </nav>
 
-    <div id="rp-drawer-menu" class="drawer-menu" aria-hidden="true" inert>
-        <button id="menu-close" class="menu-close" aria-label="メニューを閉じる">
+    <div id="rp-drawer-menu" class="p-header__drawer drawer-menu" aria-hidden="true" inert>
+        <button id="menu-close" class="p-header__drawer-close menu-close" aria-label="メニューを閉じる">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
         </button>
-        <ul class="navbar-nav custom-drawer-nav">
-            <li class="fl-nav-item"><a class="fl-nav-link" href="#home">ホーム</a></li>
-            <li class="fl-nav-item"><a class="fl-nav-link" href="#service">サービス紹介</a></li>
-            <li class="fl-nav-item"><a class="fl-nav-link" href="#about">Yoganicの想い</a></li>
-            <li class="fl-nav-item"><a class="fl-nav-link" href="#feedback">お客様の声</a></li>
-            <li class="fl-nav-item"><a class="fl-nav-link" href="#pricing">料金プラン</a></li>
-            <li class="fl-nav-item"><a class="fl-nav-link" href="#faq">よくあるご質問</a></li>
-            <li class="fl-nav-item"><a class="fl-nav-link" href="#contact">お問い合わせ</a></li>
-            <li><a href="index.html" class="btn rounded-pill fl-dw-cta">体験レッスン予約</a>
+        <ul class="p-header__drawer-list navbar-nav custom-drawer-nav">
+            <li class="p-header__drawer-item fl-nav-item"><a class="p-header__drawer-link fl-nav-link"
+                    href="#home">ホーム</a></li>
+            <li class="p-header__drawer-item fl-nav-item"><a class="p-header__drawer-link fl-nav-link"
+                    href="#service">サービス紹介</a></li>
+            <li class="p-header__drawer-item fl-nav-item"><a class="p-header__drawer-link fl-nav-link"
+                    href="#about">Yoganicの想い</a></li>
+            <li class="p-header__drawer-item fl-nav-item"><a class="p-header__drawer-link fl-nav-link"
+                    href="#feedback">お客様の声</a></li>
+            <li class="p-header__drawer-item fl-nav-item"><a class="p-header__drawer-link fl-nav-link"
+                    href="#pricing">料金プラン</a></li>
+            <li class="p-header__drawer-item fl-nav-item"><a class="p-header__drawer-link fl-nav-link"
+                    href="#faq">よくあるご質問</a></li>
+            <li class="p-header__drawer-item fl-nav-item"><a class="p-header__drawer-link fl-nav-link"
+                    href="#contact">お問い合わせ</a></li>
+            <li class="p-header__drawer-item--cta"><a href="index.html"
+                    class="p-header__drawer-cta btn rounded-pill fl-dw-cta">体験レッスン予約</a>
             </li>
         </ul>
     </div>
 
-    <div id="menu-overlay" class="menu-overlay"></div>
+    <div id="menu-overlay" class="p-header__overlay menu-overlay"></div>
     <!-- Responsive Scrolling Menu End -->
 
     <!-- Services Start -->
@@ -570,8 +578,8 @@
     <!-- Aos -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Javascript -->
-    <script src="js/main.js"></script>
-    <script src="js/validation.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/validation.js" defer></script>
 </body>
 
 </html>

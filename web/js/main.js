@@ -1,6 +1,6 @@
 "use strict";
 
-// Spinner
+// スピナー
 const spinner = document.querySelector("#spinner");
 
 if (spinner) {
@@ -9,7 +9,7 @@ if (spinner) {
     }, 1);
 }
 
-// Sticky Navbar & Back To Top
+// 固定ナビバー ＆ トップへ戻るボタン
 const navbar = document.querySelector(".navbar");
 const backToTop = document.querySelector(".back-to-top");
 
@@ -61,7 +61,7 @@ if (swiperElement) {
     });
 }
 
-//　AOS Initialization
+//　AOS 初期化
 if (typeof AOS !== "undefined") {
     AOS.init({
         once: true,
@@ -70,105 +70,122 @@ if (typeof AOS !== "undefined") {
     });
 }
 
-// // Responsive Scroll Menu
-document.addEventListener('DOMContentLoaded', () => {
+// レスポンシブ　スクロールメニュー
+const header = document.getElementById('rp-scroll-header');
+const drawer = document.getElementById('rp-drawer-menu');
+const overlay = document.getElementById('menu-overlay');
+const humButtons = document.querySelectorAll('.menu-trigger');
+const closeBtn = document.getElementById('menu-close');
+const navLinks = document.querySelectorAll('.nav-link, .fl-nav-link');
 
-    const header = document.getElementById('rp-scroll-header');
-    const drawer = document.getElementById('rp-drawer-menu');
-    const overlay = document.getElementById('menu-overlay');
-    const humButtons = document.querySelectorAll('.menu-trigger');
-    const closeBtn = document.getElementById('menu-close');
-    const navLinks = document.querySelectorAll('.nav-link, .fl-nav-link');
-    const navbar = document.querySelector('.navbar');
+// ドロワーメニューのinert属性の切り替え
+const updateDrawerInert = () => {
+    if (!drawer) return;
 
-    // ドロワーメニューのinert属性の切り替え
-    const updateDrawerInert = () => {
-        if (!drawer) return;
+    const isOpen = drawer.classList.contains('is-on');
+    const isMobile = window.innerWidth < 1640;
+
+    drawer.inert = !isOpen || !isMobile;
+
+};
+
+// 1640pxでナビゲーションのレイアウトを切り替える
+const switchNavbar = () => {
+    if (!navbar || !drawer) return;
+
+    const isMobile = window.innerWidth < 1640;
+
+    navbar.classList.toggle('navbar-expand-xxl', !isMobile);
+    updateDrawerInert();
+};
+
+switchNavbar();
+window.addEventListener('resize', switchNavbar);
+
+window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+
+    // デスクトップ／モバイルのヘッダーの切り替え
+    if (window.innerWidth >= 1640) {
+        if (header) {
+            header.classList.remove('show');
+            header.classList.add('d-none');
+        }
+        return;
+    }
+
+    // スクロール時にモバイルヘッダーの表示・非表示を切り替える
+    if (header) {
+        if (y === 0) {
+            header.classList.remove('show');
+            header.classList.add('d-none');
+        } else {
+            header.classList.remove('d-none');
+            header.classList.add('show');
+        }
+    }
+});
+
+const toggleMenu = () => {
+    if (drawer && overlay) {
+        drawer.classList.toggle('is-on');
+        overlay.classList.toggle('is-on');
+
+        document.body.classList.toggle('is-drawer-open');
 
         const isOpen = drawer.classList.contains('is-on');
-        const isMobile = window.innerWidth < 1640;
 
-        drawer.inert = !isOpen || !isMobile;
-
-    };
-
-    // // Toggle navigation layout at 1640px
-    const switchNavbar = () => {
-        if (!navbar || !drawer) return;
-
-        const isMobile = window.innerWidth < 1640;
-
-        navbar.classList.toggle('navbar-expand-xxl', !isMobile);
         updateDrawerInert();
-    };
 
-    switchNavbar();
-    window.addEventListener('resize', switchNavbar);
-
-    window.addEventListener('scroll', () => {
-        const y = window.scrollY;
-
-        // // Desktop / Mobile Behavior Switch
-        if (window.innerWidth >= 1640) {
-            if (header) {
-                header.classList.remove('show');
-                header.classList.add('d-none');
-            }
-            return;
-        }
-
-        // // Toggle mobile header visibility on scroll
-        if (header) {
-            if (y === 0) {
-                header.classList.remove('show');
-                header.classList.add('d-none');
-            } else {
-                header.classList.remove('d-none');
-                header.classList.add('show');
-            }
-        }
-    });
-
-    const toggleMenu = () => {
-        if (drawer && overlay) {
-            drawer.classList.toggle('is-on');
-            overlay.classList.toggle('is-on');
-
-            document.body.classList.toggle('is-drawer-open');
-
-            const isOpen = drawer.classList.contains('is-on');
-
-            updateDrawerInert();
-
-            humButtons.forEach(btn => {
-                btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            });
-
-            drawer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-        }
-    };
-
-    document.querySelectorAll('.menu-trigger').forEach(btn => {
-        btn.addEventListener('click', toggleMenu);
-    });
-
-    if (overlay) overlay.addEventListener('click', toggleMenu);
-    if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (drawer && drawer.classList.contains('is-on')) {
-                toggleMenu();
-            }
+        humButtons.forEach(btn => {
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
+
+        drawer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    }
+};
+
+document.querySelectorAll('.menu-trigger').forEach(btn => {
+    btn.addEventListener('click', toggleMenu);
+});
+
+if (overlay) overlay.addEventListener('click', toggleMenu);
+if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (drawer && drawer.classList.contains('is-on')) {
+            toggleMenu();
+        }
     });
 });
 
 
-// Scrollspy Start
+// スクロールスパイ
 const mainSections = document.querySelectorAll("#home, section");
 const mainNavLinks = document.querySelectorAll(".nav-link");
 const mobileNavLinks = document.querySelectorAll(".fl-nav-link");
+
+const setActiveNav = (id) => {
+    mainNavLinks.forEach((link) => {
+        link.classList.remove("is-active");
+    });
+
+    mobileNavLinks.forEach((link) => {
+        link.classList.remove("is-active");
+    });
+
+    const targetMain = document.querySelector(`.nav-link[href="#${id}"]`);
+    const targetMobile = document.querySelector(`.fl-nav-link[href="#${id}"]`);
+
+    if (targetMain) {
+        targetMain.classList.add("is-active");
+    }
+
+    if (targetMobile) {
+        targetMobile.classList.add("is-active");
+    }
+};
 
 const options = {
     root: null,
@@ -178,18 +195,14 @@ const options = {
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            const id = entry.target.getAttribute("id");
+        if (!entry.isIntersecting) return;
 
-            mobileNavLinks.forEach((link) => link.classList.remove("is-active"));
-            mainNavLinks.forEach((link) => link.classList.remove("is-active"));
+        const id = entry.target.id;
 
-            const targetMain = document.querySelector(`.nav-link[href="#${id}"]`);
-            const targetMobile = document.querySelector(`.fl-nav-link[href="#${id}"]`);
-
-            if (targetMain) targetMain.classList.add("is-active");
-            if (targetMobile) targetMobile.classList.add("is-active");
+        if (id) {
+            setActiveNav(id);
         }
+
     });
 }, options);
 
@@ -197,20 +210,16 @@ mainSections.forEach((section) => {
     observer.observe(section);
 });
 
-window.addEventListener("scroll", () => {
+const updateHomeActive = () => {
     if (window.scrollY === 0) {
-        mainNavLinks.forEach((link) => link.classList.remove("is-active"));
-        mobileNavLinks.forEach((link) => link.classList.remove("is-active"));
-
-        const homeMain = document.querySelector(`.nav-link[href="#home"]`);
-        const homeMobile = document.querySelector(`.fl-nav-link[href="#home"]`);
-
-        if (homeMain) homeMain.classList.add("is-active");
-        if (homeMobile) homeMobile.classList.add("is-active");
+        setActiveNav("home");
     }
-});
+};
 
-// Accordion Menu
+updateHomeActive();
+window.addEventListener("scroll", updateHomeActive);
+
+// アコーディオン
 document.querySelectorAll('details').forEach((el) => {
     const summary = el.querySelector('summary');
     const content = el.querySelector('.faq-answer');
@@ -221,7 +230,7 @@ document.querySelectorAll('details').forEach((el) => {
         if (el.dataset.animating === 'true') return;
 
         if (el.open) {
-            // close
+            // 閉じる
             el.dataset.animating = 'true';
             const closingAnim = content.animate([
                 { height: `${content.offsetHeight}px`, opacity: 1 },
@@ -248,7 +257,7 @@ document.querySelectorAll('details').forEach((el) => {
                 }
             });
 
-            // open
+            // 開く
             el.dataset.animating = 'true';
             el.open = true;
 
