@@ -1,0 +1,19 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/*----------------------------------------------*/
+/* コンテナ */
+/*----------------------------------------------*/
+.l-container {
+    max-width: 1070px;
+    margin: 0 auto;
+
+    @include m.mq-max(v.$xl) {
+        max-width: 960px;
+    }
+
+    @media (width < 1024px) {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}

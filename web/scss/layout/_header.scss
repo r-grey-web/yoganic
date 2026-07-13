@@ -2,17 +2,9 @@
 @use "../foundation/mixins" as m;
 
 /*----------------------------------------------*/
-/* トップバー */
-/*----------------------------------------------*/
-.c-top-line {
-    height: 7px;
-    background-color: #241a08;
-}
-
-/*----------------------------------------------*/
 /* ヘッダー */
 /*----------------------------------------------*/
-.p-header {
+.l-header {
     position: relative;
     padding: 0;
 
@@ -160,11 +152,11 @@
         transition: .5s;
 
         @include m.hover-device {
-            color: v.$dark-btn-color !important;
+            color: #C65200 !important;
         }
 
         &.is-active {
-            color: v.$dark-btn-color !important;
+            color: #C65200 !important;
 
             &::before {
                 width: calc(100% - 2px);
@@ -180,7 +172,7 @@
                 height: 2px;
                 bottom: -1px;
                 left: 50%;
-                background: v.$dark-btn-color;
+                background: #C65200;
                 transition: .5s;
             }
 
@@ -197,33 +189,155 @@
         }
     }
 
-    &__cta {
-        @include m.cta-btn;
+    &__floating-menu {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @include m.mq-min(v.$xxl) {
+            display: none !important;
+        }
+
+        @include m.mq-max(v.$xxl) {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+    }
+
+    // レスポンシブ時のナブメニュー
+    &__floating-button {
+        width: 50px;
+        height: 50px;
+        background: #fff;
+        border-radius: 50%;
+        border: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    &__floating-bar {
+        width: 17.5px;
+        height: 2px;
+        background: v.$dark-gray;
+        margin: 2px 0;
+    }
+
+    &__drawer {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background: #fff;
+        z-index: 2000;
+        transition: right 0.4s ease;
+        padding: 80px 20px 20px;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+
+        &.is-on {
+            right: 0;
+        }
+    }
+
+    &__drawer-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            position: absolute;
+            width: 25px;
+            height: 2px;
+            background: v.$dark-gray;
+            transition: 0.3s;
+
+            &:nth-child(1) {
+                transform: rotate(45deg);
+            }
+
+            &:nth-child(2) {
+                transform: rotate(-45deg);
+            }
+        }
+
+        &:hover span {
+            background: #000;
+        }
+    }
+
+    &__drawer-list {
+        display: flex !important;
+        flex-direction: column !important;
+        padding-left: 0;
+        list-style: none;
+    }
+
+    &__drawer-item {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+
+    &__drawer-link {
+        display: block;
+        padding: 25px 10px;
+        transition: background-color 0.2s ease-in-out;
+        color: v.$dark-gray !important;
+        text-decoration: none;
+        font-weight: bold;
+
+        &.is-active {
+            color: v.$dark-btn-color !important;
+        }
 
         @include m.hover-device {
-            @include m.cta-btn-hover;
+            background: #f8f9fa;
+            color: v.$dark-btn-color !important;
         }
 
         &:active {
-            opacity: 0.7;
+            background: #f8f9fa;
+            color: v.$dark-btn-color !important;
         }
+    }
 
-        @include m.mq-max(v.$nav-breakpoint) {
-            margin: 20px 0 !important;
+    &__drawer-cta {
+        margin-top: 25px;
+    }
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s;
+        z-index: 1999;
+
+        &.is-on {
+            opacity: 1;
+            visibility: visible;
         }
     }
 }
-
-/*----------------------------------------------*/
-/* ヒーロー */
-/*----------------------------------------------*/
-.p-hero__image {
-    width: 100%;
-    height: auto;
-    margin-top: 85px;
-}
-
-/*----------------------------------------------*/
-/* レスポンシブ時のナブメニュー */
-/*----------------------------------------------*/
-// 次回css以降と、bootstrapのクラス消す作業

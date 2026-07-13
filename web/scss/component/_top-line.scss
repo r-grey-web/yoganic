@@ -2,12 +2,9 @@
 @use "../foundation/mixins" as m;
 
 /*----------------------------------------------*/
-/* ヒーロー */
+/* トップバー */
 /*----------------------------------------------*/
-.p-hero {
-    &__image {
-        width: 100%;
-        height: auto;
-        margin-top: 85px;
-    }
+.c-top-line {
+    height: 7px;
+    background-color: #241a08;
 }

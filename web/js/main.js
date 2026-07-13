@@ -1,7 +1,7 @@
 "use strict";
 
 // スピナー
-const spinner = document.querySelector("#spinner");
+const spinner = document.querySelector("[data-spinner]");
 
 if (spinner) {
     setTimeout(() => {
@@ -10,8 +10,8 @@ if (spinner) {
 }
 
 // 固定ナビバー ＆ トップへ戻るボタン
-const navbar = document.querySelector(".navbar");
-const backToTop = document.querySelector(".back-to-top");
+const navbar = document.querySelector("[data-naver]");
+const backToTop = document.querySelector("[data-back-to-top]");
 
 window.addEventListener("scroll", () => {
     if (navbar) {
@@ -32,7 +32,7 @@ window.addEventListener("scroll", () => {
 });
 
 //　Swiper 初期化
-const swiperElement = document.querySelector(".mySwiper");
+const swiperElement = document.querySelector("[data-feedback-swiper]");
 
 if (swiperElement) {
     new Swiper(swiperElement, {
@@ -71,12 +71,12 @@ if (typeof AOS !== "undefined") {
 }
 
 // レスポンシブ　スクロールメニュー
-const header = document.getElementById('rp-scroll-header');
-const drawer = document.getElementById('rp-drawer-menu');
-const overlay = document.getElementById('menu-overlay');
-const humButtons = document.querySelectorAll('.menu-trigger');
-const closeBtn = document.getElementById('menu-close');
-const navLinks = document.querySelectorAll('.nav-link, .fl-nav-link');
+const header = document.querySelector('[data-floating-menu]');
+const drawer = document.querySelector('[data-drawer]');
+const overlay = document.querySelector('[data-overlay]');
+const humButtons = document.querySelectorAll('[data-hamburger-open]');
+const closeBtn = document.querySelector('[data-drawer-close]');
+const navLinks = document.querySelectorAll('[data-nav-link], [data-drawer-link]');
 
 // ドロワーメニューのinert属性の切り替え
 const updateDrawerInert = () => {
@@ -145,7 +145,7 @@ const toggleMenu = () => {
     }
 };
 
-document.querySelectorAll('.menu-trigger').forEach(btn => {
+document.querySelectorAll('[data-hamburger-open]').forEach(btn => {
     btn.addEventListener('click', toggleMenu);
 });
 
@@ -163,8 +163,8 @@ navLinks.forEach(link => {
 
 // スクロールスパイ
 const mainSections = document.querySelectorAll("#home, section");
-const mainNavLinks = document.querySelectorAll(".nav-link");
-const mobileNavLinks = document.querySelectorAll(".fl-nav-link");
+const mainNavLinks = document.querySelectorAll("[data-nav-link]");
+const mobileNavLinks = document.querySelectorAll("[data-drawer-link]");
 
 const setActiveNav = (id) => {
     mainNavLinks.forEach((link) => {
@@ -175,8 +175,8 @@ const setActiveNav = (id) => {
         link.classList.remove("is-active");
     });
 
-    const targetMain = document.querySelector(`.nav-link[href="#${id}"]`);
-    const targetMobile = document.querySelector(`.fl-nav-link[href="#${id}"]`);
+    const targetMain = document.querySelector(`[data-nav-link][href="#${id}"]`);
+    const targetMobile = document.querySelector(`[data-drawer-link][href="#${id}"]`);
 
     if (targetMain) {
         targetMain.classList.add("is-active");
@@ -243,7 +243,7 @@ document.querySelectorAll('details').forEach((el) => {
             };
 
         } else {
-            document.querySelectorAll('.faq-item[open]').forEach((openEl) => {
+            document.querySelectorAll('[data-faq-item][open]').forEach((openEl) => {
                 if (openEl !== el) {
                     const openContent = openEl.querySelector('.faq-answer');
                     const otherClosingAnim = openContent.animate([

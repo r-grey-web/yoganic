@@ -1,0 +1,17 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/*----------------------------------------------*/
+/* ボタン */
+/*----------------------------------------------*/
+.c-button--cta {
+    @include m.cta-btn;
+
+    @include m.hover-device {
+        @include m.cta-btn-hover;
+    }
+
+    &:active {
+        opacity: 0.7;
+    }
+}

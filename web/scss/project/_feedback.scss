@@ -1,0 +1,150 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/*----------------------------------------------*/
+/* お客様の声 */
+/*----------------------------------------------*/
+.p-feedback {
+    background-color: #fefef8;
+
+    &__lead {
+        @include m.lead-text;
+
+        @include m.mq-max(v.$xxl) {
+            @include m.lead-text-sp;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 397px) {
+            line-height: 1.7;
+        }
+    }
+
+    &__sp-br {
+        display: none;
+
+        @media (max-width: 397px) {
+            display: block;
+        }
+    }
+
+    &__comment-icon {
+        color: v.$light-gray;
+        font-size: 1.25rem;
+
+        @media (max-width: 397px) {
+            font-size: 18px;
+        }
+    }
+
+    &__slider {
+        position: relative;
+        margin: 0 auto;
+        height: 100%;
+    }
+
+    &__card {
+        position: relative;
+        display: flex;
+        height: 100%;
+        padding: 1.5rem;
+        border: 3px solid #C97B63;
+        border-radius: 10px;
+        background: #fdfbf7;
+
+        &--male {
+            border: 3px solid #6B705C !important;
+        }
+    }
+
+    &__user-img-box {
+        margin-bottom: 1.5rem;
+    }
+
+    &__user-img-bg {
+        display: inline-flex;
+        padding: 1rem;
+        background-color: v.$text-white;
+        border-radius: 10px;
+    }
+
+    &__user-img {
+        width: 100%;
+        height: 64px;
+    }
+
+    &__profile {
+        @include m.content-title;
+    }
+
+    &__divider {
+        margin: 0;
+        height: 2px !important;
+        background-color: #c97b63;
+        border: none;
+    }
+
+    &__text {
+        @include m.content-text;
+        margin-bottom: 0;
+        padding-top: 10px;
+    }
+
+    &__cta-box {
+        margin-top: 135px;
+        text-align: center;
+
+        @media (max-width: 714.98px) {
+            margin-top: 105px;
+        }
+
+        @media (max-width: 680.98px) {
+            margin-top: 130px;
+        }
+
+        @media (max-width: 384.98px) {
+            margin-top: 100px;
+        }
+
+        @media (max-width: 367.98px) {
+            margin-top: 135px;
+        }
+    }
+
+    &__cta {
+        padding: 12px 32px;
+        box-shadow: 0 4px 15px rgba(94, 77, 68, 0.1);
+        background-color: transparent;
+        border: 1.55px solid v.$color-primary;
+        border-radius: 50rem;
+        color: v.$color-primary;
+        outline: none;
+        transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
+        @include m.hover-device {
+            background-color: v.$color-primary;
+            color: v.$text-white;
+            box-shadow: 0 8px 20px rgba(184, 138, 118, 0.2);
+
+            .p-feedback__cta-arrow-icon {
+                transform: translateX(3px);
+            }
+        }
+
+        &:active {
+            opacity: 0.7;
+        }
+    }
+
+    &__cta-arrow-icon {
+        width: 1.2rem;
+        height: auto;
+        margin-bottom: 4.5px;
+        margin-left: 5px;
+        vertical-align: middle;
+        transition: transform 0.3s ease;
+        fill: currentColor;
+    }
+
+
+}
