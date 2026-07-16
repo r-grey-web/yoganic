@@ -64,80 +64,80 @@
 
     <!-- Navbar & Hero Start -->
     <header class="l-header">
-        <nav class="l-header__nav navbar navbar-expand-xxl navbar-light" data-naver>
-
-            <a href="index.html" class="l-header__logo navbar-brand" aria-label="Yoganic ホームへ戻る">
-                <img class="l-header__logo-img" src="img/logo.svg" alt="">
-            </a>
-            <button id="navbar-toggler" class="l-header__hamburger navbar-toggler" data-hamburger-open type="button"
-                aria-label="メニューを開く" aria-controls="drawer-menu" aria-expanded="false">
-                <span class="l-header__hamburger-bar" aria-hidden="true"></span>
-                <span class="l-header__hamburger-bar" aria-hidden="true"></span>
-                <span class="l-header__hamburger-bar" aria-hidden="true"></span>
-            </button>
-            <div class="l-header__menu collapse navbar-collapse" id="navbarCollapse">
-                <div class="l-header__nav-list navbar-nav">
-                    <a href="#home" class="l-header__nav-link nav-link" data-nav-link>ホーム</a>
-                    <a href="#service" class="l-header__nav-link nav-link" data-nav-link>サービス紹介</a>
-                    <a href="#about" class="l-header__nav-link nav-link" data-nav-link>Yoganicの想い</a>
-                    <a href="#feedback" class="l-header__nav-link nav-link" data-nav-link>お客様の声</a>
-                    <a href="#pricing" class="l-header__nav-link nav-link" data-nav-link>料金プラン</a>
-                    <a href="#faq" class="l-header__nav-link nav-link" data-nav-link>よくあるご質問</a>
-                    <a href="#contact" class="l-header__nav-link nav-link" data-nav-link>お問い合わせ</a>
+        <div class="p-header">
+            <nav class="p-header__nav navbar navbar-expand-xxl navbar-light" data-navbar>
+                <a href="index.html" class="p-header__logo" aria-label="Yoganic ホームへ戻る">
+                    <img class="p-header__logo-img" src="img/logo.svg" alt="">
+                </a>
+                <button id="navbar-toggler" class="p-header__hamburger navbar-toggler" data-hamburger-open type="button"
+                    aria-label="メニューを開く" aria-controls="drawer-menu" aria-expanded="false">
+                    <span class="p-header__hamburger-bar" aria-hidden="true"></span>
+                    <span class="p-header__hamburger-bar" aria-hidden="true"></span>
+                    <span class="p-header__hamburger-bar" aria-hidden="true"></span>
+                </button>
+                <div class="p-header__menu collapse navbar-collapse" id="navbarCollapse">
+                    <div class="p-header__nav-list navbar-nav">
+                        <a href="#home" class="p-header__nav-link nav-link" data-nav-link>ホーム</a>
+                        <a href="#service" class="p-header__nav-link nav-link" data-nav-link>サービス紹介</a>
+                        <a href="#about" class="p-header__nav-link nav-link" data-nav-link>Yoganicの想い</a>
+                        <a href="#feedback" class="p-header__nav-link nav-link" data-nav-link>お客様の声</a>
+                        <a href="#pricing" class="p-header__nav-link nav-link" data-nav-link>料金プラン</a>
+                        <a href="#faq" class="p-header__nav-link nav-link" data-nav-link>よくあるご質問</a>
+                        <a href="#contact" class="p-header__nav-link nav-link" data-nav-link>お問い合わせ</a>
+                    </div>
+                    <a href="index.html" class="c-button">体験レッスン予約</a>
                 </div>
-                <a href="index.html" class="c-button--cta">体験レッスン予約</a>
+            </nav>
+
+            <h1 class="visually-hidden">Yoganic 誰にも見られない、私だけのおうちヨガ</h1>
+
+            <div class="p-hero">
+                <picture>
+                    <source media="(min-width: 768px)" srcset="img/hero-img.avif" type="image/avif">
+                    <source media="(min-width: 768px)" srcset="img/hero-img.webp" type="image/webp">
+                    <source srcset="img/hero-img-sp.avif" type="image/avif">
+                    <img src="img/hero-img-sp.webp" alt="" class="p-hero__image" fetchpriority="high" decoding="async">
+                </picture>
             </div>
-        </nav>
-
-        <h1 class="visually-hidden">Yoganic 誰にも見られない、私だけのおうちヨガ</h1>
-
-        <div class="p-hero">
-            <picture>
-                <source media="(min-width: 768px)" srcset="img/hero-img.avif" type="image/avif">
-                <source media="(min-width: 768px)" srcset="img/hero-img.webp" type="image/webp">
-                <source srcset="img/hero-img-sp.avif" type="image/avif">
-                <img src="img/hero-img-sp.webp" alt="" class="p-hero__image" fetchpriority="high" decoding="async">
-            </picture>
         </div>
-
     </header>
     <!-- Navbar & Hero End -->
 
     <!-- Responsive Scrolling Menu Start -->
-    <nav class="l-header__floating-menu floating-header" data-floating-menu>
-        <button class="l-header__floating-button" data-hamburger-open aria-label="メニューを開く" aria-controls="drawer-menu"
+    <nav class="p-header__floating-menu floating-header" data-floating-menu>
+        <button class="p-header__floating-button" data-hamburger-open aria-label="メニューを開く" aria-controls="drawer-menu"
             aria-expanded="false">
-            <span class="l-header__floating-bar" aria-hidden="true"></span>
-            <span class="l-header__floating-bar" aria-hidden="true"></span>
-            <span class="l-header__floating-bar" aria-hidden="true"></span>
+            <span class="p-header__floating-bar" aria-hidden="true"></span>
+            <span class="p-header__floating-bar" aria-hidden="true"></span>
+            <span class="p-header__floating-bar" aria-hidden="true"></span>
         </button>
     </nav>
 
-    <div id="drawer-menu" class="l-header__drawer" data-drawer aria-hidden="true" inert>
-        <button class="l-header__drawer-close" data-drawer-close aria-label="メニューを閉じる">
+    <div id="drawer-menu" class="p-header__drawer" data-drawer aria-hidden="true" inert>
+        <button class="p-header__drawer-close" data-drawer-close aria-label="メニューを閉じる">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
         </button>
-        <ul class="l-header__drawer-list navbar-nav">
-            <li class="l-header__drawer-item"><a class="l-header__drawer-link" href="#home" data-drawer-link>ホーム</a>
+        <ul class="p-header__drawer-list navbar-nav">
+            <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#home" data-drawer-link>ホーム</a>
             </li>
-            <li class="l-header__drawer-item"><a class="l-header__drawer-link" href="#service"
+            <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#service"
                     data-drawer-link>サービス紹介</a></li>
-            <li class="l-header__drawer-item"><a class="l-header__drawer-link" href="#about"
+            <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#about"
                     data-drawer-link>Yoganicの想い</a></li>
-            <li class="l-header__drawer-item"><a class="l-header__drawer-link" href="#feedback"
+            <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#feedback"
                     data-drawer-link>お客様の声</a></li>
-            <li class="l-header__drawer-item"><a class="l-header__drawer-link" href="#pricing"
+            <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#pricing"
                     data-drawer-link>料金プラン</a></li>
-            <li class="l-header__drawer-item"><a class="l-header__drawer-link" href="#faq" data-drawer-link>よくあるご質問</a>
+            <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#faq" data-drawer-link>よくあるご質問</a>
             </li>
-            <li class="l-header__drawer-item"><a class="l-header__drawer-link" href="#contact"
+            <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#contact"
                     data-drawer-link>お問い合わせ</a></li>
-            <li><a href="index.html" class="c-button--cta l-header__drawer-cta">体験レッスン予約</a></li>
+            <li><a href="index.html" class="c-button p-header__drawer-cta">体験レッスン予約</a></li>
         </ul>
     </div>
 
-    <div class="l-header__overlay" data-overlay></div>
+    <div class="p-header__overlay" data-overlay></div>
     <!-- Responsive Scrolling Menu End -->
 
     <!-- Services Start -->
@@ -385,55 +385,50 @@
                 <div class="p-pricing__inner" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800"
                     data-aos-easing="ease-out" data-aos-offset="50">
                     <div class="p-pricing__card-item">
-                        <div class="card side-card p-pricing__card p-pricing__card--default">
-                            <div class="card-body text-center p-pricing__card-body">
-                                <h3 class="card-title fw-bold p-pricing__card-title">ドロップイン</h3>
-                                <p class="card-text p-pricing__card-text">まずは1回、お試しに</p>
-                                <p class="course-price p-pricing__price"><span class="visually-hidden">1回あたり1100円</span>
+                        <div class="p-pricing__card p-pricing__card--default">
+                            <div class="p-pricing__card-body">
+                                <h3 class="p-pricing__card-title">ドロップイン</h3>
+                                <p class="p-pricing__card-text">まずは1回、お試しに</p>
+                                <p class="p-pricing__price"><span class="visually-hidden">1回あたり1100円</span>
                                     <span aria-hidden="true">
-                                        <span class="doll p-pricing__currency">¥&nbsp;</span>1,100<small
-                                            class="text-gray unit p-pricing__unit"> /回</small>
+                                        <span class="p-pricing__currency">¥&nbsp;</span>1,100<small
+                                            class="p-pricing__unit"> /回</small>
                                     </span>
                                 </p>
-                                <a href="index.html"
-                                    class="pricing__btn w-100 side-btn p-pricing__button p-pricing__button--default">申し込む<span
+                                <a href="index.html" class="p-pricing__button p-pricing__button--default">申し込む<span
                                         class="visually-hidden">（ドロップイン）</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="p-pricing__card-item">
-                        <div class="card pick-card p-pricing__card p-pricing__card--recommended">
-                            <div class="card-body text-center p-pricing__card-body">
-                                <span class="badge p-pricing__badge pick-bg rounded-pill">おすすめ</span>
-                                <h3 class="card-title fw-bold p-pricing__card-title">ゆるっと月4回</h3>
+                        <div class="p-pricing__card p-pricing__card--recommended">
+                            <div class="p-pricing__card-body">
+                                <span class="p-pricing__badge">おすすめ</span>
+                                <h3 class="p-pricing__card-title">ゆるっと月4回</h3>
                                 <p class="card-text p-pricing__card-text">週に1回、自分のペースで</p>
-                                <p class="course-price p-pricing__price"><span
-                                        class="visually-hidden">一か月あたり3300円</span>
+                                <p class="p-pricing__price"><span class="visually-hidden">一か月あたり3300円</span>
                                     <span aria-hidden="true">
-                                        <span class="doll p-pricing__currency">¥&nbsp;</span>3,300<small
-                                            class="text-gray unit p-pricing__unit"> /月</small>
+                                        <span class="p-pricing__currency">¥&nbsp;</span>3,300<small
+                                            class="p-pricing__unit"> /月</small>
                                     </span>
                                 </p>
-                                <a href="index.html"
-                                    class="pricing__btn w-100 pick-btn p-pricing__button p-pricing__button--recommended">申し込む<span
+                                <a href="index.html" class="p-pricing__button p-pricing__button--recommended">申し込む<span
                                         class="visually-hidden">（ゆるっと月4回）</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="p-pricing__card-item">
-                        <div class="card side-card p-pricing__card p-pricing__card--default">
-                            <div class="card-body text-center p-pricing__card-body">
-                                <h3 class="card-title fw-bold p-pricing__card-title">受け放題</h3>
-                                <p class="card-text p-pricing__card-text">いつでも、何度でも、好きなだけ</p>
-                                <p class="course-price p-pricing__price"><span
-                                        class="visually-hidden">一か月あたり5500円</span>
+                        <div class="p-pricing__card p-pricing__card--default">
+                            <div class="p-pricing__card-body">
+                                <h3 class="p-pricing__card-title">受け放題</h3>
+                                <p class="p-pricing__card-text">いつでも、何度でも、好きなだけ</p>
+                                <p class="p-pricing__price"><span class="visually-hidden">一か月あたり5500円</span>
                                     <span aria-hidden="true">
-                                        <span class="doll p-pricing__currency">¥&nbsp;</span>5,500<small
-                                            class="text-gray unit p-pricing__unit"> /月</small>
+                                        <span class="p-pricing__currency">¥&nbsp;</span>5,500<small
+                                            class="p-pricing__unit"> /月</small>
                                     </span>
                                 </p>
-                                <a href="index.html"
-                                    class="pricing__btn w-100 side-btn p-pricing__button p-pricing__button--default">申し込む<span
+                                <a href="index.html" class="p-pricing__button p-pricing__button--default">申し込む<span
                                         class="visually-hidden">（受け放題）</span></a>
                             </div>
                         </div>
@@ -444,54 +439,55 @@
         <!-- Pricing End -->
 
         <!--Faq Start -->
-        <section id="faq" class="c-section faq">
-            <div class="l-container faq-wrapper">
+        <section id="faq" class="c-section p-faq">
+            <div class="l-container">
                 <h2 class="c-section-title" data-aos="fade-zoom-in" data-aos-easing="ease-out-sine"
                     data-aos-duration="1200" data-aos-offset="50">よくあるご質問</h2>
-                <div class="l-container faq-box" data-aos="fade-zoom-in" data-aos-delay="400" data-aos-duration="2000"
+                <div class="p-faq__inner" data-aos="fade-zoom-in" data-aos-delay="400" data-aos-duration="2000"
                     data-aos-easing="ease-out-sine" data-aos-offset="50">
-                    <p class="fs-title" aria-hidden="true">FAQ</p>
-                    <div class="faq-container">
-                        <details class="faq-item" data-faq-item>
-                            <summary class="faq-question">体が硬いのですが、レッスンについていけますか？<span class="faq-icon"
-                                    aria-hidden="true"></span>
+                    <p class="p-faq__en-title" aria-hidden="true">FAQ</p>
+                    <div class="p-faq__list">
+                        <details class="p-faq__item" data-faq-item>
+                            <summary class="p-faq__question" data-faq-question>体が硬いのですが、レッスンについていけますか？<span
+                                    class="p-faq__icon" aria-hidden="true"></span>
                             </summary>
-                            <div class="faq-answer">
-                                <p class="mb-0">
+                            <div class="p-faq__answer-body" data-faq-answer>
+                                <p class="p-faq__answer-text">
                                     もちろんです。ヨガはポーズの完成度を競うものではありません。インストラクターが軽減法（簡単なポーズへのアレンジ）をお伝えしますので、ご自身のペースで心地よく動いていただけます。
                                 </p>
                             </div>
                         </details>
-                        <details class="faq-item" data-faq-item>
-                            <summary class="faq-question">運動が苦手で体力に自信がありませんが、大丈夫でしょうか？<span class="faq-icon"
-                                    aria-hidden="true"></span>
+                        <details class="p-faq__item" data-faq-item>
+                            <summary class="p-faq__question" data-faq-question>運動が苦手で体力に自信がありませんが、大丈夫でしょうか？<span
+                                    class="p-faq__icon" aria-hidden="true"></span>
                             </summary>
-                            <div class="faq-answer">
-                                <p class="mb-0">
+                            <div class="p-faq__answer-body" data-faq-answer>
+                                <p class="p-faq__answer-text">
                                     はい、もちろんです。Yoganicのレッスンは、激しい運動よりも「呼吸」や「心地よい伸び」を重視しています。その日の体調に合わせてお休みしながらでも構いません。まずは深呼吸をするような気持ちでご参加ください。
                                 </p>
                             </div>
                         </details>
-                        <details class="faq-item" data-faq-item>
-                            <summary class="faq-question">オンラインレッスンに必要な準備はありますか？<span class="faq-icon"
-                                    aria-hidden="true"></span></summary>
-                            <div class="faq-answer">
-                                <p class="mb-0">
+                        <details class="p-faq__item" data-faq-item>
+                            <summary class="p-faq__question" data-faq-question>オンラインレッスンに必要な準備はありますか？<span
+                                    class="p-faq__icon" aria-hidden="true"></span></summary>
+                            <div class="p-faq__answer-body" data-faq-answer>
+                                <p class="p-faq__answer-text">
                                     動きやすい服装、水分、ヨガマット（または滑りにくい床）をご用意ください。Zoomを使用して配信しますので、スマホ・タブレット・PCのいずれかがあればOKです。</p>
                             </div>
                         </details>
-                        <details class="faq-item" data-faq-item>
-                            <summary class="faq-question">カメラをオフにして参加しても大丈夫ですか？<span class="faq-icon"
-                                    aria-hidden="true"></span></summary>
-                            <div class="faq-answer">
-                                <p class="mb-0">はい、大丈夫です。リラックスして受けたい時や、お部屋の様子を映したくない時は、カメラオフのままご参加いただけます。</p>
+                        <details class="p-faq__item" data-faq-item>
+                            <summary class="p-faq__question" data-faq-question>カメラをオフにして参加しても大丈夫ですか？<span
+                                    class="p-faq__icon" aria-hidden="true"></span></summary>
+                            <div class="p-faq__answer-body" data-faq-answer>
+                                <p class="p-faq__answer-text">はい、大丈夫です。リラックスして受けたい時や、お部屋の様子を映したくない時は、カメラオフのままご参加いただけます。
+                                </p>
                             </div>
                         </details>
-                        <details class="faq-item" data-faq-item>
-                            <summary class="faq-question">予約のキャンセルはいつまで可能ですか？<span class="faq-icon"
-                                    aria-hidden="true"></span></summary>
-                            <div class="faq-answer">
-                                <p class="mb-0">レッスン開始の60分前まで無料でキャンセル・振替が可能です。公式LINEから簡単にお手続きいただけます。</p>
+                        <details class="p-faq__item" data-faq-item>
+                            <summary class="p-faq__question" data-faq-question>予約のキャンセルはいつまで可能ですか？<span
+                                    class="p-faq__icon" aria-hidden="true"></span></summary>
+                            <div class="p-faq__answer-body" data-faq-answer>
+                                <p class="p-faq__answer-text">レッスン開始の60分前まで無料でキャンセル・振替が可能です。公式LINEから簡単にお手続きいただけます。</p>
                             </div>
                         </details>
                     </div>
@@ -500,29 +496,32 @@
         </section>
         <!-- Faq End -->
 
-        <section id="contact" class="c-section contact">
-            <div class="contact__inner l-container">
+        <section id="contact" class="c-section p-contact">
+            <div class="l-container">
                 <h2 class="c-section-title" data-aos="fade-zoom-in" data-aos-easing="ease-out" data-aos-delay="0"
                     data-aos-duration="1000" data-aos-offset="50">お問い合わせ</h2>
-                <p class="contact__lead mb-4">ご質問やご相談など、<br class="sp-only" aria-hidden="true">お気軽にお問い合わせください。</p>
-                <form class="contact-form" action="#" method="post" novalidate>
-                    <div class="contact-form__item">
-                        <label class="contact-form__label" for="name">お名前<span class="required">必須</span></label>
-                        <input type="text" id="name" name="name" placeholder="山田 花子" required
+                <p class="p-contact__lead">ご質問やご相談など、<br class="u-sp-only" aria-hidden="true">お気軽にお問い合わせください。</p>
+                <form class="p-contact__form" action="#" method="post" novalidate>
+                    <div class="p-contact__item">
+                        <label class="p-contact__label" for="name">お名前<span
+                                class="p-contact__required">必須</span></label>
+                        <input class="p-contact__control" type="text" id="name" name="name" placeholder="山田 花子" required
                             aria-describedby="name-error">
-                        <p id="name-error" class="error-message"></p>
+                        <p id="name-error" class="p-contact__error-message"></p>
                     </div>
-                    <div class="contact-form__item">
-                        <label class="contact-form__label" for="email">メールアドレス<span class="required">必須</span></label>
-                        <input type="email" id="email" name="email" placeholder="example@mail.com" required
-                            aria-describedby="email-error">
-                        <p id="email-error" class="error-message"></p>
+                    <div class="p-contact__item">
+                        <label class="p-contact__label" for="email">メールアドレス<span
+                                class="p-contact__required">必須</span></label>
+                        <input class="p-contact__control" type="email" id="email" name="email"
+                            placeholder="example@mail.com" required aria-describedby="email-error">
+                        <p id="email-error" class="p-contact__error-message"></p>
                     </div>
-                    <div class="contact-form__item">
-                        <label class="contact-form__label" for="category">お問い合わせ種別<span
-                                class="required">必須</span></label>
-                        <div class="select-wrapper">
-                            <select name="category" id="category" required aria-describedby="category-error">
+                    <div class="p-contact__item">
+                        <label class="p-contact__label" for="category">お問い合わせ種別<span
+                                class="p-contact__required">必須</span></label>
+                        <div class="p-contact__select-wrapper">
+                            <select class="p-contact__control p-contact__select" name="category" id="category" required
+                                aria-describedby="category-error">
                                 <option value="">選択してください</option>
                                 <option value="trial">体験レッスンについて</option>
                                 <option value="plan">料金プランについて</option>
@@ -530,25 +529,27 @@
                                 <option value="other">その他</option>
                             </select>
                         </div>
-                        <p id="category-error" class="error-message"></p>
+                        <p id="category-error" class="p-contact__error-message"></p>
                     </div>
-                    <div class="contact-form__item">
-                        <label class="contact-form__label" for="message">お問い合わせ内容<span
-                                class="required">必須</span></label>
-                        <textarea name="message" id="message" rows="6" placeholder="お問い合わせ内容をご入力ください" required
-                            aria-describedby="message-error"></textarea>
-                        <p id="message-error" class="error-message"></p>
+                    <div class="p-contact__item">
+                        <label class="p-contact__label" for="message">お問い合わせ内容<span
+                                class="p-contact__required">必須</span></label>
+                        <textarea class="p-contact__control p-contact__textarea" name="message" id="message" rows="6"
+                            placeholder="お問い合わせ内容をご入力ください" required aria-describedby="message-error"></textarea>
+                        <p id="message-error" class="p-contact__error-message"></p>
                     </div>
-                    <div class="contact-form__privacy">
-                        <label for="privacy">
-                            <input type="checkbox" id="privacy" required aria-describedby="privacy-error">
-                            <span><a href="privacy-policy.html" target="_blank" rel="noopener noreferrer"
+                    <div class="p-contact__privacy">
+                        <label class="p-contact__privacy-label" for="privacy">
+                            <input class="p-contact__checkbox" name="privacy" type="checkbox" id="privacy" required
+                                aria-describedby="privacy-error">
+                            <span><a href="privacy-policy.html" target="_blank" class="p-contact__privacy-link"
+                                    rel="noopener noreferrer"
                                     aria-label="個人情報の取り扱い（別タブで開きます）">個人情報の取り扱い</a>に同意します</span>
                         </label>
-                        <p id="privacy-error" class="error-message"></p>
+                        <p id="privacy-error" class="p-contact__error-message"></p>
                     </div>
 
-                    <button class="contact-form__button btn rounded-pill" type="submit" aria-label="お問い合わせ内容を確認する">
+                    <button class="c-button p-contact__button" type="submit">
                         入力内容を確認する
                     </button>
                 </form>
@@ -557,26 +558,28 @@
     </main>
 
     <!-- Footer Start -->
-    <footer class="footer">
-        <div class="footer-cta-box">
-            <p class="cta-message">忙しい日常のなかに、自分を整える癒しの15分をつくりませんか？</p>
-            <a href="index.html" class="btn line-btn">
-                <i class="fab fa-line pe-2" aria-hidden="true"></i>&thinsp;公式LINEで体験予約
-            </a>
-        </div>
-        <div class="footer-main">
-            <div class="footer-logo"><a href="index.html" class="navbar-brand p-0 leaf-bg" aria-label="Yoganic ホームへ戻る">
-                    <img src="img/footer-logo.svg" alt="" width="300px" height="45" loading="lazy">
-                </a></div>
-            <ul class="footer-sns">
-                <li><a href="index.html" aria-label="Instagramを開く"><i class="fab fa-instagram"
-                            aria-hidden="true"></i></a></li>
-                <li><a href="index.html" aria-label="Facebookを開く"><i class="fab fa-facebook-f"
-                            aria-hidden="true"></i></a></li>
-            </ul>
-            <!-- Copyright -->
-            <div class="copyright">
-                <p class="mb-0">&copy; 2026 Yoganic All Rights Reserved.</p>
+    <footer class="footer l-footer">
+        <div class="p-footer">
+            <div class="p-footer__cta">
+                <p class="p-footer__message">忙しい日常のなかに、自分を整える癒しの15分をつくりませんか？</p>
+                <a href="index.html" class="p-footer__line-button">
+                    <i class="fab fa-line p-footer__line-icon" aria-hidden="true"></i>&thinsp;公式LINEで体験予約
+                </a>
+            </div>
+            <div class="p-footer__main">
+                <div class="p-footer__logo"><a href="index.html" aria-label="Yoganic ホームへ戻る">
+                        <img class="p-footer__logo-image" src="img/footer-logo.svg" alt="" loading="lazy">
+                    </a></div>
+                <ul class="p-footer__sns">
+                    <li><a class="p-footer__sns-link" href="index.html" aria-label="Instagramを開く"><i
+                                class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a class="p-footer__sns-link" href="index.html" aria-label="Facebookを開く"><i
+                                class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                </ul>
+                <!-- Copyright -->
+                <small class="p-footer__copyright">
+                    &copy; 2026 Yoganic All Rights Reserved.
+                </small>
             </div>
         </div>
     </footer>

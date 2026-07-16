@@ -68,16 +68,28 @@
         }
     }
 
+    &__card-body {
+        padding: 1rem 1rem;
+        text-align: center;
+    }
+
     &__badge {
-        padding: 0.4em 0.65em;
+        display: inline-block;
+        padding: 0.5em 0.65em;
         background-color: #8da399;
+        border-radius: 50rem;
+        color: v.$color-white;
+        font-size: 0.75rem;
+        font-weight: 700;
         letter-spacing: 0.1em;
+        line-height: 1;
     }
 
     &__card-title {
         @include m.content-title;
         margin: 20px 0 8px;
         color: #595551;
+        font-weight: 700;
     }
 
     &__card-text {

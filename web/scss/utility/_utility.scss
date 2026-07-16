@@ -1,2 +1,13 @@
 @use "../foundation/variables" as v;
 @use "../foundation/mixins" as m;
+
+/*----------------------------------------------*/
+/* br */
+/*----------------------------------------------*/
+.u-sp-only {
+    display: none;
+
+    @include m.mq-max(v.$md) {
+        display: block;
+    }
+}

@@ -10,7 +10,7 @@ if (spinner) {
 }
 
 // 固定ナビバー ＆ トップへ戻るボタン
-const navbar = document.querySelector("[data-naver]");
+const navbar = document.querySelector("[data-navbar]");
 const backToTop = document.querySelector("[data-back-to-top]");
 
 window.addEventListener("scroll", () => {
@@ -220,9 +220,9 @@ updateHomeActive();
 window.addEventListener("scroll", updateHomeActive);
 
 // アコーディオン
-document.querySelectorAll('details').forEach((el) => {
-    const summary = el.querySelector('summary');
-    const content = el.querySelector('.faq-answer');
+document.querySelectorAll('[data-faq-item]').forEach((el) => {
+    const summary = el.querySelector('[data-faq-question]');
+    const content = el.querySelector('[data-faq-answer]');
 
     summary.addEventListener('click', (e) => {
         e.preventDefault();
@@ -245,7 +245,7 @@ document.querySelectorAll('details').forEach((el) => {
         } else {
             document.querySelectorAll('[data-faq-item][open]').forEach((openEl) => {
                 if (openEl !== el) {
-                    const openContent = openEl.querySelector('.faq-answer');
+                    const openContent = openEl.querySelector('[data-faq-answer]');
                     const otherClosingAnim = openContent.animate([
                         { height: `${openContent.offsetHeight}px`, opacity: 1 },
                         { height: '0px', opacity: 0 }
