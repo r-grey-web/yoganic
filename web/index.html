@@ -67,25 +67,32 @@
         <div class="p-header">
             <nav class="p-header__nav navbar navbar-expand-xxl navbar-light" data-navbar>
                 <a href="index.html" class="p-header__logo" aria-label="Yoganic ホームへ戻る">
-                    <img class="p-header__logo-img" src="img/logo.svg" alt="">
+                    <img class="p-header__logo-image" src="img/logo.svg" alt="">
                 </a>
-                <button id="navbar-toggler" class="p-header__hamburger navbar-toggler" data-hamburger-open type="button"
+                <button class="p-header__hamburger navbar-toggler" data-hamburger-open type="button"
                     aria-label="メニューを開く" aria-controls="drawer-menu" aria-expanded="false">
                     <span class="p-header__hamburger-bar" aria-hidden="true"></span>
                     <span class="p-header__hamburger-bar" aria-hidden="true"></span>
                     <span class="p-header__hamburger-bar" aria-hidden="true"></span>
                 </button>
-                <div class="p-header__menu collapse navbar-collapse" id="navbarCollapse">
-                    <div class="p-header__nav-list navbar-nav">
-                        <a href="#home" class="p-header__nav-link nav-link" data-nav-link>ホーム</a>
-                        <a href="#service" class="p-header__nav-link nav-link" data-nav-link>サービス紹介</a>
-                        <a href="#about" class="p-header__nav-link nav-link" data-nav-link>Yoganicの想い</a>
-                        <a href="#feedback" class="p-header__nav-link nav-link" data-nav-link>お客様の声</a>
-                        <a href="#pricing" class="p-header__nav-link nav-link" data-nav-link>料金プラン</a>
-                        <a href="#faq" class="p-header__nav-link nav-link" data-nav-link>よくあるご質問</a>
-                        <a href="#contact" class="p-header__nav-link nav-link" data-nav-link>お問い合わせ</a>
-                    </div>
-                    <a href="index.html" class="c-button">体験レッスン予約</a>
+                <div class="p-header__menu collapse navbar-collapse">
+                    <ul class="p-header__nav-list navbar-nav">
+                        <li class="p-header__nav-item"><a href="#home" class="p-header__nav-link nav-link"
+                                data-nav-link>ホーム</a></li>
+                        <li class="p-header__nav-item"><a href="#service" class="p-header__nav-link nav-link"
+                                data-nav-link>サービス紹介</a></li>
+                        <li class="p-header__nav-item"><a href="#about" class="p-header__nav-link nav-link"
+                                data-nav-link>Yoganicの想い</a></li>
+                        <li class="p-header__nav-item"><a href="#feedback" class="p-header__nav-link nav-link"
+                                data-nav-link>お客様の声</a></li>
+                        <li class="p-header__nav-item"><a href="#pricing" class="p-header__nav-link nav-link"
+                                data-nav-link>料金プラン</a></li>
+                        <li class="p-header__nav-item"><a href="#faq" class="p-header__nav-link nav-link"
+                                data-nav-link>よくあるご質問</a></li>
+                        <li class="p-header__nav-item"><a href="#contact" class="p-header__nav-link nav-link"
+                                data-nav-link>お問い合わせ</a></li>
+                    </ul>
+                    <a href="index.html" class="c-button p-header__cta">体験レッスン予約</a>
                 </div>
             </nav>
 
@@ -99,46 +106,49 @@
                     <img src="img/hero-img-sp.webp" alt="" class="p-hero__image" fetchpriority="high" decoding="async">
                 </picture>
             </div>
+
+            <!-- Responsive Scrolling Menu Start -->
+            <nav class="p-header__floating-menu floating-header" data-floating-menu>
+                <button class="p-header__floating-button" type="button" data-hamburger-open aria-label="メニューを開く"
+                    aria-controls="drawer-menu" aria-expanded="false">
+                    <span class="p-header__floating-bar" aria-hidden="true"></span>
+                    <span class="p-header__floating-bar" aria-hidden="true"></span>
+                    <span class="p-header__floating-bar" aria-hidden="true"></span>
+                </button>
+            </nav>
+
+            <div id="drawer-menu" class="p-header__drawer" data-drawer aria-hidden="true" inert>
+                <button class="p-header__drawer-close" type="button" data-drawer-close aria-label="メニューを閉じる">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+                <ul class="p-header__drawer-list navbar-nav">
+                    <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#home"
+                            data-drawer-link>ホーム</a>
+                    </li>
+                    <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#service"
+                            data-drawer-link>サービス紹介</a></li>
+                    <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#about"
+                            data-drawer-link>Yoganicの想い</a></li>
+                    <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#feedback"
+                            data-drawer-link>お客様の声</a></li>
+                    <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#pricing"
+                            data-drawer-link>料金プラン</a></li>
+                    <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#faq"
+                            data-drawer-link>よくあるご質問</a>
+                    </li>
+                    <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#contact"
+                            data-drawer-link>お問い合わせ</a></li>
+                    <li class="p-header__drawer-item p-header__drawer-item--cta"><a href="index.html"
+                            class="c-button p-header__drawer-cta">体験レッスン予約</a></li>
+                </ul>
+            </div>
+
+            <div class="p-header__overlay" data-overlay></div>
+            <!-- Responsive Scrolling Menu End -->
         </div>
     </header>
     <!-- Navbar & Hero End -->
-
-    <!-- Responsive Scrolling Menu Start -->
-    <nav class="p-header__floating-menu floating-header" data-floating-menu>
-        <button class="p-header__floating-button" data-hamburger-open aria-label="メニューを開く" aria-controls="drawer-menu"
-            aria-expanded="false">
-            <span class="p-header__floating-bar" aria-hidden="true"></span>
-            <span class="p-header__floating-bar" aria-hidden="true"></span>
-            <span class="p-header__floating-bar" aria-hidden="true"></span>
-        </button>
-    </nav>
-
-    <div id="drawer-menu" class="p-header__drawer" data-drawer aria-hidden="true" inert>
-        <button class="p-header__drawer-close" data-drawer-close aria-label="メニューを閉じる">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </button>
-        <ul class="p-header__drawer-list navbar-nav">
-            <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#home" data-drawer-link>ホーム</a>
-            </li>
-            <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#service"
-                    data-drawer-link>サービス紹介</a></li>
-            <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#about"
-                    data-drawer-link>Yoganicの想い</a></li>
-            <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#feedback"
-                    data-drawer-link>お客様の声</a></li>
-            <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#pricing"
-                    data-drawer-link>料金プラン</a></li>
-            <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#faq" data-drawer-link>よくあるご質問</a>
-            </li>
-            <li class="p-header__drawer-item"><a class="p-header__drawer-link" href="#contact"
-                    data-drawer-link>お問い合わせ</a></li>
-            <li><a href="index.html" class="c-button p-header__drawer-cta">体験レッスン予約</a></li>
-        </ul>
-    </div>
-
-    <div class="p-header__overlay" data-overlay></div>
-    <!-- Responsive Scrolling Menu End -->
 
     <!-- Services Start -->
     <main>
@@ -231,8 +241,8 @@
                     data-aos-easing="ease-out-quart">お客様の声</h2>
                 <p class="p-feedback__lead" data-aos="fade-zoom-in" data-aos-delay="200" data-aos-duration="1000"
                     data-aos-offset="50" data-aos-easing="ease-out-quart">
-                    会員様のリアルな声を<br class="p-feedback__sp-br">お届けします&nbsp;<i
-                        class="far fa-comment-dots p-feedback__comment-icon" aria-hidden="true"></i></p>
+                    会員様のリアルな声を<br class="p-feedback__sp-br">お届けします&nbsp;<span
+                        class="far fa-comment-dots p-feedback__comment-icon" aria-hidden="true"></span></p>
                 <div class="p-feedback__slider" data-aos="fade-zoom-in" data-aos-delay="200" data-aos-duration="1000"
                     data-aos-offset="50" data-aos-easing="ease-out-quart">
                     <div class="swiper" data-feedback-swiper>
@@ -563,7 +573,7 @@
             <div class="p-footer__cta">
                 <p class="p-footer__message">忙しい日常のなかに、自分を整える癒しの15分をつくりませんか？</p>
                 <a href="index.html" class="p-footer__line-button">
-                    <i class="fab fa-line p-footer__line-icon" aria-hidden="true"></i>&thinsp;公式LINEで体験予約
+                    <span class="fab fa-line p-footer__line-icon" aria-hidden="true"></span>&thinsp;公式LINEで体験予約
                 </a>
             </div>
             <div class="p-footer__main">
@@ -571,10 +581,10 @@
                         <img class="p-footer__logo-image" src="img/footer-logo.svg" alt="" loading="lazy">
                     </a></div>
                 <ul class="p-footer__sns">
-                    <li><a class="p-footer__sns-link" href="index.html" aria-label="Instagramを開く"><i
-                                class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                    <li><a class="p-footer__sns-link" href="index.html" aria-label="Facebookを開く"><i
-                                class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                    <li><a class="p-footer__sns-link" href="index.html" aria-label="Instagramを開く"><span
+                                class="fab fa-instagram" aria-hidden="true"></span></a></li>
+                    <li><a class="p-footer__sns-link" href="index.html" aria-label="Facebookを開く"><span
+                                class="fab fa-facebook-f" aria-hidden="true"></span></a></li>
                 </ul>
                 <!-- Copyright -->
                 <small class="p-footer__copyright">
@@ -587,8 +597,8 @@
     <!-- Footer End -->
 
     <!-- Back to Top -->
-    <a href="#home" class="btn c-back-to-top" data-back-to-top aria-label="ページの先頭へ戻る"><i class="fa fa-arrow-up"
-            aria-hidden="true"></i></a>
+    <a href="#home" class="btn c-back-to-top" data-back-to-top aria-label="ページの先頭へ戻る"><span
+            class="fa fa-arrow-up c-back-to-top__icon" aria-hidden="true"></span></a>
 
 
     <!-- Bootstrap -->

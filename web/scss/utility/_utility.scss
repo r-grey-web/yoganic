@@ -11,3 +11,11 @@
         display: block;
     }
 }
+
+.u-sp-hide {
+    display: block;
+
+    @include m.mq-max(v.$md) {
+        display: none;
+    }
+}

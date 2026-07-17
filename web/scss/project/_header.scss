@@ -93,7 +93,7 @@
         }
     }
 
-    &__logo-img {
+    &__logo-image {
         width: 300px;
         height: 45px;
         max-height: 50px;
@@ -293,6 +293,10 @@
     &__drawer-item {
         width: 100%;
         border-bottom: 1px solid #eee;
+
+        &--cta {
+            border-bottom: none;
+        }
     }
 
     &__drawer-link {

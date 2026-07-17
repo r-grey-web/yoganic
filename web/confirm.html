@@ -29,42 +29,42 @@
 </head>
 
 <body>
-  <main class="confirm">
-    <div class="confirm__inner">
-      <h1 class="confirm__title">お問い合わせ内容の確認</h1>
-      <p class="confirm__lead">
+  <main class="p-confirm">
+    <div class="p-confirm__inner">
+      <h1 class="p-confirm__title">お問い合わせ内容の確認</h1>
+      <p class="p-confirm__lead">
         入力内容をご確認のうえ、送信してください。
       </p>
 
-      <div class="confirm__box">
-        <dl class="confirm__list">
-          <div class="confirm__item">
-            <dt>お名前</dt>
-            <dd id="confirm-name"></dd>
+      <div class="p-confirm__box">
+        <dl class="p-confirm__list">
+          <div class="p-confirm__item">
+            <dt class="p-confirm__label">お名前</dt>
+            <dd id="confirm-name" class="p-confirm__value"></dd>
           </div>
 
-          <div class="confirm__item">
-            <dt>メールアドレス</dt>
-            <dd id="confirm-email"></dd>
+          <div class="p-confirm__item">
+            <dt class="p-confirm__label">メールアドレス</dt>
+            <dd id="confirm-email" class="p-confirm__value"></dd>
           </div>
 
-          <div class="confirm__item">
+          <div class="p-confirm__item">
             <dt>お問い合わせ種別</dt>
-            <dd id="confirm-category"></dd>
+            <dd id="confirm-category" class="p-confirm__value"></dd>
           </div>
 
-          <div class="confirm__item">
+          <div class="p-confirm__item">
             <dt>お問い合わせ内容</dt>
-            <dd id="confirm-message"></dd>
+            <dd id="confirm-message" class="p-confirm__value"></dd>
           </div>
         </dl>
 
-        <p id="confirm-note" class="confirm__note">※本サイトはポートフォリオのため、実際のメール送信は行われません。</p>
+        <p id="confirm-note" class="p-confirm__note">※本サイトはポートフォリオのため、実際のメール送信は行われません。</p>
 
-        <div class="confirm__buttons">
-          <button id="return-to-form-button" class="confirm__button confirm__button--back rounded-pill btn"
+        <div class="p-confirm__buttons">
+          <button data-return-to-form-button class="p-confirm__button p-confirm__button--back"
             type="button">入力画面に戻って修正する</button>
-          <button id="submit-button" class="confirm__button confirm__button--submit rounded-pill btn" type="button"
+          <button data-submit-button class="p-confirm__button p-confirm__button--submit" type="button"
             aria-describedby="confirm-note">送信する（デモ）</button>
         </div>
       </div>

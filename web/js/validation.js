@@ -1,16 +1,18 @@
-const form = document.querySelector(".contact-form");
+"use strict";
+
+const form = document.querySelector(".p-contact__form");
 
 if (form) {
     const nameInput = document.querySelector("#name");
-    const nameError = nameInput.closest(".contact-form__item").querySelector(".error-message");
+    const nameError = nameInput.closest(".p-contact__item").querySelector(".p-contact__error-message");
     const emailInput = document.querySelector("#email");
-    const emailError = emailInput.closest(".contact-form__item").querySelector(".error-message");
+    const emailError = emailInput.closest(".p-contact__item").querySelector(".p-contact__error-message");
     const categorySelect = document.querySelector("#category");
-    const categorySelectError = categorySelect.closest(".contact-form__item").querySelector(".error-message");
+    const categorySelectError = categorySelect.closest(".p-contact__item").querySelector(".p-contact__error-message");
     const messageTextarea = document.querySelector("#message");
-    const messageTextareaError = messageTextarea.closest(".contact-form__item").querySelector(".error-message");
+    const messageTextareaError = messageTextarea.closest(".p-contact__item").querySelector(".p-contact__error-message");
     const privacyInput = document.querySelector("#privacy");
-    const privacyError = privacyInput.closest(".contact-form__privacy").querySelector(".error-message");
+    const privacyError = privacyInput.closest(".p-contact__privacy").querySelector(".p-contact__error-message");
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     // 入力内容確認ページから戻った場合、データの復元処理
