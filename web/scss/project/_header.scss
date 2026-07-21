@@ -188,6 +188,17 @@
         }
     }
 
+    &__cta {
+        padding: 10px 24px;
+        background-color: v.$color-primary;
+        border: 1.9px solid v.$color-primary;
+        color: v.$color-white;
+
+        @include m.hover-device {
+            @include m.button-base-hover;
+        }
+    }
+
     &__floating-menu {
         opacity: 0;
         visibility: hidden;

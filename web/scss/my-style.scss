@@ -1,20 +1,13 @@
-@use "sass:color";
-
 @use "foundation/base";
-@use "foundation/variables" as v;
-@use "foundation/mixins" as m;
-@use "foundation/reset";
 
 @use "layout/container";
-@use "layout/footer" as layoutFooter;
-@use "layout/header" as layoutHeader;
+@use "layout/footer";
+@use "layout/header";
 
 @use "component/accordion";
 @use "component/back-to-top";
 @use "component/button";
-@use "component/card";
 @use "component/divider";
-@use "component/form";
 @use "component/section";
 @use "component/section-title";
 @use "component/spinner";

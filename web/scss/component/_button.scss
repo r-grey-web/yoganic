@@ -5,11 +5,7 @@
 /* ボタン */
 /*----------------------------------------------*/
 .c-button {
-    @include m.cta-btn;
-
-    @include m.hover-device {
-        @include m.cta-btn-hover;
-    }
+    @include m.button-base;
 
     &:active {
         opacity: 0.7;

@@ -103,8 +103,8 @@
 
         &--submit {
             color: #fffdf8;
-            background-color: #973D00;
-            border: 2px solid #973D00;
+            background-color: v.$color-primary;
+            border: 2px solid v.$color-primary;
 
             @include m.hover-device {
                 color: #fffdf8;

@@ -38,7 +38,7 @@
         fill: none;
         margin: 0 auto 24px;
         border-radius: 50%;
-        background-color: #973D00;
+        background-color: v.$color-primary;
         display: grid;
         place-items: center;
         font-size: 28px;
@@ -92,7 +92,7 @@
         margin-top: 40px;
         color: #fffdf8;
         text-decoration: none;
-        background-color: #973D00;
+        background-color: v.$color-primary;
         border-radius: 50rem;
 
         @include m.hover-device {

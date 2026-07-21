@@ -153,14 +153,16 @@
     }
 
     &__button {
-        @include m.cta-btn;
         display: block;
-        min-width: 220px;
         margin: 0 auto;
         padding: 16px 40px;
+        background-color: v.$color-primary;
+        border: 1.9px solid v.$color-primary;
+        color: v.$color-white;
+        letter-spacing: 0.12em;
 
         @include m.hover-device {
-            @include m.cta-btn-hover;
+            @include m.button-base-hover;
         }
     }
 }
