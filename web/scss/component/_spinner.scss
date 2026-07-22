@@ -8,7 +8,7 @@
     position: fixed;
     inset: 0;
     visibility: hidden;
-    z-index: v.$z-spinner;
+    z-index: 9999;
     background-color: v.$color-white;
     transition: opacity .5s ease-out, visibility 0s linear .5s;
 

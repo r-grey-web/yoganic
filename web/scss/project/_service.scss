@@ -29,7 +29,7 @@
         border: 1px solid rgba(166, 124, 82, 0.1);
         border-radius: 40px 15px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        background: v.$text-white;
+        background: v.$color-off-white;
         transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 
         @include m.hover-device {
@@ -182,7 +182,6 @@
 
     &__card-text {
         @include m.content-text;
-        color: #6F6A64;
     }
 
     &__card-btn-box {
@@ -208,7 +207,7 @@
 
         @include m.hover-device {
             background-color: #b38255;
-            color: #fff;
+            color: v.$color-white;
         }
 
         &:focus,

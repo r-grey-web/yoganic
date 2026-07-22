@@ -84,19 +84,16 @@
     }
 
     &__button {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
+        @include m.button-primary;
         min-width: 220px;
-        padding: 14px 32px;
-        margin-top: 40px;
-        color: #fffdf8;
+        padding: 16px 28px;
+        margin-top: 24px;
+        border-width: 1.95;
         text-decoration: none;
-        background-color: v.$color-primary;
-        border-radius: 50rem;
 
         @include m.hover-device {
-            opacity: .8;
+            @include m.button-base-hover;
+            background-color: transparent;
         }
 
         &:focus-visible {

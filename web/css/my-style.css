@@ -24,9 +24,6 @@ body.is-drawer-open {
 /* Color */
 /*----------------------------------------------*/
 /*----------------------------------------------*/
-/* Z-index */
-/*----------------------------------------------*/
-/*----------------------------------------------*/
 /* Breakpoint */
 /*----------------------------------------------*/
 /*----------------------------------------------*/
@@ -185,7 +182,7 @@ body.is-drawer-open {
   border-radius: 50rem;
   font-weight: 400;
   letter-spacing: 0.12em;
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .c-button:active {
   opacity: 0.7;
@@ -457,7 +454,7 @@ body.is-drawer-open {
 }
 .p-confirm__value {
   margin: 0;
-  color: #5d5754;
+  color: #595551;
   line-height: 1.8;
   white-space: pre-wrap;
 }
@@ -487,7 +484,6 @@ body.is-drawer-open {
   min-width: 180px;
   padding: 14px 28px;
   font-size: 15px;
-  border-radius: 50rem;
 }
 .p-confirm__button--back {
   color: #973D00;
@@ -623,7 +619,7 @@ body.is-drawer-open {
 }
 .p-contact__privacy {
   margin: 32px 0;
-  color: #6b5a55;
+  color: #5c443d;
   font-size: 14px;
   text-align: center;
 }
@@ -639,25 +635,31 @@ body.is-drawer-open {
   cursor: pointer;
 }
 .p-contact__privacy-link {
-  color: #6b5a55;
+  color: #5c443d;
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: opacity 0.25s ease;
 }
 @media (hover: hover) {
   .p-contact__privacy-link:hover {
-    color: #6b5a55;
+    color: #5c443d;
     opacity: 0.8;
   }
+}
+.p-contact__button {
+  background-color: #973D00;
+  border: 1.9px solid #973D00;
+  color: #fff;
+}
+.p-contact__button:focus-visible {
+  box-shadow: none !important;
+  outline: 3px solid #5d7769 !important;
+  outline-offset: 4px !important;
 }
 .p-contact__button {
   display: block;
   margin: 0 auto;
   padding: 16px 40px;
-  background-color: #973D00;
-  border: 1.9px solid #973D00;
-  color: #fff;
-  letter-spacing: 0.12em;
 }
 @media (hover: hover) {
   .p-contact__button:hover {
@@ -751,7 +753,7 @@ body.is-drawer-open {
   display: flex;
   height: 100%;
   padding: 1.5rem;
-  border: 3px solid #C97B63;
+  border: 3px solid #c97b63;
   border-radius: 10px;
   background: #fdfbf7;
 }
@@ -880,7 +882,6 @@ body.is-drawer-open {
   padding: 0;
   background: none;
   border: none;
-  color: #c97b63 !important;
   transition: all 0.2s ease-out;
 }
 .p-feedback .swiper-button-prev::after,
@@ -913,9 +914,11 @@ body.is-drawer-open {
 .p-feedback .swiper-button-next {
   left: 107% !important;
 }
+.p-feedback__arrow-icon {
+  fill: #c97b63;
+}
 .p-feedback .swiper-pagination {
   top: 385px !important;
-  background-color: #cc5500;
 }
 @media (width < 1090px) {
   .p-feedback .swiper-pagination {
@@ -1035,8 +1038,9 @@ body.is-drawer-open {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   background-color: #D68A55;
   color: #3a2e2b;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: 500;
+  letter-spacing: 0.08em;
   transition: all 0.3s;
 }
 @media (hover: hover) {
@@ -1244,7 +1248,7 @@ body.is-drawer-open {
 .p-header__hamburger-bar {
   width: 17.5px;
   height: 2px;
-  background: #5d5754;
+  background: #595551;
   margin: 2px 0;
 }
 .p-header__nav-list {
@@ -1255,7 +1259,7 @@ body.is-drawer-open {
   position: relative;
   margin-right: 25px;
   padding: 30px 8px;
-  color: #5d5754 !important;
+  color: #595551 !important;
   font-family: "M PLUS 1", sans-serif;
   font-size: 0.9375rem;
   font-weight: 500;
@@ -1298,10 +1302,17 @@ body.is-drawer-open {
   }
 }
 .p-header__cta {
-  padding: 10px 24px;
   background-color: #973D00;
   border: 1.9px solid #973D00;
   color: #fff;
+}
+.p-header__cta:focus-visible {
+  box-shadow: none !important;
+  outline: 3px solid #5d7769 !important;
+  outline-offset: 4px !important;
+}
+.p-header__cta {
+  padding: 10px 24px;
 }
 @media (hover: hover) {
   .p-header__cta:hover {
@@ -1349,7 +1360,7 @@ body.is-drawer-open {
 .p-header__floating-bar {
   width: 17.5px;
   height: 2px;
-  background: #5d5754;
+  background: #595551;
   margin: 2px 0;
 }
 .p-header__drawer {
@@ -1384,8 +1395,8 @@ body.is-drawer-open {
   position: absolute;
   width: 25px;
   height: 2px;
-  background: #5d5754;
-  transition: 0.3s;
+  background: #595551;
+  transition: background 0.3s;
 }
 .p-header__drawer-close span:nth-child(1) {
   transform: rotate(45deg);
@@ -1413,25 +1424,44 @@ body.is-drawer-open {
   display: block;
   padding: 25px 10px;
   transition: background-color 0.2s ease-in-out;
-  color: #5d5754 !important;
+  color: #595551 !important;
   text-decoration: none;
   font-weight: bold;
 }
 .p-header__drawer-link.is-active {
-  color: #cc5500 !important;
+  color: #973D00 !important;
 }
 @media (hover: hover) {
   .p-header__drawer-link:hover {
     background: #f8f9fa;
-    color: #cc5500 !important;
+    color: #973D00 !important;
   }
 }
 .p-header__drawer-link:active {
   background: #f8f9fa;
-  color: #cc5500 !important;
+  color: #973D00 !important;
+}
+.p-header__drawer-cta {
+  background-color: #973D00;
+  border: 1.9px solid #973D00;
+  color: #fff;
+}
+.p-header__drawer-cta:focus-visible {
+  box-shadow: none !important;
+  outline: 3px solid #5d7769 !important;
+  outline-offset: 4px !important;
 }
 .p-header__drawer-cta {
   margin-top: 25px;
+  padding: 12px 28px;
+}
+@media (hover: hover) {
+  .p-header__drawer-cta:hover {
+    background-color: #fff;
+    border-color: #973D00;
+    color: #973D00;
+    font-weight: 450;
+  }
 }
 .p-header__overlay {
   position: fixed;
@@ -1913,7 +1943,6 @@ body.is-drawer-open {
   letter-spacing: 0.14em;
   margin-bottom: 22px;
   text-align: left;
-  color: #6F6A64;
 }
 @media (width < 1090px) {
   .p-service__card-btn-box {
@@ -2037,20 +2066,29 @@ body.is-drawer-open {
   }
 }
 .p-thanks__button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 220px;
-  padding: 14px 32px;
-  margin-top: 40px;
-  color: #fffdf8;
-  text-decoration: none;
   background-color: #973D00;
-  border-radius: 50rem;
+  border: 1.9px solid #973D00;
+  color: #fff;
+}
+.p-thanks__button:focus-visible {
+  box-shadow: none !important;
+  outline: 3px solid #5d7769 !important;
+  outline-offset: 4px !important;
+}
+.p-thanks__button {
+  min-width: 220px;
+  padding: 16px 28px;
+  margin-top: 24px;
+  border-width: 1.95;
+  text-decoration: none;
 }
 @media (hover: hover) {
   .p-thanks__button:hover {
-    opacity: 0.8;
+    background-color: #fff;
+    border-color: #973D00;
+    color: #973D00;
+    font-weight: 450;
+    background-color: transparent;
   }
 }
 .p-thanks__button:focus-visible {

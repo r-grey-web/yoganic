@@ -6,7 +6,7 @@
 /*----------------------------------------------*/
 .c-accordion {
     &__item {
-        background: #fff;
+        background: v.$color-white;
         margin-bottom: 15px;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -19,7 +19,7 @@
 
             .c-accordion__question {
                 background-color: #e6e0dd;
-                color: #595551;
+                color: v.$dark-gray;
                 font-weight: 500;
             }
 

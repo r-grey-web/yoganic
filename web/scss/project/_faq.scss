@@ -5,7 +5,7 @@
 /* よくあるご質問 */
 /*----------------------------------------------*/
 .p-faq {
-    background-color: #fefef8;
+    background-color: v.$color-background;
 
     @include m.mq-max(v.$md) {
         padding: 80px 0px;

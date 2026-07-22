@@ -1,6 +1,11 @@
 @use "../foundation/variables" as v;
 @use "../foundation/mixins" as m;
 
+// ==========================================
+// Local variables
+// ==========================================
+$pricing-accent-color: #8da399;
+
 /*----------------------------------------------*/
 /* 料金プラン */
 /*----------------------------------------------*/
@@ -31,7 +36,7 @@
     }
 
     &__card {
-        background-color: v.$text-white;
+        background-color: v.$color-off-white;
         transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
         border-radius: 40px 15px 40px 15px;
 
@@ -57,7 +62,7 @@
 
             @include m.hover-device {
                 transform: scale(1.05) translateY(-18px) !important;
-                border-color: #8da399;
+                border-color: $pricing-accent-color;
                 box-shadow: 0 20px 45px rgba(141, 163, 153, 0.3) !important;
             }
 
@@ -76,7 +81,7 @@
     &__badge {
         display: inline-block;
         padding: 0.5em 0.65em;
-        background-color: #8da399;
+        background-color: $pricing-accent-color;
         border-radius: 50rem;
         color: v.$color-white;
         font-size: 0.75rem;
@@ -88,7 +93,7 @@
     &__card-title {
         @include m.content-title;
         margin: 20px 0 8px;
-        color: #595551;
+        color: v.$dark-gray;
         font-weight: 700;
     }
 
@@ -96,12 +101,12 @@
         @include m.content-text;
         text-align: center;
         letter-spacing: 0.07em;
-        text-shadow: 0 0 10px #fff;
+        text-shadow: 0 0 10px v.$color-white;
     }
 
     &__price {
         margin: 0 0 33px;
-        color: #595551;
+        color: v.$dark-gray;
         font-size: 1.75rem;
         font-family: "Playfair Display", serif;
         font-weight: 550;
@@ -122,9 +127,9 @@
     &__button {
         width: 100%;
         padding: 8px 24px;
-        border: 1px solid #8da399;
+        border: 1px solid $pricing-accent-color;
         background-color: transparent;
-        color: #8da399;
+        color: $pricing-accent-color;
         transition: all 0.3s ease-out;
 
         &--default {
@@ -136,12 +141,12 @@
 
         &--recommended {
             z-index: 10;
-            background-color: #8da399;
-            color: v.$text-white;
+            background-color: $pricing-accent-color;
+            color: v.$color-off-white;
 
             @include m.hover-device {
                 opacity: 0.8;
-                color: v.$text-white;
+                color: v.$color-off-white;
             }
         }
 

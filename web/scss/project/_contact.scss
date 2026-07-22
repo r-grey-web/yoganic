@@ -2,6 +2,11 @@
 @use "../foundation/variables" as v;
 @use "../foundation/mixins" as m;
 
+// ==========================================
+// Local variables
+// ==========================================
+$contact-main-color: #5c443d;
+
 /*----------------------------------------------*/
 /* お問い合わせフォーム */
 /*----------------------------------------------*/
@@ -43,7 +48,7 @@
         display: block;
         padding-left: 4px;
         margin-bottom: 10px;
-        color: #5c443d;
+        color: $contact-main-color;
         font-size: 14px;
         letter-spacing: 0.08em;
     }
@@ -52,7 +57,7 @@
         display: inline-block;
         margin-left: 8px;
         padding: 2px 8px;
-        color: #fff;
+        color: v.$color-white;
         background: v.$color-primary;
         border-radius: 999px;
         font-size: 11px;
@@ -61,14 +66,14 @@
     &__control {
         width: 100%;
         padding: 20px 50px 20px 28px;
-        color: #5c443d;
+        color: $contact-main-color;
         background: #fbfaf7;
         border: 1.8px solid #e4ddd5;
         border-radius: 8px;
         font-size: 15px;
 
         &:focus-visible {
-            border: 1.8px solid #c97b63 !important;
+            border: 1.8px solid v.$color-accent !important;
             outline: none !important;
         }
 
@@ -104,8 +109,8 @@
             right: 28px;
             width: 10px;
             height: 10px;
-            border-right: 1px solid #5c443d;
-            border-bottom: 1px solid #5c443d;
+            border-right: 1px solid $contact-main-color;
+            border-bottom: 1px solid $contact-main-color;
             transform: translateY(-70%) rotate(45deg);
             pointer-events: none;
         }
@@ -122,7 +127,7 @@
 
     &__privacy {
         margin: 32px 0;
-        color: #6b5a55;
+        color: $contact-main-color;
         font-size: 14px;
         text-align: center;
 
@@ -141,25 +146,22 @@
     }
 
     &__privacy-link {
-        color: #6b5a55;
+        color: $contact-main-color;
         text-decoration: underline;
         text-underline-offset: 3px;
         transition: opacity 0.25s ease;
 
         @include m.hover-device {
-            color: #6b5a55;
+            color: $contact-main-color;
             opacity: .8;
         }
     }
 
     &__button {
+        @include m.button-primary;
         display: block;
         margin: 0 auto;
         padding: 16px 40px;
-        background-color: v.$color-primary;
-        border: 1.9px solid v.$color-primary;
-        color: v.$color-white;
-        letter-spacing: 0.12em;
 
         @include m.hover-device {
             @include m.button-base-hover;

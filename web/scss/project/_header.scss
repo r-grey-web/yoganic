@@ -1,6 +1,12 @@
 @use "../foundation/variables" as v;
 @use "../foundation/mixins" as m;
 
+// ==========================================
+// Local variables
+// ==========================================
+$nav-active-color: #C65200;
+$drawer-link-background: #f8f9fa;
+
 /*----------------------------------------------*/
 /* ヘッダー */
 /*----------------------------------------------*/
@@ -17,17 +23,17 @@
         background-color: v.$color-white;
         border-bottom: 1px solid rgba(255, 255, 255, .1);
 
-        @include m.mq-max(v.$nav-breakpoint) {
+        @include m.mq-max(v.$xxl) {
             padding: 15px 5% !important;
         }
 
         &.sticky-top {
-            @include m.mq-min(v.$nav-breakpoint) {
+            @include m.mq-min(v.$xxl) {
                 position: fixed;
                 background: var(--bs-light) !important;
             }
 
-            @include m.mq-max(v.$nav-breakpoint) {
+            @include m.mq-max(v.$xxl) {
                 position: relative;
                 background: var(--bs-white);
             }
@@ -99,7 +105,7 @@
         max-height: 50px;
         transition: .5s;
 
-        @include m.mq-max(v.$nav-breakpoint) {
+        @include m.mq-max(v.$xxl) {
             max-height: 45px;
         }
 
@@ -117,7 +123,7 @@
         width: 50px;
         height: 50px;
 
-        @include m.mq-max(v.$nav-breakpoint) {
+        @include m.mq-max(v.$xxl) {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -151,11 +157,11 @@
         transition: .5s;
 
         @include m.hover-device {
-            color: #C65200 !important;
+            color: $nav-active-color !important;
         }
 
         &.is-active {
-            color: #C65200 !important;
+            color: $nav-active-color !important;
 
             &::before {
                 width: calc(100% - 2px);
@@ -163,7 +169,7 @@
             }
         }
 
-        @include m.mq-min(v.$nav-breakpoint) {
+        @include m.mq-min(v.$xxl) {
             &::before {
                 position: absolute;
                 content: "";
@@ -171,7 +177,7 @@
                 height: 2px;
                 bottom: -1px;
                 left: 50%;
-                background: #C65200;
+                background: $nav-active-color;
                 transition: .5s;
             }
 
@@ -182,17 +188,15 @@
             }
         }
 
-        @include m.mq-max(v.$nav-breakpoint) {
+        @include m.mq-max(v.$xxl) {
             padding: 20px 0;
             margin-left: 0;
         }
     }
 
     &__cta {
+        @include m.button-primary;
         padding: 10px 24px;
-        background-color: v.$color-primary;
-        border: 1.9px solid v.$color-primary;
-        color: v.$color-white;
 
         @include m.hover-device {
             @include m.button-base-hover;
@@ -225,7 +229,7 @@
     &__floating-button {
         width: 50px;
         height: 50px;
-        background: #fff;
+        background: v.$color-white;
         border-radius: 50%;
         border: none;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -249,7 +253,7 @@
         right: -300px;
         width: 300px;
         height: 100vh;
-        background: #fff;
+        background: v.$color-white;
         z-index: 2000;
         transition: right 0.4s ease;
         padding: 80px 20px 20px;
@@ -278,7 +282,7 @@
             width: 25px;
             height: 2px;
             background: v.$dark-gray;
-            transition: 0.3s;
+            transition: background 0.3s;
 
             &:nth-child(1) {
                 transform: rotate(45deg);
@@ -290,7 +294,7 @@
         }
 
         &:hover span {
-            background: #000;
+            background: v.$color-black;
         }
     }
 
@@ -319,22 +323,28 @@
         font-weight: bold;
 
         &.is-active {
-            color: v.$dark-btn-color !important;
+            color: v.$color-primary !important;
         }
 
         @include m.hover-device {
-            background: #f8f9fa;
-            color: v.$dark-btn-color !important;
+            background: $drawer-link-background;
+            color: v.$color-primary !important;
         }
 
         &:active {
-            background: #f8f9fa;
-            color: v.$dark-btn-color !important;
+            background: $drawer-link-background;
+            color: v.$color-primary !important;
         }
     }
 
     &__drawer-cta {
+        @include m.button-primary;
         margin-top: 25px;
+        padding: 12px 28px;
+
+        @include m.hover-device {
+            @include m.button-base-hover;
+        }
     }
 
     &__overlay {

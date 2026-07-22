@@ -5,7 +5,7 @@
 /* お客様の声 */
 /*----------------------------------------------*/
 .p-feedback {
-    background-color: #fefef8;
+    background-color: v.$color-background;
 
     &__lead {
         @include m.lead-text;
@@ -48,7 +48,7 @@
         display: flex;
         height: 100%;
         padding: 1.5rem;
-        border: 3px solid #C97B63;
+        border: 3px solid v.$color-accent;
         border-radius: 10px;
         background: #fdfbf7;
 
@@ -64,7 +64,7 @@
     &__user-img-bg {
         display: inline-flex;
         padding: 1rem;
-        background-color: v.$text-white;
+        background-color: v.$color-off-white;
         border-radius: 10px;
     }
 
@@ -80,7 +80,7 @@
     &__divider {
         margin: 0;
         height: 2px !important;
-        background-color: #c97b63;
+        background-color: v.$color-accent;
         border: none;
     }
 
@@ -122,7 +122,7 @@
 
         @include m.hover-device {
             background-color: v.$color-primary;
-            color: v.$text-white;
+            color: v.$color-off-white;
             box-shadow: 0 8px 20px rgba(184, 138, 118, 0.2);
 
             .p-feedback__cta-arrow-icon {
@@ -173,7 +173,6 @@
         padding: 0;
         background: none;
         border: none;
-        color: #c97b63 !important;
         transition: all 0.2s ease-out;
 
         &::after {
@@ -203,9 +202,12 @@
         left: 107% !important;
     }
 
+    &__arrow-icon {
+        fill: v.$color-accent;
+    }
+
     .swiper-pagination {
         top: 385px !important;
-        background-color: v.$dark-btn-color;
 
         @include m.mq-max(v.$xl) {
             top: 390px !important;
@@ -258,7 +260,7 @@
             &:focus-visible {
                 opacity: .6;
                 @include m.focus-ring-accessible;
-                background: #c97b63 !important;
+                background: v.$color-accent !important;
             }
 
             @media (max-width: 1350.98px) {
@@ -272,7 +274,7 @@
         }
 
         .swiper-pagination-bullet-active {
-            background: #c97b63 !important;
+            background: v.$color-accent !important;
 
             &:focus-visible {
                 opacity: 1;
