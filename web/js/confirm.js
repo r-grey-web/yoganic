@@ -1,6 +1,8 @@
+"use strict";
+
 const data = JSON.parse(sessionStorage.getItem("contactData"));
-const returnToFormButton = document.querySelector("#return-to-form-button");
-const submitButton = document.querySelector("#submit-button");
+const returnToFormButton = document.querySelector("[data-return-to-form-button]");
+const submitButton = document.querySelector("[data-submit-button]");
 
 
 const categoryMap = {

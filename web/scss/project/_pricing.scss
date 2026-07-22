@@ -1,0 +1,157 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+// ==========================================
+// Local variables
+// ==========================================
+$pricing-accent-color: #8da399;
+
+/*----------------------------------------------*/
+/* 料金プラン */
+/*----------------------------------------------*/
+.p-pricing {
+    background-image:
+        linear-gradient(rgba(251, 250, 249, 0.1), rgba(251, 250, 249, 0.1)),
+        url("../img/pricing-bg.avif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .c-section-title {
+        margin-bottom: 75px;
+    }
+
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    &__card-item {
+        flex: 0 0 calc((100% - 3rem) / 3);
+
+        @include m.mq-max(v.$md) {
+            flex: 0 0 100%;
+        }
+    }
+
+    &__card {
+        background-color: v.$color-off-white;
+        transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        border-radius: 40px 15px 40px 15px;
+
+        @include m.hover-device {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(141, 163, 153, 0.3) !important;
+            cursor: pointer;
+        }
+
+        &--default {
+            box-shadow: 0 4px 15px rgba(141, 163, 153, 0.1);
+            border: 2px solid transparent;
+
+            @include m.hover-device {
+                border-color: rgba(141, 163, 153, 0.6);
+            }
+        }
+
+        &--recommended {
+            transform: scale(1.03) translateY(-10px);
+            border: 2px solid transparent;
+            box-shadow: 0 10px 30px rgba(141, 163, 153, 0.2);
+
+            @include m.hover-device {
+                transform: scale(1.05) translateY(-18px) !important;
+                border-color: $pricing-accent-color;
+                box-shadow: 0 20px 45px rgba(141, 163, 153, 0.3) !important;
+            }
+
+            @include m.mq-max(v.$md) {
+                transform: none;
+                border: 2px solid rgba(141, 163, 153, 0.6);
+            }
+        }
+    }
+
+    &__card-body {
+        padding: 1rem 1rem;
+        text-align: center;
+    }
+
+    &__badge {
+        display: inline-block;
+        padding: 0.5em 0.65em;
+        background-color: $pricing-accent-color;
+        border-radius: 50rem;
+        color: v.$color-white;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        line-height: 1;
+    }
+
+    &__card-title {
+        @include m.content-title;
+        margin: 20px 0 8px;
+        color: v.$dark-gray;
+        font-weight: 700;
+    }
+
+    &__card-text {
+        @include m.content-text;
+        text-align: center;
+        letter-spacing: 0.07em;
+        text-shadow: 0 0 10px v.$color-white;
+    }
+
+    &__price {
+        margin: 0 0 33px;
+        color: v.$dark-gray;
+        font-size: 1.75rem;
+        font-family: "Playfair Display", serif;
+        font-weight: 550;
+        letter-spacing: 0.02em;
+    }
+
+    &__currency {
+        color: #8a928c;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    &__unit {
+        color: #8a928c;
+        font-size: 0.875rem;
+    }
+
+    &__button {
+        width: 100%;
+        padding: 8px 24px;
+        border: 1px solid $pricing-accent-color;
+        background-color: transparent;
+        color: $pricing-accent-color;
+        transition: all 0.3s ease-out;
+
+        &--default {
+            @include m.hover-device {
+                border-color: #6b7b6e;
+                color: #6b7b6e;
+            }
+        }
+
+        &--recommended {
+            z-index: 10;
+            background-color: $pricing-accent-color;
+            color: v.$color-off-white;
+
+            @include m.hover-device {
+                opacity: 0.8;
+                color: v.$color-off-white;
+            }
+        }
+
+        &:active {
+            opacity: 0.7;
+        }
+    }
+}

@@ -1,0 +1,107 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/*----------------------------------------------*/
+/* お問い合わせフォーム 送信完了ページ */
+/*----------------------------------------------*/
+.p-thanks {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 120px 20px;
+    background-color: #fbf8f1;
+
+    @include m.mq-max(v.$md) {
+        padding: 80px 16px;
+    }
+
+    &__inner {
+        width: 100%;
+        max-width: 760px;
+        margin-inline: auto;
+    }
+
+    &__box {
+        padding: 64px 48px;
+        background-color: #fffdf8;
+        box-shadow: 0 8px 30px rgba(91, 74, 63, 0.08);
+        text-align: center;
+
+        @include m.mq-max(v.$md) {
+            padding: 48px 24px;
+        }
+    }
+
+    &__icon-wrap {
+        width: 56px;
+        height: 56px;
+        fill: none;
+        margin: 0 auto 24px;
+        border-radius: 50%;
+        background-color: v.$color-primary;
+        display: grid;
+        place-items: center;
+        font-size: 28px;
+        line-height: 1;
+
+        @include m.mq-max(v.$xxl) {
+            width: clamp(46px, 2.696rem + 0.893vw, 56px);
+            height: clamp(46px, 2.696rem + 0.893vw, 56px);
+        }
+    }
+
+    &__icon {
+        width: 36px;
+        height: 36px;
+        stroke: #fffdf8;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+
+        @include m.mq-max(v.$xxl) {
+            width: clamp(26px, 1.446rem + 0.893vw, 36px);
+            height: clamp(26px, 1.446rem + 0.893vw, 36px);
+        }
+    }
+
+    &__title {
+        color: #9A7048;
+        font-family: "Noto Serif JP", serif;
+        font-size: clamp(1.5rem, 4vw, 2.25rem);
+        font-weight: 400;
+        letter-spacing: 0.08em;
+    }
+
+    &__text {
+        margin-top: 24px;
+        color: #3f332d;
+        font-size: 15px;
+        line-height: 2;
+
+        @include m.mq-max(v.$md) {
+            text-align: left;
+        }
+    }
+
+    &__button {
+        @include m.button-primary;
+        min-width: 220px;
+        padding: 16px 28px;
+        margin-top: 24px;
+        border-width: 1.95;
+        text-decoration: none;
+
+        @include m.hover-device {
+            @include m.button-base-hover;
+            background-color: transparent;
+        }
+
+        &:focus-visible {
+            @include m.focus-ring-accessible;
+        }
+
+        @include m.mq-max(v.$md) {
+            width: 100%;
+        }
+    }
+}

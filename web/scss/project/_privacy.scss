@@ -1,0 +1,105 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/*----------------------------------------------*/
+/* プライバシーポリシー */
+/*----------------------------------------------*/
+.p-privacy-policy {
+    padding: 120px 20px;
+    background-color: #fbf8f1;
+
+    @include m.mq-max(v.$md) {
+        padding: 80px 16px;
+    }
+
+    &__inner {
+        max-width: 880px;
+        margin-inline: auto;
+    }
+
+    &__icon-wrap {
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+    &__icon {
+        width: 36px;
+        height: 36px;
+        color: #9C5A2A;
+        stroke-width: 2;
+
+        @include m.mq-max(v.$xxl) {
+            width: clamp(2.125rem, 2.089rem + 0.179vw, 2.25rem);
+            height: clamp(2.125rem, 2.089rem + 0.179vw, 2.25rem);
+        }
+    }
+
+    &__title {
+        @include m.section-title;
+        color: #8B4513;
+
+        @include m.mq-max(v.$md) {
+            @include m.section-title-sp;
+        }
+    }
+
+    &__lead {
+        @include m.lead-text;
+
+        @include m.mq-max(v.$xxl) {
+            @include m.lead-text-sp;
+        }
+    }
+
+    &__box {
+        padding: 56px 48px;
+        background-color: #fffdf8;
+        box-shadow: 0 8px 30px rgba(91, 74, 63, 0.08);
+
+        @include m.mq-max(v.$md) {
+            padding: 40px 24px;
+        }
+    }
+
+    &__section {
+        padding: 0;
+        scroll-margin-top: 0;
+
+        &+& {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid #eadfd2;
+
+            @include m.mq-max(v.$md) {
+                margin-top: 32px;
+                padding-top: 32px;
+            }
+        }
+    }
+
+    &__section-title {
+        color: #3A3834;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+
+        @include m.mq-max(v.$md) {
+            font-size: 16px;
+        }
+    }
+
+    &__section-number {
+        color: #8B4513;
+    }
+
+    &__section-text {
+        margin-top: 16px;
+        color: #3A3834;
+        font-size: 15px;
+        line-height: 2;
+
+        @include m.mq-max(v.$md) {
+            font-size: 14px;
+        }
+    }
+}

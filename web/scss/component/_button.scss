@@ -1,0 +1,13 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/*----------------------------------------------*/
+/* ボタン */
+/*----------------------------------------------*/
+.c-button {
+    @include m.button-base;
+
+    &:active {
+        opacity: 0.7;
+    }
+}

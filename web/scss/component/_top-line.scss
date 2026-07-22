@@ -1,0 +1,10 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/*----------------------------------------------*/
+/* トップバー */
+/*----------------------------------------------*/
+.c-top-line {
+    height: 7px;
+    background-color: #241a08;
+}

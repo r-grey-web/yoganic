@@ -1,0 +1,35 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/*----------------------------------------------*/
+/* よくあるご質問 */
+/*----------------------------------------------*/
+.p-faq {
+    background-color: v.$color-background;
+
+    @include m.mq-max(v.$md) {
+        padding: 80px 0px;
+    }
+
+    &__inner {
+        padding: 50px 20px;
+        background-color: lighten(#e6e0dd, 5.5%);
+        border-radius: 8px;
+        color: v.$light-gray;
+    }
+
+    &__en-title {
+        margin: 0 0 50px;
+        color: v.$light-gray;
+        font-family: "Playfair Display", serif;
+        font-weight: 650;
+        font-size: 1.5rem;
+        text-align: center;
+        letter-spacing: 0.1em;
+    }
+
+    &__list {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}

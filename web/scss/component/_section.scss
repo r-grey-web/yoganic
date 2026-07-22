@@ -1,0 +1,18 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/*----------------------------------------------*/
+/* セクション */
+/*----------------------------------------------*/
+.c-section {
+    padding: 120px 0;
+    scroll-margin-top: 80px;
+
+    @include m.mq-max(v.$xxl) {
+        scroll-margin-top: 0px;
+    }
+
+    @include m.mq-max(v.$lg) {
+        padding: 80px 12px;
+    }
+}

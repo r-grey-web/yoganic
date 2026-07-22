@@ -1,0 +1,114 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/*----------------------------------------------*/
+/* お問い合わせフォーム 入力確認ページ */
+/*----------------------------------------------*/
+.p-confirm {
+    padding: 96px 20px;
+    background-color: #fbf8f1;
+
+    &__inner {
+        max-width: 800px;
+        margin-inline: auto;
+    }
+
+    &__title {
+        @include m.section-title;
+
+        @include m.mq-max(v.$md) {
+            @include m.section-title-sp;
+        }
+    }
+
+    &__lead {
+        @include m.lead-text;
+
+        @include m.mq-max(v.$xxl) {
+            @include m.lead-text-sp;
+        }
+    }
+
+    &__box {
+        margin-top: 24px;
+        padding: 48px;
+        background-color: #fffdf8;
+        box-shadow: 0 8px 30px rgba(91, 74, 63, 0.08);
+
+        @include m.mq-max(v.$xxl) {
+            padding: clamp(1.5rem, 1.071rem + 2.143vw, 3rem);
+        }
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 24px;
+        padding: 20px 0;
+        border-bottom: 1px solid #eadfd2;
+
+        @include m.mq-max(v.$md) {
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+    }
+
+    &__label {
+        color: #5d5754;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    &__value {
+        margin: 0;
+        color: v.$dark-gray;
+        line-height: 1.8;
+        white-space: pre-wrap;
+    }
+
+    &__note {
+        @include m.lead-text;
+        margin: 40px 0 0;
+        font-size: 14px;
+        letter-spacing: 0.03em;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 24px;
+
+        @include m.mq-max(v.$xxl) {
+            flex-direction: column;
+        }
+    }
+
+    &__button {
+        min-width: 180px;
+        padding: 14px 28px;
+        font-size: 15px;
+
+        &--back {
+            color: v.$color-primary;
+            background-color: #fffdf8;
+            border: 2px solid v.$color-primary;
+
+            @include m.hover-device {
+                color: v.$color-primary;
+                opacity: .7;
+            }
+        }
+
+        &--submit {
+            color: #fffdf8;
+            background-color: v.$color-primary;
+            border: 2px solid v.$color-primary;
+
+            @include m.hover-device {
+                color: #fffdf8;
+                opacity: .8;
+            }
+        }
+    }
+}

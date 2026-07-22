@@ -1,0 +1,13 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/*----------------------------------------------*/
+/* ヒーロー */
+/*----------------------------------------------*/
+.p-hero {
+    &__image {
+        width: 100%;
+        height: auto;
+        margin-top: 85px;
+    }
+}

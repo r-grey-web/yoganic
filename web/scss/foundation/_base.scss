@@ -1,0 +1,21 @@
+/*----------------------------------------------*/
+/* ボディ */
+/*----------------------------------------------*/
+body {
+    background-color: #fdfbf7;
+    font-family: "M PLUS 1", sans-serif;
+    font-optical-sizing: auto;
+    cursor: default;
+
+    &.is-drawer-open {
+        overflow: hidden;
+    }
+}
+
+/*----------------------------------------------*/
+/* フォーカス設定 */
+/*----------------------------------------------*/
+:focus-visible {
+    outline: 3px solid #d67a61 !important;
+    outline-offset: 4px;
+}

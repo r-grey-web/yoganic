@@ -1,0 +1,22 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/*----------------------------------------------*/
+/* 区切り線 */
+/*----------------------------------------------*/
+.c-divider {
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+    line-height: 0;
+
+    svg {
+        width: 100%;
+        height: 80px;
+    }
+
+    @include m.mq-max(v.$lg) {
+        display: none;
+    }
+}

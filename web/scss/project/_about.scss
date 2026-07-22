@@ -1,0 +1,102 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/*----------------------------------------------*/
+/* Yoganicの想い */
+/*----------------------------------------------*/
+.p-about {
+    padding: 80px 0 120px;
+    scroll-margin-top: 120px;
+
+    @include m.mq-max(v.$lg) {
+        padding: 80px 12px;
+    }
+
+    .c-section-title {
+        letter-spacing: 0.1em;
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        width: 100%;
+        margin: 0 auto;
+
+        @include m.mq-max(v.$lg) {
+            flex: 0 1 auto;
+            flex-wrap: wrap;
+            max-width: 600px !important;
+            margin: 0 auto;
+            padding: 0px !important;
+            text-align: center;
+        }
+    }
+
+    &__img-box {
+        flex: 0 0 calc(41.666667% - 15px);
+
+        @include m.mq-max(v.$lg) {
+            flex: 0 0 100%;
+            width: 100%;
+            padding: 0;
+        }
+    }
+
+    &__img {
+        object-fit: cover;
+        opacity: 0.95;
+        height: 290px;
+        max-width: 100%;
+        width: 100%;
+        border-radius: 15px;
+        filter: sepia(10%) contrast(95%);
+
+        @include m.mq-max(v.$lg) {
+            height: auto;
+        }
+    }
+
+    &__text-box {
+        @include m.mq-max(v.$lg) {
+            max-width: 600px !important;
+            margin: 0 auto;
+            padding: 0;
+        }
+    }
+
+    &__text-box-inner {
+        flex: 1;
+    }
+
+    &__title {
+        @include m.content-title;
+        color: #6F6A64;
+
+        @include m.mq-max(v.$lg) {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        @media (max-width: 451px) {
+            line-height: 1.7;
+        }
+    }
+
+    &__sp-br {
+        display: none;
+
+        @media (max-width: 451px) {
+            display: block;
+        }
+    }
+
+    &__text {
+        @include m.content-text;
+        letter-spacing: 0.1em;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

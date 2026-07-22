@@ -1,0 +1,25 @@
+@use "../foundation/variables" as v;
+
+.c-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    position: fixed;
+    inset: 0;
+    visibility: hidden;
+    z-index: 9999;
+    background-color: v.$color-white;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+
+    &.show {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &__loader {
+        width: 3rem;
+        height: 3rem;
+        color: v.$color-primary;
+    }
+}

@@ -3,22 +3,33 @@
 /*----------------------------------------------*/
 /* Design */
 /*----------------------------------------------*/
-@mixin cta-btn {
-    padding: 10px 24px;
-    border: 2px solid v.$btn-color;
-    background-color: v.$btn-color;
-    color: #fff !important;
+@mixin button-base {
+    display: inline-block;
+    border-radius: 50rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+        color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@mixin button-base-hover {
+    background-color: v.$color-white;
+    border-color: v.$color-primary;
+    color: v.$color-primary;
+    font-weight: 450;
+}
+
+@mixin button-primary {
+    background-color: v.$color-primary;
+    border: 1.9px solid v.$color-primary;
+    color: v.$color-white;
 
     &:focus-visible {
         box-shadow: none !important;
         outline: 3px solid #5d7769 !important;
         outline-offset: 4px !important;
     }
-}
-
-@mixin cta-btn-hover {
-    box-shadow: inset 300px 0 0 0 #fff;
-    color: v.$btn-color !important;
 }
 
 @mixin section-title {
