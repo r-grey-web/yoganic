@@ -31,7 +31,7 @@ window.addEventListener("scroll", () => {
     }
 });
 
-//　Swiper 初期化
+//　Swiper
 const swiperElement = document.querySelector("[data-feedback-swiper]");
 
 if (swiperElement) {
@@ -61,7 +61,7 @@ if (swiperElement) {
     });
 }
 
-//　AOS 初期化
+//　AOS
 if (typeof AOS !== "undefined") {
     AOS.init({
         once: true,
@@ -219,7 +219,36 @@ const updateHomeActive = () => {
 updateHomeActive();
 window.addEventListener("scroll", updateHomeActive);
 
+// ========================================
+// タブ
+// ========================================
+const tabs = document.querySelectorAll("[data-tab]");
+const panels = document.querySelectorAll("[data-panel]");
+
+tabs.forEach((tab) => {
+    tab.addEventListener("click", (e) => {
+        tabs.forEach((item) => {
+            item.classList.remove("is-active");
+            item.setAttribute("aria-selected", "false");
+        });
+
+        e.currentTarget.classList.add("is-active");
+        e.currentTarget.setAttribute("aria-selected", "true");
+        const target = e.currentTarget.dataset.tab;
+
+        panels.forEach((panel) => {
+            if (panel.dataset.panel === target) {
+                panel.hidden = false;
+            } else {
+                panel.hidden = true;
+            }
+        });
+    });
+});
+
+// ========================================
 // アコーディオン
+// ========================================
 document.querySelectorAll('[data-faq-item]').forEach((el) => {
     const summary = el.querySelector('[data-faq-question]');
     const content = el.querySelector('[data-faq-answer]');
