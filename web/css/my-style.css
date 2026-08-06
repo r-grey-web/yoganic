@@ -1783,6 +1783,7 @@ body.is-drawer-open {
   background-color: #fff;
   color: #5a463d;
   font-size: 16px;
+  letter-spacing: 0.0656rem;
   line-height: 1.5;
   cursor: pointer;
   transition: color 0.3s, background-color 0.3s;
@@ -1800,7 +1801,7 @@ body.is-drawer-open {
 }
 .p-service__tabs-tab.is-active {
   background-color: #e8b78e;
-  color: #fff;
+  color: #4F3B2A;
 }
 .p-service__tabs-tab.is-active::after {
   position: absolute;
@@ -1833,7 +1834,6 @@ body.is-drawer-open {
 @media (width < 576px) {
   .p-service__tabs-panel {
     grid-template-columns: 1fr;
-    grid-template-rows: 300px 300px;
   }
 }
 .p-service__tabs-image-wrapper {
@@ -1846,8 +1846,17 @@ body.is-drawer-open {
   height: 100%;
   object-fit: cover;
 }
+.p-service__tabs-image--vinyasa {
+  object-position: 61% 0%;
+}
 .p-service__tabs-image--hatha {
+  height: 418px;
   object-position: center 30%;
+}
+@media (width < 576px) {
+  .p-service__tabs-image {
+    height: 320px;
+  }
 }
 .p-service__tabs-text-body {
   display: flex;
@@ -1901,7 +1910,7 @@ body.is-drawer-open {
   letter-spacing: 0.09em;
   text-decoration: none;
   outline: none;
-  transition: all 0.3s ease-in-out;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
 }
 @media (hover: hover) {
   .p-service__card-btn:hover {
