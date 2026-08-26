@@ -150,6 +150,41 @@
     </header>
     <!-- Navbar & Hero End -->
 
+    <!-- Modal -->
+    <div class="p-modal" aria-hidden="true">
+        <div class="p-modal__overlay">
+            <div class="p-modal__content" role="dialog" aria-modal="true" aria-labelledby="reservation-title">
+                <button class="p-modal__close" aria-label="閉じる">×</button>
+
+                <h2 class="p-modal__title" id="reservation-title">
+                    体験レッスンを予約
+                </h2>
+
+                <label class="p-modal__field">
+                    希望日
+                    <input class="p-modal__input" type="date" id="reservation-date" required>
+                </label>
+
+                <label class="p-modal__field">
+                    希望時間
+                    <select class="p-modal__input" name="reservation-time" id="reservation-time" required>
+                        <option value="">時間を選択してください</option>
+                        <option value="10:00">10:00〜11:00</option>
+                        <option value="11:30">11:30〜12:30</option>
+                        <option value="14:00">14:00〜15:00</option>
+                        <option value="16:00">16:00〜17:00</option>
+                        <option value="18:30">18:30〜19:30</option>
+                        <option value="20:00">20:00〜21:00</option>
+                    </select>
+                </label>
+
+                <button class="p-modal__submit" type="button">
+                    予約内容を確認する
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Services Start -->
     <main>
         <section id="service" class="p-service">
@@ -249,53 +284,6 @@
                 </div>
             </div>
         </section>
-
-
-        <!-- <section id="service" class="c-section p-service">
-            <div class="l-container">
-                <h2 class="c-section-title" data-aos="fade-zoom-in" data-aos-easing="ease-out" data-aos-delay="0"
-                    data-aos-duration="1000" data-aos-offset="50">サービス紹介</h2>
-                <div class="p-service__inner" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800"
-                    data-aos-easing="ease-out" data-aos-offset="50">
-                    <article class="p-service__card p-service__card--vinyasa">
-                        <img src="img/service-img1.avif" alt="" class="p-service__card-img" loading="lazy">
-                        <div class="p-service__card-content">
-                            <h3 class="p-service__card-title">ヴィンヤサヨガ</h3>
-                            <p class="p-service__card-text">
-                                呼吸に合わせ、流れるように動く。集中力を高め、心身に活力を。アクティブにリフレッシュしたい方に。</p>
-                            <div class="p-service__card-btn-box">
-                                <a href="index.html" class="c-button p-service__card-btn">詳しく見る<span
-                                        class="visually-hidden">（ヴィンヤサヨガ）</span></a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="p-service__card p-service__card--hatha">
-                        <img src="img/service-img2.avif" alt="" class="p-service__card-img" loading="lazy">
-                        <div class="p-service__card-content">
-                            <h3 class="p-service__card-title">ハタヨガ</h3>
-                            <p class="p-service__card-text">
-                                ヨガ初心者の方や、基礎から学びたい方に。無理なく、自分のペースでヨガを楽しみませんか？</p>
-                            <div class="p-service__card-btn-box">
-                                <a href="index.html" class="c-button p-service__card-btn">詳しく見る<span
-                                        class="visually-hidden">（ハタヨガ）</span></a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="p-service__card p-service__card--maternity">
-                        <img src="img/service-img3.avif" alt="" class="p-service__card-img" loading="lazy">
-                        <div class="p-service__card-content">
-                            <h3 class="p-service__card-title">マタニティヨガ</h3>
-                            <p class="p-service__card-text">
-                                おなかの赤ちゃんと共に、心安らぐひとときを。妊娠期の不調を和らげ、出産に必要な体力を整えます。</p>
-                            <div class="p-service__card-btn-box">
-                                <a href="index.html" class="c-button p-service__card-btn">詳しく見る<span
-                                        class="visually-hidden">（マタニティヨガ）</span></a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section> -->
         <!-- Services End -->
 
         <!-- Boundary line -->
