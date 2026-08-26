@@ -342,6 +342,10 @@ $drawer-link-background: #f8f9fa;
         margin-top: 25px;
         padding: 12px 28px;
 
+        &:active {
+            color: #fff;
+        }
+
         @include m.hover-device {
             @include m.button-base-hover;
         }
