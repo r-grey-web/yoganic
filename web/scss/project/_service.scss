@@ -192,6 +192,7 @@
         &:active {
             outline: none;
             opacity: 0.7;
+            color: #4F3B2A;
         }
 
         @include m.mq-max(v.$sm) {

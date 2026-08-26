@@ -133,6 +133,10 @@ $pricing-accent-color: #8da399;
         transition: all 0.3s ease-out;
 
         &--default {
+            &:active {
+                color: $pricing-accent-color;
+            }
+
             @include m.hover-device {
                 border-color: #6b7b6e;
                 color: #6b7b6e;
@@ -143,6 +147,10 @@ $pricing-accent-color: #8da399;
             z-index: 10;
             background-color: $pricing-accent-color;
             color: v.$color-off-white;
+
+            &:active {
+                color: v.$color-off-white;
+            }
 
             @include m.hover-device {
                 opacity: 0.8;

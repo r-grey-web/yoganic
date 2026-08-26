@@ -163,6 +163,10 @@ $contact-main-color: #5c443d;
         margin: 0 auto;
         padding: 16px 40px;
 
+        &:active {
+            color: v.$color-white;
+        }
+
         @include m.hover-device {
             @include m.button-base-hover;
         }

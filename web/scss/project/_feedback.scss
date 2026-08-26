@@ -120,6 +120,10 @@
         outline: none;
         transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 
+        &:active {
+            color: v.$color-primary;
+        }
+
         @include m.hover-device {
             background-color: v.$color-primary;
             color: v.$color-off-white;

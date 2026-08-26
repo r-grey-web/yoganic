@@ -40,6 +40,10 @@ $footer-accent-color: #D68A55;
         letter-spacing: 0.08em;
         transition: all 0.3s;
 
+        &:active {
+            color: #3a2e2b;
+        }
+
         @include m.hover-device {
             transform: translateY(-2px) scale(1.02);
             box-shadow:

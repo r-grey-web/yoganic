@@ -661,6 +661,9 @@ body.is-drawer-open {
   margin: 0 auto;
   padding: 16px 40px;
 }
+.p-contact__button:active {
+  color: #fff;
+}
 @media (hover: hover) {
   .p-contact__button:hover {
     background-color: #fff;
@@ -831,6 +834,9 @@ body.is-drawer-open {
   color: #973D00;
   outline: none;
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.p-feedback__cta:active {
+  color: #973D00;
 }
 @media (hover: hover) {
   .p-feedback__cta:hover {
@@ -1042,6 +1048,9 @@ body.is-drawer-open {
   text-decoration: none;
   letter-spacing: 0.08em;
   transition: all 0.3s;
+}
+.p-footer__line-button:active {
+  color: #3a2e2b;
 }
 @media (hover: hover) {
   .p-footer__line-button:hover {
@@ -1455,6 +1464,9 @@ body.is-drawer-open {
   margin-top: 25px;
   padding: 12px 28px;
 }
+.p-header__drawer-cta:active {
+  color: #fff;
+}
 @media (hover: hover) {
   .p-header__drawer-cta:hover {
     background-color: #fff;
@@ -1617,6 +1629,9 @@ body.is-drawer-open {
   color: #8da399;
   transition: all 0.3s ease-out;
 }
+.p-pricing__button--default:active {
+  color: #8da399;
+}
 @media (hover: hover) {
   .p-pricing__button--default:hover {
     border-color: #6b7b6e;
@@ -1626,6 +1641,9 @@ body.is-drawer-open {
 .p-pricing__button--recommended {
   z-index: 10;
   background-color: #8da399;
+  color: #fdfdfd;
+}
+.p-pricing__button--recommended:active {
   color: #fdfdfd;
 }
 @media (hover: hover) {
@@ -1924,6 +1942,7 @@ body.is-drawer-open {
 .p-service__card-btn:active {
   outline: none;
   opacity: 0.7;
+  color: #4F3B2A;
 }
 @media (width < 576px) {
   .p-service__card-btn {
