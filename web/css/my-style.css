@@ -8,7 +8,7 @@ body {
   font-optical-sizing: auto;
   cursor: default;
 }
-body.is-drawer-open {
+body.is-drawer-open, body.is-modal-open {
   overflow: hidden;
 }
 
@@ -1580,9 +1580,10 @@ body.is-drawer-open {
   border-radius: 0.5rem;
   background: #fff;
 }
-.p-modal__input:focus {
+.p-modal__input:focus-visible {
   border-color: #b57a42;
-  outline: none;
+  outline: 2px solid #b57a42;
+  outline-offset: 2px;
 }
 .p-modal__submit {
   width: 100%;
@@ -1908,7 +1909,7 @@ body.is-drawer-open {
   border-radius: 5px 0 0 0;
 }
 .p-service__tabs-tab:last-child {
-  border-radius: 0 0 5px 0;
+  border-radius: 0 5px 0 0;
 }
 .p-service__tabs-tab:not(:first-child) {
   border-left: none;

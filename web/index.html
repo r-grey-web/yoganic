@@ -160,27 +160,31 @@
                     体験レッスンを予約
                 </h2>
 
-                <label class="p-modal__field">
-                    希望日
-                    <input class="p-modal__input" type="date" id="reservation-date" required>
-                </label>
+                <form class="p-modal__form">
+                    <label class="p-modal__field">
+                        希望日
+                        <input class="p-modal__input" type="date" name="reservation-date" id="reservation-date"
+                            required>
+                    </label>
 
-                <label class="p-modal__field">
-                    希望時間
-                    <select class="p-modal__input" name="reservation-time" id="reservation-time" required>
-                        <option value="">時間を選択してください</option>
-                        <option value="10:00">10:00〜11:00</option>
-                        <option value="11:30">11:30〜12:30</option>
-                        <option value="14:00">14:00〜15:00</option>
-                        <option value="16:00">16:00〜17:00</option>
-                        <option value="18:30">18:30〜19:30</option>
-                        <option value="20:00">20:00〜21:00</option>
-                    </select>
-                </label>
+                    <label class="p-modal__field">
+                        希望時間
+                        <select class="p-modal__input" name="reservation-time" id="reservation-time" required>
+                            <option value="">時間を選択してください</option>
+                            <option value="10:00">10:00〜11:00</option>
+                            <option value="11:30">11:30〜12:30</option>
+                            <option value="14:00">14:00〜15:00</option>
+                            <option value="16:00">16:00〜17:00</option>
+                            <option value="18:30">18:30〜19:30</option>
+                            <option value="20:00">20:00〜21:00</option>
+                        </select>
+                    </label>
 
-                <button class="p-modal__submit" type="button">
-                    予約内容を確認する
-                </button>
+                    <button class="p-modal__submit" type="submit">
+                        予約内容を確認する
+                    </button>
+                </form>
+
             </div>
         </div>
     </div>

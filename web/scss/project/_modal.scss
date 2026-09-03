@@ -7,7 +7,7 @@
 .p-modal {
     position: fixed;
     inset: 0;
-      display: none;
+    display: none;
     z-index: 1000;
 
     &.is-open {
@@ -87,9 +87,10 @@
         border-radius: .5rem;
         background: #fff;
 
-        &:focus {
+        &:focus-visible {
             border-color: #b57a42;
-            outline: none;
+            outline: 2px solid #b57a42;
+            outline-offset: 2px;
         }
     }
 
@@ -108,5 +109,4 @@
     &__submit:hover {
         background: #9b571a;
     }
-
 }
