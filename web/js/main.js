@@ -1,6 +1,8 @@
 "use strict";
 
+// ========================================
 // スピナー
+// ========================================
 const spinner = document.querySelector("[data-spinner]");
 
 if (spinner) {
@@ -9,7 +11,9 @@ if (spinner) {
     }, 1);
 }
 
-// 固定ナビバー ＆ トップへ戻るボタン
+// ========================================
+// 固定ナブバー ＆ トップへ戻るボタン
+// ========================================
 const navbar = document.querySelector("[data-navbar]");
 const backToTop = document.querySelector("[data-back-to-top]");
 
@@ -31,7 +35,9 @@ window.addEventListener("scroll", () => {
     }
 });
 
-//　Swiper
+// ========================================
+// Swiper
+// ========================================
 const swiperElement = document.querySelector("[data-feedback-swiper]");
 
 if (swiperElement) {
@@ -61,7 +67,9 @@ if (swiperElement) {
     });
 }
 
-//　AOS
+// ========================================
+// AOS
+// ========================================　
 if (typeof AOS !== "undefined") {
     AOS.init({
         once: true,
@@ -70,7 +78,9 @@ if (typeof AOS !== "undefined") {
     });
 }
 
+// ========================================
 // レスポンシブ　スクロールメニュー
+// ========================================
 const header = document.querySelector('[data-floating-menu]');
 const drawer = document.querySelector('[data-drawer]');
 const overlay = document.querySelector('[data-overlay]');
@@ -160,8 +170,9 @@ navLinks.forEach(link => {
     });
 });
 
-
+// ========================================
 // スクロールスパイ
+// ========================================
 const mainSections = document.querySelectorAll("#home, section");
 const mainNavLinks = document.querySelectorAll("[data-nav-link]");
 const mobileNavLinks = document.querySelectorAll("[data-drawer-link]");
@@ -307,5 +318,72 @@ document.querySelectorAll('[data-faq-item]').forEach((el) => {
 // ========================================
 // モーダル
 // ========================================
+const reservationButton = document.querySelector(".p-header__cta");
+const reservationModal = document.querySelector(".p-modal");
+const modalCloseButton = document.querySelector(".p-modal__close");
+const modalOverlay = document.querySelector(".p-modal__overlay");
+const reservationForm = document.querySelector(".p-modal__form");
 
+let lastFocusedElement;
 
+const openModal = () => {
+    lastFocusedElement = document.activeElement;
+    reservationModal.classList.add("is-open");
+    document.body.classList.add("is-modal-open");
+    reservationModal.setAttribute("aria-hidden", "false");
+    modalCloseButton.focus();
+};
+
+const closeModal = () => {
+    reservationModal.classList.remove("is-open");
+    document.body.classList.remove("is-modal-open");
+    reservationModal.setAttribute("aria-hidden", "true");
+    lastFocusedElement?.focus();
+};
+
+reservationButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    openModal();
+});
+
+modalCloseButton.addEventListener("click", closeModal);
+
+modalOverlay.addEventListener("click", (e) => {
+    if (e.target !== modalOverlay) return;
+    closeModal();
+});
+
+document.addEventListener("keydown", (e) => {
+    if (!reservationModal.classList.contains("is-open")) return;
+
+    if (e.key === "Escape") {
+        closeModal();
+        return;
+    }
+
+    if (e.key === "Tab") {
+        const focusableElements = reservationModal.querySelectorAll(
+            'button, input, select, [tabindex]:not([tabindex="-1"])'
+        );
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        // Shift + Tabで先頭から戻ろうとした場合
+        if (e.shiftKey && document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+        }
+
+        // Tabで最後から次へ進もうとした場合
+        if (!e.shiftKey && document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+        }
+    }
+});
+
+// 確認画面が完成したら処理を変更
+reservationForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+});
